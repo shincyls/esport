@@ -1,8 +1,7 @@
 <%= link_to 'New Match', new_match_path %>
-<table id="data-table" class="table table-sm table-responsive-lg table-striped" style="font-size:0.7rem">
+<table id="data-table" class="table table-sm table-responsive-lg" style="font-size:0.7rem">
   <thead class="bg-success text-white">
     <tr>
-      <th>Name</th>
       <th>Description</th>
       <th>Team home</th>
       <th>Team away</th>
@@ -18,9 +17,9 @@
   <tbody>
     <% @matches.each do |match| %>
       <tr>
-        <td><%= match.name %></td>
         <td><%= match.description %></td>
         <td><%= match.team_home_id %></td>
+        <td><%= match.team_away_id %></td>
         <td><%= match.match_start %></td>
         <td><%= match.match_end %></td>
         <td><%= match.question_1 %></td>
@@ -28,7 +27,7 @@
         <td><%= match.question_3 %></td>
         <td><%= link_to 'Show', match %></td>
         <td><%= link_to 'Edit', edit_match_path(match) %></td>
-        <td><%= link_to 'Destroy', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

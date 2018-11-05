@@ -5,28 +5,12 @@
       <div class="col-md-8 mx-auto">
 
         <%= form_for :register, url: select_model_path, method: "post", remote: true do |f| %>
-
         <div class="form-group ml-4 mr-4">
           <%= button_tag "User", value: 1, type: "submit", id: "btn-first", class: "btn btn-outline-primary" %>
           <%= button_tag "Team", value: 2, type: "submit", id: "btn-second", class: "btn btn-outline-primary" %>
           <%= button_tag "Match", value: 3, type: "submit", id: "btn-third", class: "btn btn-outline-primary" %>
           <%= button_tag "Prediction", value: 4, type: "submit", id: "btn-forth", class: "btn btn-outline-primary" %>
         </div>
-
-        <div class="custom-control custom-checkbox d-inline">
-          <%= check_box_tag :check, true, false, id: "check-in"%>
-          <%= label_tag :check, "Hide Checked Customer" %>
-          <%= check_box_tag :uncheck, true, false, id: "not-check-in"%>
-          <%= label_tag :uncheck, "Hide Unchecked Customer" %>
-        </div>
-        <br>
-        <div class="custom-control custom-checkbox d-inline">
-          <%= check_box_tag :ticket_sort, true, false, id: "ticket_number"%>
-          <%= label_tag :ticket_sort, "Sort By Ticket Number" %>
-          <%= check_box_tag :hide_sort, true, false, id: "status_unprint"%>
-          <%= label_tag :hide_sort, "Show Unprint Only" %>
-        </div>
-
         <% end %>
 
       </div>
@@ -52,10 +36,6 @@
 
 loadjs();
 
-$('.btn').on('click', function() {
-  $('#summary').html('<i class="fa fa-circle-o-notch fa-spin" style="font-size:24px"></i><span class="small"> loading data...</span>');
-});
-
 function loadjs() {
   $(document).ready(function() {
     $('#data-table').DataTable({
@@ -65,14 +45,6 @@ function loadjs() {
       }
     });
   });
-};
-
-function printDiv(divName, regid) {
-    var mywindow = window.open('/registers/' + regid);
-    var printContents = document.getElementById(divName).innerHTML;
-    mywindow.document.body.innerHTML = printContents;
-    mywindow.print();
-    return true;
 };
 
 </script>

@@ -22,58 +22,15 @@
     font-family: pacifico;
 }
 
-.unprint {
-    color: #d36d6d;
+.card {
+    background-color: rgba(0,0,0,0.5);
 }
 
-.printed {
-    color: #2dce89;
+.card-header {
+    background-color: rgba(0,0,0,0.5);
 }
 
-.container {
-    position: relative;
-    text-align: center;
-}
-
-.bottom-left {
-    position: absolute;
-    bottom: 11%;
-    left: 6%;
-    font-family: arial;
-    color: black;
-}
-
-.top-left {
-    position: absolute;
-    top: 12%;
-    left: 24%;
-}
-
-.top-right {
-    position: absolute;
-    top: 8%;
-    right: 14%;
-    font-family: arial;
-    color: black;
-}
-
-.bottom-right {
-    position: absolute;
-    bottom: 12%;
-    right: 24%;
-}
-
-.centered {
-    position: absolute;
-    top: 12%;
-    left: 24%;
-    transform: translate(-50%, -50%);
-}
-
-.white-shadow {
-    text-shadow: 0 0 0.2rem whitesmoke;
-}
-
-.white-shadow-sm {
-    text-shadow: 0 0 0.2rem whitesmoke;
+.nav-item {
+    background-color: rgba(0,0,0,0.5);
+    color: white;
 }

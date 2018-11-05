@@ -8,16 +8,49 @@
                 <h1 class="display-4 mt-4">Please Choose a Match and Predict Your Outcome!</h1>
                 <hr class="my-4">
 
-                <div class="row justify-content-center">
-                    <div class="col-lg-12">
-                        <div class="row row-grid">
-                            <%= render partial: "matches/card"%>
-                        </div>
-                    </div>
-                </div>
+                <table id="data-table" class="table table-sm table-responsive-lg" style="font-size:0.7rem">
+                    <thead class="bg-success text-white">
+                        <tr>
+                            <th>No<th>
+                            <th>Description</th>
+                            <th>Team 1 vs Team 2</th>
+                            <th>Match Start</th>
+                            <th>Predict</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <% @matches.each do |match| %>
+                        <tr>
+                            <th><%= match.id %><th>
+                            <td><%= match.description %></td>
+                            <td>Team <%= match.team_home_id %> VS Team <%= match.team_away_id %></td>
+                            <td><%= match.match_start %></td>
+                            <td>Click Here</td>
+                        </tr>
+                        <% end %>
+                    </tbody>
+                </table>
 
             </div>
         </div>
 
     </div>
 </div>
+
+
+<script>
+
+loadjs();
+
+function loadjs() {
+  $(document).ready(function() {
+    $('#data-table').DataTable({
+      "search": {
+        "caseInsensitive": true
+      }
+    });
+  });
+};
+
+</script>

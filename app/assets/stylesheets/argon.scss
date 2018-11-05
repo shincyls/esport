@@ -101,8 +101,12 @@ body
 
     text-align: left;
 
-    color: #525f7f;
+    color: white;
     background-color: #000;
+    background-image: url("icons/juggernaught.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 [tabindex='-1']:focus
@@ -5189,9 +5193,9 @@ input[type='button'].btn-block
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link
 {
-    color: #525f7f;
+    color: white;
     border-color: #dee2e6 #dee2e6 #fff; 
-    background-color: #fff;
+    background-color: rgba(0,0,0,0.5);
 }
 .nav-tabs .dropdown-menu
 {
@@ -7926,7 +7930,7 @@ button.close
 
 .bg-primary
 {
-    background-color: #000000 !important;
+    background-color: rgba(0,0,0,0.5) !important;
 }
 
 a.bg-primary:hover,
