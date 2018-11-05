@@ -1,27 +1,21 @@
-<%= form_with(model: match_prediction) do |form| %>
+<%= form_with(model: match_prediction, id: "match-prediction-form") do |form| %>
 
   <%= form.hidden_field :user_id, value: current_user.id %>
   <%= form.hidden_field :match_id, value: @match.id %>
 
   <p>Question 1: <%= @match.question_1 %></p>
-  <div class="field">
-    <%= form.label :answer_1 %>
-    <%= form.text_field :answer_1 %>
+  <div class="input-group mb-3 col-md-10">
+    <%= form.select(:answer_1, {"Yes" => "Yes", "No" => "No", "Draw" => "Draw"}, {include_blank: "Select Here"}, class: "form-control form-control-sm", id: "state") %>
   </div>
 
   <p>Question 2: <%= @match.question_2 %></p>
-  <div class="field">
-    <%= form.label :answer_2 %>
-    <%= form.text_field :answer_2 %>
+  <div class="input-group mb-3 col-md-10">
+    <%= form.select(:answer_2, {"Team 1" => "Team 1", "Team 2" => "Draw", "Draw" => "Draw"}, {include_blank: "Select Here"}, class: "form-control form-control-sm", id: "state") %>
   </div>
 
   <p>Question 3: <%= @match.question_3 %></p>
-  <div class="field">
-    <%= form.label :answer_3 %>
-    <%= form.text_field :answer_3 %>
+  <div class="input-group mb-3 col-md-10">
+    <%= form.select(:answer_3, {"Yes" => "Yes", "Ok" => "Ok", "Will" => "Will"}, {include_blank: "Select Here"}, class: "form-control form-control-sm", id: "state") %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

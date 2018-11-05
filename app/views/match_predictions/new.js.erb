@@ -2,4 +2,6 @@ $('#flash-message').html("<%= j (render 'statics/message') %>");
 
 $("#modal-header").html("Please Answer the Questions");
 $("#modal-body").html("<%= j (render 'new') %>");
+$("#modal-footer").html("<button type='submit' form='match-prediction-form' value='Submit' class='btn btn-primary'>Submit</button>");
+
 $("#modal-form").modal();

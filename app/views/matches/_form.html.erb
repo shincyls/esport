@@ -1,67 +1,39 @@
-<%= form_with(model: match, local: true) do |form| %>
-  <% if match.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(match.errors.count, "error") %> prohibited this match from being saved:</h2>
+<%= form_with(model: match, id: "match-form") do |form| %>
 
-      <ul>
-      <% match.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <div class="form-group">
+    <%= form.text_field :name, placeholder: "Game Name", class: "form-control form-control-sm" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.text_field :description, placeholder: "Description", class: "form-control form-control-sm" %>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-5 field">
+      <%= form.text_field :team_home_id, placeholder: "Team Home", class: "form-control form-control-sm" %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <div class="col-2 field">
+      <span>VS</span>
+    </div>
+    <div class="col-5 field">
+      <%= form.text_field :team_away_id, placeholder: "Team Away", class: "form-control form-control-sm" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
+  <div class="form-group">
+    <%= form.text_field :match_start, placeholder: "Match Start", class: "form-control form-control-sm" %>
   </div>
 
-  <div class="field">
-    <%= form.label :team_home_id_id %>
-    <%= form.text_field :team_home_id_id %>
+  <div class="form-group">
+    <%= form.text_field :question_1, placeholder: "Question 1", class: "form-control form-control-sm" %>
   </div>
 
-  <div class="field">
-    <%= form.label :team_away_id_id %>
-    <%= form.text_field :team_away_id_id %>
+  <div class="form-group">
+    <%= form.text_field :question_2, placeholder: "Question 2", class: "form-control form-control-sm" %>
   </div>
 
-  <div class="field">
-    <%= form.label :answer_3 %>
-    <%= form.text_field :answer_3 %>
+  <div class="form-group">
+    <%= form.text_field :question_3, placeholder: "Question 3", class: "form-control form-control-sm" %>
   </div>
 
-  <div class="field">
-    <%= form.label :match_start %>
-    <%= form.datetime_select :match_start %>
-  </div>
-
-  <div class="field">
-    <%= form.label :match_end %>
-    <%= form.datetime_select :match_end %>
-  </div>
-
-  <div class="field">
-    <%= form.label :question_1 %>
-    <%= form.text_field :question_1 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :question_2 %>
-    <%= form.text_field :question_2 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :question_3 %>
-    <%= form.text_field :question_3 %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

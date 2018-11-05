@@ -96,6 +96,7 @@ body
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
+    height: 100%;
 
     margin: 0;
 
@@ -7108,7 +7109,7 @@ button.close
     border: 1px solid rgba(0, 0, 0, .2);
     border-radius: .3rem;
     outline: 0; 
-    background-color: #fff;
+    background-color: black;
     background-clip: padding-box;
     box-shadow: 0 15px 35px rgba(50, 50, 93, .2), 0 5px 15px rgba(0, 0, 0, .17);
 }

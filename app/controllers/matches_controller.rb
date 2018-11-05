@@ -14,6 +14,7 @@ class MatchesController < ApplicationController
 
   # GET /matches/new
   def new
+    respond_to :html, :js
     @match = Match.new
   end
 
@@ -22,42 +23,38 @@ class MatchesController < ApplicationController
   end
 
   # POST /matches
-  # POST /matches.json
   def create
     @match = Match.new(match_params)
-
     respond_to do |format|
       if @match.save
-        format.html { redirect_to @match, notice: 'Match was successfully created.' }
-        format.json { render :show, status: :created, location: @match }
+        format.html
+        format.js { flash.now[:success] = "Match has successfully created!" }
       else
-        format.html { render :new }
-        format.json { render json: @match.errors, status: :unprocessable_entity }
+        format.html
+        format.js { flash.now[:alert] = "Something Wrong" }
       end
     end
   end
 
   # PATCH/PUT /matches/1
-  # PATCH/PUT /matches/1.json
   def update
     respond_to do |format|
-      if @match.update(match_params)
-        format.html { redirect_to @match, notice: 'Match was successfully updated.' }
-        format.json { render :show, status: :ok, location: @match }
+      if @match.save
+        format.html
+        format.js { flash.now[:success] = "Match has successfully updated!" }
       else
-        format.html { render :edit }
-        format.json { render json: @match.errors, status: :unprocessable_entity }
+        format.html
+        format.js { flash.now[:alert] = "Something Wrong" }
       end
     end
   end
 
   # DELETE /matches/1
-  # DELETE /matches/1.json
   def destroy
     @match.destroy
     respond_to do |format|
-      format.html { redirect_to matches_url, notice: 'Match was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html
+      format.js { flash.now[:success] = "Match has successfully removed!" }
     end
   end
 
