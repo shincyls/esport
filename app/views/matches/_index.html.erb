@@ -28,8 +28,8 @@
       <th>Team away</th>
       <th>Match start</th>
       <th>Match end</th>
-      <th>Action 1</th>
-      <th>Action 2</th>
+      <th>Edit</th>
+      <th>Delete</th>
     </tr>
   </thead>
 
@@ -42,8 +42,8 @@
         <td><%= match.team_away_id %></td>
         <td><%= match.match_start %></td>
         <td><%= match.match_end %></td>
-        <td><%= link_to 'Edit', edit_match_path(match), remote: true %></td>
-        <td><%= link_to 'Delete', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><span class="bg-warning rounded p-1 m-1"><%= link_to 'Edit', edit_match_path(match), remote: true, class: "text-white" %></span></td>
+        <td><span class="bg-danger rounded p-1 m-1"><%= link_to 'Delete', match, method: :delete, data: { confirm: 'Are you sure?' }, class: "text-white" %></span></td>
       </tr>
     <% end %>
   </tbody>

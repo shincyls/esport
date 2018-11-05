@@ -20,8 +20,8 @@
       <th>Email</th>
       <th>Phone Number</th>
       <th>Approval</th>
-      <th>Action 1</th>
-      <th>Action 2</th>
+      <th>Edit</th>
+      <th>Delete</th>
     </tr>
   </thead>
 
@@ -40,8 +40,8 @@
                                 url: "#{user.id}/approve",
                                 method: 'POST'}) %>
         </td>
-        <td><%= link_to 'Edit' %></td>
-        <td><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><span class="bg-warning rounded p-1 m-1"><%= link_to 'Edit', edit_user_path(user), class: "text-white" %></span></td>
+        <td><span class="bg-danger rounded p-1 m-1"><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure want to delete?' }, class: "text-white" %></span></td>
       </tr>
     <% end %>
   </tbody>
