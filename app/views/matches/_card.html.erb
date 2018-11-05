@@ -3,10 +3,8 @@
         <div class="card shadow border-0">
             <div class="card-body py-5">
                 <h6 class="text-primary text-uppercase"><%= m.description %></h6>
-                <p class="description mt-3">Argon is a great free UI package based on Bootstrap 4 that includes the most important components and features.</p>
-                <span class="badge badge-pill badge-primary">design</span>
-                <span class="badge badge-pill badge-primary">system</span>
-                <span class="badge badge-pill badge-primary">creative</span>
+                <p class="description mt-3">Team <%= m.team_home_id %> vs Team <%= m.team_away_id %></p>
+                <span class="badge badge-pill badge-primary"><%= m.match_start %></span>
                 <a href="#" class="btn btn-primary mt-4">Predict</a>
             </div>
         </div>
