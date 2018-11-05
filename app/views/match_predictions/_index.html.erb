@@ -1,0 +1,30 @@
+<%= link_to 'New Match Prediction', new_match_prediction_path %>
+<table id="data-table" class="table table-sm table-responsive-lg table-striped" style="font-size:0.7rem">
+  <thead class="bg-success text-white">
+    <tr>
+      <th>User</th>
+      <th>Match</th>
+      <th>Answer 1</th>
+      <th>Answer 2</th>
+      <th>Answer 3</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @match_predictions.each do |match_prediction| %>
+      <tr>
+        <td><%= match_prediction.user.username %></td>
+        <td><%= match_prediction.match.description %></td>
+        <td><%= match_prediction.answer_1 %></td>
+        <td><%= match_prediction.answer_2 %></td>
+        <td><%= match_prediction.answer_3 %></td>
+        <td><%= link_to 'Show', match_prediction %></td>
+        <td><%= link_to 'Edit', edit_match_prediction_path(match_prediction) %></td>
+        <td><%= link_to 'Delete', match_prediction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

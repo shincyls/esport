@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @match_prediction.user %>
+</p>
+
+<p>
+  <strong>Match:</strong>
+  <%= @match_prediction.match %>
+</p>
+
+<p>
+  <strong>Answer 1:</strong>
+  <%= @match_prediction.answer_1 %>
+</p>
+
+<p>
+  <strong>Answer 2:</strong>
+  <%= @match_prediction.answer_2 %>
+</p>
+
+<p>
+  <strong>Answer 3:</strong>
+  <%= @match_prediction.answer_3 %>
+</p>
+
+<%= link_to 'Edit', edit_match_prediction_path(@match_prediction) %> |
+<%= link_to 'Back', match_predictions_path %>

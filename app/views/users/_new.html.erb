@@ -1,0 +1,68 @@
+<% @user = User.new %>
+<%= form_for @user, id: 'signup', remote: true  do |f| %>
+
+  <div id="validateUsername" class="form-group mb-3">
+    <div class="input-group input-group-alternative">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
+      </div>
+      <%= f.text_field :username, class: "form-control is-valid", placeholder: "Username" %>
+    </div>
+    <span class="small invalid-feedback"></span>
+  </div>
+
+  <div id="validateName" class="form-group mb-3">
+    <div class="input-group input-group-alternative">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+      </div>
+      <%= f.text_field :first_name, class: "form-control mr-1", placeholder: "First Name" %>
+      <%= f.text_field :last_name, class: "form-control ml-1", placeholder: "Last Name"  %>
+    </div>
+    <span class="small invalid-feedback"></span>
+  </div>
+
+  <div id="validateEmail" class="form-group mb-3">
+    <div class="input-group input-group-alternative">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+      </div>
+      <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+    </div>
+    <span class="small invalid-feedback"></span>
+  </div>
+
+  <div id="validatePhone" class="form-group mb-3">
+    <div class="input-group input-group-alternative">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+      </div>
+      <%= f.text_field :phone_number, class: "form-control", placeholder: "Phone Number" %>
+    </div>
+    <span class="small invalid-feedback"></span>
+  </div>
+
+  <div id="validatePassword" class="form-group">
+    <div class="input-group input-group-alternative">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+      </div>
+      <%= f.password_field :password, class: "form-control", placeholder: "Password"  %>
+    </div>
+    <span class="small invalid-feedback"></span>
+  </div>
+
+  <div id="validatePasswordConfirm" class="form-group">
+    <div class="input-group input-group-alternative">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+      </div>
+      <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password Confirmation"  %>
+    </div>
+  </div>
+    
+  <div class="text-center">
+    <button type="submit" class="btn btn-primary my-4">Sign Up</button>
+  </div>
+    
+<% end %>

@@ -1,0 +1,72 @@
+@media print {
+
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    @page {
+        size: 4in 6in;
+    }
+
+    img {
+
+    }
+
+    #actual-section {
+        width: 62%;
+    }
+
+    .container {
+        position: relative;
+        text-align: center;
+    }
+
+    .top-right {
+        position: absolute;
+        top: 8%;
+        right: 12%;
+        color: black;
+    }
+    
+    .bottom-left {
+        position: absolute;
+        bottom: 11%;
+        left: 6%;
+    }
+
+    .ticket-length {
+        padding: 0 !important;
+    }
+
+    .ticket-number {
+        font-size: 3rem !important;
+    }
+
+    .ticket-font {
+        font-size: 1.1rem !important;
+    }
+    
+    
+    .top-left {
+        position: absolute;
+        top: 12%;
+        left: 24%;
+    }
+    
+    .bottom-right {
+        position: absolute;
+        bottom: 12%;
+        right: 24%;
+    }
+    
+    .centered {
+        position: absolute;
+        top: 12%;
+        left: 24%;
+        transform: translate(-50%, -50%);
+    }
+
+    
+
+}

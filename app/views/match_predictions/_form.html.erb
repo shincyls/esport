@@ -1,0 +1,42 @@
+<%= form_with(model: match_prediction, local: true) do |form| %>
+  <% if match_prediction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(match_prediction.errors.count, "error") %> prohibited this match_prediction from being saved:</h2>
+
+      <ul>
+      <% match_prediction.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :match_id %>
+    <%= form.text_field :match_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :answer_1 %>
+    <%= form.text_field :answer_1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :answer_2 %>
+    <%= form.text_field :answer_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :answer_3 %>
+    <%= form.text_field :answer_3 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

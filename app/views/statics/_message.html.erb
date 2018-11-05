@@ -1,0 +1,24 @@
+<% if flash.present? %>
+    <% flash.each do |type, message| %>
+        <% if type == "notice" %>
+        <div class="alert alert-success alert-dismissible fade show text-center" style="position:fixed;top:0;" role="alert">
+        <% elsif type == "alert" %>
+            <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+        <% else %>                              
+                 <div class="alert alert-<%= bootstrap_class_for(type) %> alert-dismissible fade show text-center" role="alert">
+            <% end %>
+                <span class="alert-inner--text"><b>
+                    <% if message.kind_of?(Array) %>
+                        <% message.each do |m| %>
+                        <li><%= m %></li>
+                        <% end %>
+                    <% else %>
+                        <%= message %>
+                    <% end %>
+                </b></span>
+                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>                              
+        <% end %>
+<% end %>
