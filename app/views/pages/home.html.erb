@@ -8,8 +8,8 @@
                 <h1 class="display-4 mt-4">Please Choose a Match and Predict Your Outcome!</h1>
                 <hr class="my-4">
 
-                <table id="data-table" class="table table-sm table-responsive-lg" style="font-size:0.7rem">
-                    <thead class="bg-success text-white">
+                <table id="data-table" class="table table-sm table-responsive-lg table-striped table-dark" style="font-size:0.8rem">
+                    <thead class="bg-dark text-white">
                         <tr>
                             <th>No<th>
                             <th>Description</th>
@@ -46,6 +46,7 @@ loadjs();
 function loadjs() {
   $(document).ready(function() {
     $('#data-table').DataTable({
+      "order": [],
       "search": {
         "caseInsensitive": true
       }

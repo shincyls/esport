@@ -1,6 +1,5 @@
-<%= link_to 'New Match', new_match_path %>
-<table id="data-table" class="table table-sm table-responsive-lg" style="font-size:0.7rem">
-  <thead class="bg-success text-white">
+<table id="match-table" class="table table-sm table-responsive-lg table-striped table-dark" style="font-size:0.8rem">
+  <thead class="bg-dark text-white">
     <tr>
       <th>Description</th>
       <th>Team home</th>
@@ -14,7 +13,7 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="text-black">
     <% @matches.each do |match| %>
       <tr>
         <td><%= match.description %></td>
@@ -32,3 +31,16 @@
     <% end %>
   </tbody>
 </table>
+
+<script>
+
+  $(document).ready(function() {
+    $('#match-table').DataTable({
+      "order": [],
+      "search": {
+        "caseInsensitive": true
+      }
+    });
+  });
+
+</script>

@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-md-8 mx-auto">
 
-        <%= form_for :register, url: select_model_path, method: "post", remote: true do |f| %>
+        <%= form_for :page, url: select_page_path, method: "post", remote: true do |f| %>
         <div class="form-group ml-4 mr-4">
           <%= button_tag "User", value: 1, type: "submit", id: "btn-first", class: "btn btn-outline-primary" %>
           <%= button_tag "Team", value: 2, type: "submit", id: "btn-second", class: "btn btn-outline-primary" %>
@@ -23,28 +23,9 @@
     <div class="container p-4 shadow rounded">
       <div class="row justify-content-center">
         <div id="table-section" class="col-lg-12">
-
-            <p>Please Select a Page</p>
-
+          <h2>Select a Page</h2>
         </div>
       </div>
     </div>
   </div>
 </main>
-
-<script>
-
-loadjs();
-
-function loadjs() {
-  $(document).ready(function() {
-    $('#data-table').DataTable({
-      "order": [],
-      "search": {
-        "caseInsensitive": true
-      }
-    });
-  });
-};
-
-</script>

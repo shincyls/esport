@@ -1,17 +1,17 @@
-$('#data-table').dataTable().fnDestroy();
+
 
 <% case @select when "1" %>
 	$("#btn-first").attr('class', 'btn btn-primary');
     $("#btn-second").attr('class', 'btn btn-outline-primary');
     $("#btn-third").attr('class', 'btn btn-outline-primary');
     $("#btn-forth").attr('class', 'btn btn-outline-primary');
-    $('#table-section').html("<%= j (render 'matches/index') %>");
+    $('#table-section').html("<%= j (render 'users/index') %>");
 <% when "2" %>
 	$("#btn-first").attr('class', 'btn btn-outline-primary');
     $("#btn-second").attr('class', 'btn btn-primary');
     $("#btn-third").attr('class', 'btn btn-outline-primary');
     $("#btn-firth").attr('class', 'btn btn-outline-primary');
-    $('#table-section').html("<%= j (render 'matches/index') %>");
+    $('#table-section').html("<%= j (render 'teams/index') %>");
 <% when "3" %>
     $("#btn-first").attr('class', 'btn btn-outline-primary');
     $("#btn-second").attr('class', 'btn btn-outline-primary');
@@ -25,7 +25,3 @@ $('#data-table').dataTable().fnDestroy();
     $("#btn-forth").attr('class', 'btn btn-primary');
     $('#table-section').html("<%= j (render 'match_predictions/index') %>");
 <% end %>
-
-$('#data-table').DataTable({
-    "search": {"caseInsensitive": true}
-});

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :teams
   root 'statics#index'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -13,7 +14,8 @@ Rails.application.routes.draw do
   get 'pages/admin', to: 'pages#admin', as: 'admin'
   get 'pages/info', to: 'pages#info', as: 'info'
   get 'pages/home', to: 'pages#home', as: 'home'
-  post 'pages/select', to: 'pages#select', as: 'select_model'
+  post 'pages/select', to: 'pages#select', as: 'select_page'
+  post 'pages/approval', to: 'pages#approval', as: 'user_approval'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

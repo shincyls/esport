@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 2018_11_30_060515) do
     t.string "phone_number"
     t.string "email"
     t.date "birthday"
+    t.boolean "approval", default: false
     t.string "password_digest"
     t.string "remember_digest"
     t.integer "role", default: 2
