@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   resources :matches
-  resources :match_predictions
+  resources :match_predictions 
+  get 'match_predictions/:id/predict', to: 'match_predictions#predict'
+
   resources :users
   resources :sessions 
 
@@ -15,7 +17,7 @@ Rails.application.routes.draw do
   get 'pages/info', to: 'pages#info', as: 'info'
   get 'pages/home', to: 'pages#home', as: 'home'
   post 'pages/select', to: 'pages#select', as: 'select_page'
-  post 'pages/approval', to: 'pages#approval', as: 'user_approval'
+  post 'pages/:id/approve', to: 'pages#approve', as: 'approve_user'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

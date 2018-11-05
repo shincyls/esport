@@ -1,36 +1,21 @@
-<%= form_with(model: match_prediction, local: true) do |form| %>
-  <% if match_prediction.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(match_prediction.errors.count, "error") %> prohibited this match_prediction from being saved:</h2>
+<%= form_with(model: match_prediction) do |form| %>
 
-      <ul>
-      <% match_prediction.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
+  <%= form.hidden_field :match_id, value: @match.id %>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :match_id %>
-    <%= form.text_field :match_id %>
-  </div>
-
+  <p>Question 1: <%= @match.question_1 %></p>
   <div class="field">
     <%= form.label :answer_1 %>
     <%= form.text_field :answer_1 %>
   </div>
 
+  <p>Question 2: <%= @match.question_2 %></p>
   <div class="field">
     <%= form.label :answer_2 %>
     <%= form.text_field :answer_2 %>
   </div>
 
+  <p>Question 3: <%= @match.question_3 %></p>
   <div class="field">
     <%= form.label :answer_3 %>
     <%= form.text_field :answer_3 %>

@@ -26,6 +26,10 @@ class ApplicationController < ActionController::Base
     session[:user_id] = nil
   end
 
+  def user_approved
+    current_user.approval
+  end
+
   helper_method :logged_in?, :current_user
 
 end

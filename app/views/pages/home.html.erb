@@ -3,9 +3,11 @@
 
         <!-- Section Left -->
         <div class="col-md-12">
-            <div class="jumbotron">
+            <div class="jumbotron mx-auto">
                 <%= image_tag("brand/klmajor.png", class: "mr-2", style: "width:50%;") %>
-                <h1 class="display-4 mt-4">Please Choose a Match and Predict Your Outcome!</h1>
+                
+                <% if current_user.approval %>
+                <h1 class="display-4 mt-4 text-white">Choose a Match and Predict Your Outcome!</h1>
                 <hr class="my-4">
 
                 <table id="data-table" class="table table-sm table-responsive-lg table-striped table-dark" style="font-size:0.8rem">
@@ -20,17 +22,21 @@
                     </thead>
 
                     <tbody>
-                        <% @matches.each do |match| %>
+                        <% @matches.each do |m| %>
                         <tr>
-                            <th><%= match.id %><th>
-                            <td><%= match.description %></td>
-                            <td>Team <%= match.team_home_id %> VS Team <%= match.team_away_id %></td>
-                            <td><%= match.match_start %></td>
-                            <td>Click Here</td>
+                            <th><%= m.id %><th>
+                            <td><%= m.description %></td>
+                            <td>Team <%= m.team_home_id %> VS Team <%= m.team_away_id %></td>
+                            <td><%= m.match_start %></td>
+                            <td><span class="bg-dark rounded p-1 m-1"><%= link_to "Predict", new_match_prediction_path(id: m.id), class: "small text-white", remote: true %></span></td>
                         </tr>
                         <% end %>
                     </tbody>
                 </table>
+
+                <% else %>
+                    <%= render partial: 'approval' %>
+                <% end %>
 
             </div>
         </div>

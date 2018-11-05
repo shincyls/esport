@@ -51,12 +51,12 @@ Match.create!([
   {description: "Round Of 16 - Game 6", team_home_id: 11, team_away_id: 12, question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
   {description: "Round Of 16 - Game 7", team_home_id: 13, team_away_id: 14, question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
   {description: "Round Of 16 - Game 8", team_home_id: 15, team_away_id: 16, question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Quarter Final - Game 1"},
-  {description: "Quarter Final - Game 2"},
-  {description: "Quarter Final - Game 3"},
-  {description: "Quarter Final - Game 4"},
-  {description: "Semi Final - Game 1"},
-  {description: "Semi Final - Game 2"},
+  {description: "Quarter Final - Game 1", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
+  {description: "Quarter Final - Game 2", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
+  {description: "Quarter Final - Game 3", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
+  {description: "Quarter Final - Game 4", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
+  {description: "Semi Final - Game 1", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
+  {description: "Semi Final - Game 2", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
   {description: "The Final"}
 ])
 

@@ -1,0 +1,5 @@
+$('#flash-message').html("<%= j (render 'statics/message') %>");
+
+$("#modal-header").html("Please Answer the Questions");
+$("#modal-body").html("<%= j (render 'new') %>");
+$("#modal-form").modal();

@@ -25,15 +25,19 @@ class PagesController < ApplicationController
         end
     end
 
-    def approval
-        respond_to :html, :js
+    def approve
         @user = User.find(params[:id])
-        if @user.approval == true
-          @user.approval = false
+        if @user.approval
+          @user.update_attribute(:approval, false)
         else
-          @user.approval = true
+          @user.update_attribute(:approval, true)
         end
-        @user.save
+    end
+
+    private
+
+    def require_approval
+        current_user.approve
     end
 
 end

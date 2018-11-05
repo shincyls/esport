@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = current_users
+    @users = User.all.order("created_at desc")
   end
 
   # GET /users/:id
