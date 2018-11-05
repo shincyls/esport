@@ -24,10 +24,10 @@
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Team home</th>
-      <th>Team away</th>
-      <th>Match start</th>
-      <th>Match end</th>
+      <th>Team Home</th>
+      <th>Team Away</th>
+      <th>Match Start</th>
+      <th>Match End</th>
       <th>Edit</th>
       <th>Delete</th>
     </tr>
@@ -38,8 +38,8 @@
       <tr>
         <td><%= match.name %></td>
         <td><%= match.description %></td>
-        <td><%= match.team_home_id %></td>
-        <td><%= match.team_away_id %></td>
+        <td><%= match.team_home %></td>
+        <td><%= match.team_away %></td>
         <td><%= match.match_start %></td>
         <td><%= match.match_end %></td>
         <td><span class="bg-warning rounded p-1 m-1"><%= link_to 'Edit', edit_match_path(match), remote: true, class: "text-white" %></span></td>

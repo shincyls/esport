@@ -43,20 +43,20 @@ Team.create!([
 ])
 
 Match.create!([
-  {description: "Round Of 16 - Game 1", team_home_id: 1, team_away_id: 2, question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Round Of 16 - Game 2", team_home_id: 3, team_away_id: 4, question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Round Of 16 - Game 3", team_home_id: 5, team_away_id: 6, question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Round Of 16 - Game 4", team_home_id: 7, team_away_id: 8, question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Round Of 16 - Game 5", team_home_id: 9, team_away_id: 10, question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Round Of 16 - Game 6", team_home_id: 11, team_away_id: 12, question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Round Of 16 - Game 7", team_home_id: 13, team_away_id: 14, question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Round Of 16 - Game 8", team_home_id: 15, team_away_id: 16, question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Quarter Final - Game 1", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Quarter Final - Game 2", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Quarter Final - Game 3", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Quarter Final - Game 4", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Semi Final - Game 1", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Semi Final - Game 2", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
+  {description: "Round Of 16 - Game 1", team_home: "Alpha", team_away: "Beta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
+  {description: "Round Of 16 - Game 2", team_home: "Gamma", team_away: "Epsilon", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
+  {description: "Round Of 16 - Game 3", team_home: "Kappa", team_away: "Zeta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
+  {description: "Round Of 16 - Game 4", team_home: "Delta", team_away: "Eta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
+  {description: "Round Of 16 - Game 5", team_home: "Iota", team_away: "Thete", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
+  {description: "Round Of 16 - Game 6", team_home: "Mu", team_away: "Nu", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
+  {description: "Round Of 16 - Game 7", team_home: "Xi", team_away: "Pi", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
+  {description: "Round Of 16 - Game 8", team_home: "Omicron", team_away: "Lambda", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
+  {description: "Quarter Final - Game 1", team_home: "Alpha", team_away: "Beta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
+  {description: "Quarter Final - Game 2", team_home: "Alpha", team_away: "Beta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
+  {description: "Quarter Final - Game 3", team_home: "Alpha", team_away: "Beta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
+  {description: "Quarter Final - Game 4", team_home: "Alpha", team_away: "Beta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
+  {description: "Semi Final - Game 1", team_home: "Alpha", team_away: "Beta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
+  {description: "Semi Final - Game 2", team_home: "Alpha", team_away: "Beta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
   {description: "The Final"}
 ])
 

@@ -26,7 +26,7 @@
                         <tr>
                             <th><%= m.id %><th>
                             <td><%= m.description %></td>
-                            <td>Team <%= m.team_home_id %> VS Team <%= m.team_away_id %></td>
+                            <td>Team <%= m.team_home %> VS Team <%= m.team_away %></td>
                             <td><%= m.match_start %></td>
                             <td><span class="bg-info rounded p-1 m-1"><%= link_to "Submit", new_match_prediction_path(id: m.id), class: "small text-white", remote: true %></span></td>
                         </tr>

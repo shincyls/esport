@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 2018_11_30_060515) do
   create_table "matches", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.bigint "team_home_id"
-    t.bigint "team_away_id"
+    t.string "team_home"
+    t.string "team_away"
     t.datetime "match_start"
     t.datetime "match_end"
     t.string "question_1"
@@ -39,8 +39,6 @@ ActiveRecord::Schema.define(version: 2018_11_30_060515) do
     t.string "question_3"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["team_away_id"], name: "index_matches_on_team_away_id"
-    t.index ["team_home_id"], name: "index_matches_on_team_home_id"
   end
 
   create_table "page_contents", force: :cascade do |t|
@@ -66,24 +64,6 @@ ActiveRecord::Schema.define(version: 2018_11_30_060515) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["team_id"], name: "index_players_on_team_id"
-  end
-
-  create_table "registers", force: :cascade do |t|
-    t.string "full_name"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "phone_number"
-    t.string "phone_number_2"
-    t.string "identity_number"
-    t.float "purchase", default: 0.0
-    t.integer "drawing_chance", default: 0
-    t.string "ticket_number", limit: 5
-    t.integer "status", default: 0
-    t.integer "category", default: 0
-    t.boolean "attendance", default: false
-    t.string "holder"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "teams", force: :cascade do |t|
