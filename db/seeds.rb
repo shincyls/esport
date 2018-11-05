@@ -13,14 +13,14 @@ PageContent.create!([
 ])
 
 User.create!([
-  {username: "super1", first_name: "Super", last_name: "Admin1", email: "super1@prins.com", password: "@dmin!23", role: 0},
-  {username: "super2", first_name: "Super", last_name: "Admin2", email: "super2@prins.com", password: "@dmin!23", role: 0},
-  {username: "admin1", first_name: "Normal", last_name: "Admin1", email: "admin1@prins.com", password: "qwerasdf", role: 1},
-  {username: "admin2", first_name: "Normal", last_name: "Admin2", email: "admin2@prins.com", password: "qwerasdf", role: 1},
-  {username: "user1", first_name: "Normal", last_name: "User1", email: "user1@prins.com", password: "qwerasdf", role: 2},
-  {username: "user2", first_name: "Normal", last_name: "User2", email: "user2@prins.com", password: "qwerasdf", role: 2},
-  {username: "user3", first_name: "Normal", last_name: "User3", email: "user3@prins.com", password: "qwerasdf", role: 2},
-  {username: "user4", first_name: "Normal", last_name: "User4", email: "user4@prins.com", password: "qwerasdf", role: 2}
+  {username: "super1", first_name: "Super", last_name: "Admin1", phone_number: "0123456781", email: "super1@prins.com", password: "@dmin!23", role: 0},
+  {username: "super2", first_name: "Super", last_name: "Admin2", phone_number: "0123456782", email: "super2@prins.com", password: "@dmin!23", role: 0},
+  {username: "admin1", first_name: "Normal", last_name: "Admin1", phone_number: "0123456783", email: "admin1@prins.com", password: "qwerasdf", role: 1},
+  {username: "admin2", first_name: "Normal", last_name: "Admin2", phone_number: "0123456784", email: "admin2@prins.com", password: "qwerasdf", role: 1},
+  {username: "user1", first_name: "Normal", last_name: "User1", phone_number: "0123456785", email: "user1@prins.com", password: "qwerasdf", role: 2},
+  {username: "user2", first_name: "Normal", last_name: "User2", phone_number: "0123456786", email: "user2@prins.com", password: "qwerasdf", role: 2},
+  {username: "user3", first_name: "Normal", last_name: "User3", phone_number: "0123456787", email: "user3@prins.com", password: "qwerasdf", role: 2},
+  {username: "user4", first_name: "Normal", last_name: "User4", phone_number: "0123456788", email: "user4@prins.com", password: "qwerasdf", role: 2}
 ])
 
 Team.create!([
