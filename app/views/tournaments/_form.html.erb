@@ -1,0 +1,67 @@
+<%= form_with(model: tournament, local: true) do |form| %>
+  <% if tournament.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tournament.errors.count, "error") %> prohibited this tournament from being saved:</h2>
+
+      <ul>
+      <% tournament.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.date_select :start_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.date_select :end_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :prize_1 %>
+    <%= form.text_field :prize_1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :info_1 %>
+    <%= form.text_field :info_1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :prize_2 %>
+    <%= form.text_field :prize_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :info_2 %>
+    <%= form.text_field :info_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :prize_3 %>
+    <%= form.text_field :prize_3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :info_3 %>
+    <%= form.text_field :info_3 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_30_060515) do
+ActiveRecord::Schema.define(version: 2018_12_07_142832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "brackets", force: :cascade do |t|
+    t.string "title"
+    t.string "code"
+    t.string "remarks"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "match_predictions", force: :cascade do |t|
     t.bigint "user_id"
@@ -37,8 +45,12 @@ ActiveRecord::Schema.define(version: 2018_11_30_060515) do
     t.string "question_1"
     t.string "question_2"
     t.string "question_3"
+    t.bigint "bracket_id"
+    t.bigint "tournament_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["bracket_id"], name: "index_matches_on_bracket_id"
+    t.index ["tournament_id"], name: "index_matches_on_tournament_id"
   end
 
   create_table "page_contents", force: :cascade do |t|
@@ -70,6 +82,23 @@ ActiveRecord::Schema.define(version: 2018_11_30_060515) do
     t.string "name"
     t.string "description"
     t.string "logo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tournaments", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.date "start_date"
+    t.date "end_date"
+    t.string "logo_url"
+    t.string "prize_1"
+    t.string "info_1"
+    t.string "prize_2"
+    t.string "info_2"
+    t.string "prize_3"
+    t.string "info_3"
+    t.boolean "display", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

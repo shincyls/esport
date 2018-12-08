@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
     def home
-        @matches = Match.all.order("created_at desc")
+        @tournaments = Tournament.all.order("start_date desc")
     end
 
     def info

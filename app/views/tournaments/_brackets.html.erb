@@ -1,0 +1,81 @@
+<% @tournaments.each do |t| %>
+<div>
+    <div class="row justify-content-center">
+        <%= image_tag(t.logo_url, style: "width:80%;height:80%") %>
+        <h1 class="title text-uppercase mx-auto shadow mt-2 mb-2 display-1"><%= t.title %></h1>
+    </div>
+
+    <div class="row justify-content-center">
+        <h6 class="text-white">Select Your Game and Predict Your Result</h6>
+    </div>
+
+    <% @matches = t.matches.order("bracket_id asc") %>
+    <div class="tournament-section">
+        <div class="tournament-container">
+            <div class="tournament-headers">
+                <h3 class="text-white">Round of 16</h3>
+                <h3 class="text-white">Quarter-Finals</h3>
+                <h3 class="text-white">Semi-Finals</h3>
+                <h3 class="text-white">Final</h3>
+            </div>
+
+            <div class="tournament-brackets title">
+                <ul class="bracket bracket-1">
+                <% @matches.first(8).each do |m| %>
+                    <li class="team-item">
+                        <%= link_to new_match_prediction_path(id: m.id), method: "get", remote: true do %>
+                        <p class="m-0"><%=m.bracket.code%> <%=m.match_start%></p>
+                        <p class="m-0">
+                            <%=m.team_home unless nil %> VS <%=m.team_away unless nil %>
+                        </p>
+                        <% end %>
+                    </li>
+                <% end %>
+                </ul>
+
+                <ul class="bracket bracket-2">
+                    <% @matches[8..11].each do |m| %>
+                    <li class="team-item">
+                        <%= link_to new_match_prediction_path(id: m.id), method: "get", remote: true do %>
+                        <p class="m-0"><%=m.bracket.code%> <%=m.match_start%></p>
+                        <p class="m-0">
+                            <%=m.team_home unless nil %> VS <%=m.team_away unless nil %>
+                        </p>
+                        <% end %>
+                    </li>
+                    <% end %>
+                </ul>
+
+                <ul class="bracket bracket-3">
+                    <% @matches[12..13].each do |m| %>
+                    <li class="team-item">
+                        <%= link_to new_match_prediction_path(id: m.id), method: "get", remote: true do %>
+                        <p class="m-0"><%=m.bracket.code%> <%=m.match_start%></p>
+                        <p class="m-0">
+                            <%=m.team_home unless nil %> VS <%=m.team_away unless nil %>
+                        </p>
+                        <% end %>
+                    </li>
+                    <% end %>
+                </ul>
+
+                <ul class="bracket bracket-4">
+                    <% final = @matches[15] %>
+                    <li class="team-item">
+                        <%= link_to new_match_prediction_path(id: final.id), method: "get", remote: true do %>
+                        <p class="m-0"><%=final.bracket.code%> <%=final.match_start%></p>
+                        <p class="m-0">
+                            <%=final.team_home unless nil %> VS <%=final.team_away unless nil %>
+                        </p>
+                        <% end %>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <p class="text-white">Terms and Conditions</p>
+
+</div>
+<% end %>

@@ -1,46 +1,15 @@
 <div class="container mt-4 mb-4">
     <div class="row">
-
         <!-- Section Left -->
         <div class="col-md-12">
             <div class="jumbotron mx-auto">
-                <%= image_tag("brand/klmajor.png", class: "mr-2", style: "width:50%;") %>
-                
                 <% if current_user.approval %>
-                <h1 class="display-4 mt-4 text-white">Choose a Match and Predict Your Outcome!</h1>
-                <hr class="my-4">
-
-                <table id="data-table" class="table table-sm table-responsive-lg table-striped table-dark" style="font-size:0.8rem">
-                    <thead class="bg-primary text-white">
-                        <tr>
-                            <th>No<th>
-                            <th>Description</th>
-                            <th>Team 1 vs Team 2</th>
-                            <th>Match Start</th>
-                            <th>Predict</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <% @matches.each do |m| %>
-                        <tr>
-                            <th><%= m.id %><th>
-                            <td><%= m.description %></td>
-                            <td>Team <%= m.team_home %> VS Team <%= m.team_away %></td>
-                            <td><%= m.match_start %></td>
-                            <td><span class="bg-info rounded p-1 m-1"><%= link_to "Submit", new_match_prediction_path(id: m.id), class: "small text-white", remote: true %></span></td>
-                        </tr>
-                        <% end %>
-                    </tbody>
-                </table>
-
+                    <%= render partial: 'tournaments/brackets' %>
                 <% else %>
                     <%= render partial: 'approval' %>
                 <% end %>
-
             </div>
         </div>
-
     </div>
 </div>
 

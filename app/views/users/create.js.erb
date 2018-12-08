@@ -1,10 +1,3 @@
-<% if @user.errors.messages[:username].any? %>
-    $('#validateUsername').attr("class", "form-group mb-3 has-danger");
-    $('#validateUsername .invalid-feedback').html('<%= @user.errors.messages[:username][0] %>');
-<% else %>
-    $('#validateUsername').attr("class", "form-group mb-3 has-success");
-<% end %>
-
 <% if @user.errors.messages[:email].any? %>
     $('#validateEmail').attr("class", "form-group mb-3 has-danger");
     $('#validateEmail .invalid-feedback').html('<%= @user.errors.messages[:email][0] %>');

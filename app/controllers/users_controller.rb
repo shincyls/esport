@@ -28,6 +28,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
+      @user.set_username
+      @user.save
       redirect_to home_path, flash: { success: 'User was successfully registered.' }
     else
       respond_to do |format|

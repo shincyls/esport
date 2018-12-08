@@ -23,6 +23,29 @@ User.create!([
   {username: "user4", first_name: "Normal", last_name: "User4", phone_number: "0123456788", email: "user4@prins.com", password: "qwerasdf", role: 2}
 ])
 
+Tournament.create!([
+  {title: "Chongqing Major", description: "Chongqing Major!!!", start_date: "2019-01-16", end_date: "2019-01-18", prize_1: "RM10000", info_1: "Cash", prize_2: "RM5000", info_2: "Cash", prize_3: "RM1000", info_3: "Cash", logo_url: "https://liquipedia.net/commons/images/f/f5/Chongqing_Major_2019.jpg"}
+])
+
+Bracket.create!([
+  {title: "Round Of 16 Match 1", code: "R16-M1"},
+  {title: "Round Of 16 Match 2", code: "R16-M2"},
+  {title: "Round Of 16 Match 3", code: "R16-M3"},
+  {title: "Round Of 16 Match 4", code: "R16-M4"},
+  {title: "Round Of 16 Match 5", code: "R16-M5"},
+  {title: "Round Of 16 Match 6", code: "R16-M6"},
+  {title: "Round Of 16 Match 7", code: "R16-M7"},
+  {title: "Round Of 16 Match 8", code: "R16-M8"},
+  {title: "Quarter Finals Match 1", code: "QF-M1"},
+  {title: "Quarter Finals Match 2", code: "QF-M2"},
+  {title: "Quarter Finals Match 3", code: "QF-M3"},
+  {title: "Quarter Finals Match 4", code: "QF-M4"},
+  {title: "Semi Finals Match 1", code: "SF-M1"},
+  {title: "Semi Finals Match 2", code: "SF-M2"},
+  {title: "Bronze Match", code: "Bronze"},
+  {title: "The Final", code: "Final"}
+])
+
 Team.create!([
   {name: "Team Alpha", description: "This is Alpha Team"},
   {name: "Team Beta", description: "This is Beta Team"},
@@ -43,21 +66,22 @@ Team.create!([
 ])
 
 Match.create!([
-  {description: "Round Of 16 - Game 1", team_home: "Alpha", team_away: "Beta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Round Of 16 - Game 2", team_home: "Gamma", team_away: "Epsilon", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Round Of 16 - Game 3", team_home: "Kappa", team_away: "Zeta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Round Of 16 - Game 4", team_home: "Delta", team_away: "Eta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Round Of 16 - Game 5", team_home: "Iota", team_away: "Thete", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Round Of 16 - Game 6", team_home: "Mu", team_away: "Nu", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Round Of 16 - Game 7", team_home: "Xi", team_away: "Pi", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Round Of 16 - Game 8", team_home: "Omicron", team_away: "Lambda", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Quarter Final - Game 1", team_home: "Alpha", team_away: "Beta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Quarter Final - Game 2", team_home: "Alpha", team_away: "Beta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Quarter Final - Game 3", team_home: "Alpha", team_away: "Beta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Quarter Final - Game 4", team_home: "Alpha", team_away: "Beta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Semi Final - Game 1", team_home: "Alpha", team_away: "Beta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "Semi Final - Game 2", team_home: "Alpha", team_away: "Beta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?"},
-  {description: "The Final"}
+  {description: "Round Of 16 - Game 1", team_home: "Alpha", team_away: "Beta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 1},
+  {description: "Round Of 16 - Game 2", team_home: "Gamma", team_away: "Epsilon", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 2},
+  {description: "Round Of 16 - Game 3", team_home: "Kappa", team_away: "Zeta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 3},
+  {description: "Round Of 16 - Game 4", team_home: "Delta", team_away: "Eta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 4},
+  {description: "Round Of 16 - Game 5", team_home: "Iota", team_away: "Thete", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 5},
+  {description: "Round Of 16 - Game 6", team_home: "Mu", team_away: "Nu", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 6},
+  {description: "Round Of 16 - Game 7", team_home: "Xi", team_away: "Pi", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 7},
+  {description: "Round Of 16 - Game 8", team_home: "Omicron", team_away: "Lambda", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 8},
+  {description: "Quarter Final - Game 1", team_home: "Alpha", team_away: "Beta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 9},
+  {description: "Quarter Final - Game 2", team_home: "Alpha", team_away: "Beta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 10},
+  {description: "Quarter Final - Game 3", team_home: "Alpha", team_away: "Beta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 11},
+  {description: "Quarter Final - Game 4", team_home: "Alpha", team_away: "Beta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 12},
+  {description: "Semi Final - Game 1", team_home: "Alpha", team_away: "Beta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 13},
+  {description: "Semi Final - Game 2", team_home: "Alpha", team_away: "Beta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 14},
+  {description: "The Bronze", team_home: "Alpha", team_away: "Beta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 15},
+  {description: "The Final", team_home: "Alpha", team_away: "Beta", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 16}
 ])
 
 MatchPrediction.create!([

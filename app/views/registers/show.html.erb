@@ -6,6 +6,7 @@
             <div id="print-section">
                 <div id="actual-section" class="row">
                     <div class="col-12">
+                        <p><%= current_user.username %></p>
                         <%= image_tag "brand/ogawa-#{@register.drawing_chance}.jpg", style: "width:100%;" %>
                         <div class="top-right">
                             <p class="ticket-number white-shadow-sm m-0" style="font-size:2rem;font-family:Righteous;"><%= @register.ticket_number %></p>
