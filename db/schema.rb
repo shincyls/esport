@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 2018_12_07_142832) do
     t.string "answer_1"
     t.string "answer_2"
     t.string "answer_3"
+    t.string "answer_4"
+    t.string "answer_5"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["match_id"], name: "index_match_predictions_on_match_id"
@@ -38,18 +40,24 @@ ActiveRecord::Schema.define(version: 2018_12_07_142832) do
   create_table "matches", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "team_home"
-    t.string "team_away"
+    t.bigint "team_home_id", default: 1
+    t.bigint "team_away_id", default: 1
+    t.integer "team_home_won", default: 0
+    t.integer "team_away_won", default: 0
     t.datetime "match_start"
     t.datetime "match_end"
     t.string "question_1"
     t.string "question_2"
     t.string "question_3"
+    t.string "question_4"
+    t.string "question_5"
     t.bigint "bracket_id"
     t.bigint "tournament_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["bracket_id"], name: "index_matches_on_bracket_id"
+    t.index ["team_away_id"], name: "index_matches_on_team_away_id"
+    t.index ["team_home_id"], name: "index_matches_on_team_home_id"
     t.index ["tournament_id"], name: "index_matches_on_tournament_id"
   end
 

@@ -22,20 +22,27 @@ class MatchPredictionsController < ApplicationController
 
   # GET /match_predictions/1/edit
   def edit
+    respond_to :html, :js
   end
 
   # POST /match_predictions
   def create
     @match_prediction = MatchPrediction.new(match_prediction_params)
-    respond_to do |format|
-      if @match_prediction.save
-        format.html
-        format.js { flash.now[:success] = "You have successfully created registration!" }
-      else
-        format.html
-        format.js { flash.now[:alert] = "Something Wrong" }
+
+    if current_user.match_predictions.where(match_id: @match_prediction.id).exists?
+      redirect_to edit_match_prediction_path(id: @match_prediction.id)
+    else
+      respond_to do |format|
+        if @match_prediction.save
+          format.html
+          format.js { flash.now[:success] = "You have successfully created registration!" }
+        else
+          format.html
+          format.js { flash.now[:alert] = "The prediction to this match has been submitted." }
+        end
       end
     end
+
   end
 
   # PATCH/PUT /match_predictions/1
@@ -70,4 +77,5 @@ class MatchPredictionsController < ApplicationController
     def match_prediction_params
       params.require(:match_prediction).permit(:user_id, :match_id, :answer_1, :answer_2, :answer_3)
     end
+
 end
