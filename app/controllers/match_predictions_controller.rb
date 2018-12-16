@@ -1,5 +1,5 @@
 class MatchPredictionsController < ApplicationController
-  before_action :set_match_prediction, only: [:show, :edit, :update, :destroy]
+  before_action :set_match_prediction, only: [:show, :edit, :route, :update, :destroy]
 
   # GET /match_predictions
   def index
@@ -10,7 +10,13 @@ class MatchPredictionsController < ApplicationController
   def show
   end
 
-  def predict
+  # GET /match_predictions/1/route
+  def route
+    if @match_prediction.match_predicted
+      redirect_to edit_match_prediction_path(@match_prediction)
+    else
+      redirect_to new_match_prediction_path(@match_prediction)
+    end
   end
 
   # GET /match_predictions/new
@@ -22,38 +28,31 @@ class MatchPredictionsController < ApplicationController
 
   # GET /match_predictions/1/edit
   def edit
-    respond_to :html, :js
   end
 
   # POST /match_predictions
   def create
     @match_prediction = MatchPrediction.new(match_prediction_params)
-
-    if current_user.match_predictions.where(match_id: @match_prediction.id).exists?
-      redirect_to edit_match_prediction_path(id: @match_prediction.id)
-    else
-      respond_to do |format|
-        if @match_prediction.save
-          format.html
-          format.js { flash.now[:success] = "You have successfully created registration!" }
-        else
-          format.html
-          format.js { flash.now[:alert] = "The prediction to this match has been submitted." }
-        end
+    respond_to do |format|
+      if @match_prediction.save
+        format.html
+        format.js { flash.now[:success] = "You have submitted your prediction for this match!" }
+      else
+        format.html
+        format.js { flash.now[:alert] = "The prediction to this match has been submitted." }
       end
     end
-
   end
 
   # PATCH/PUT /match_predictions/1
   def update
     respond_to do |format|
-      if @match_prediction.update(match_prediction_params)
-        format.html { redirect_to @match_prediction, notice: 'Match prediction was successfully updated.' }
-        format.js
+      if @match_prediction.save
+        format.html
+        format.js { flash.now[:success] = "You have updated your prediction for this match!" }
       else
-        format.html { render :edit }
-        format.js
+        format.html
+        format.js { flash.now[:alert] = "The prediction to this match has been submitted." }
       end
     end
   end
@@ -76,6 +75,10 @@ class MatchPredictionsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def match_prediction_params
       params.require(:match_prediction).permit(:user_id, :match_id, :answer_1, :answer_2, :answer_3)
+    end
+
+    def timesup_block
+      
     end
 
 end

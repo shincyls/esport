@@ -3,4 +3,9 @@ class MatchPrediction < ApplicationRecord
 
     belongs_to :user
     belongs_to :match
+
+    def match_predicted
+        current_user.match_predictions.where(match_id: @match_prediction.id).exists?
+    end
+
 end

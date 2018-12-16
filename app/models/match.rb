@@ -5,4 +5,5 @@ class Match < ApplicationRecord
     belongs_to :bracket
     belongs_to :team_home, class_name: 'Team', foreign_key: 'team_home_id'
     belongs_to :team_away, class_name: 'Team', foreign_key: 'team_away_id'
+    belongs_to :team_won, class_name: 'Team', foreign_key: 'team_won_id'
 end

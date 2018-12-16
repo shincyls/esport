@@ -5,6 +5,7 @@ class CreateMatches < ActiveRecord::Migration[5.2]
       t.string :description
       t.references :team_home, default: 1
       t.references :team_away, default: 1
+      t.references :team_won, default: 1
       t.integer :team_home_won, default: 0
       t.integer :team_away_won, default: 0
       t.datetime :match_start

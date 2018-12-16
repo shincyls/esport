@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Dota Prediction Pool</title>
+    <title>PickEm Dota2</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= favicon_link_tag 'brand/favicon.png' %>
+    <%= favicon_link_tag 'brand/favicon2.png' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     
@@ -14,6 +14,7 @@
   </head>
 
   <body>
+    <div class="allbutfooter">
     <div id="flash-message"><%= render partial: 'statics/message' %></div>
     <%= render partial: 'statics/navbar' %>
     <div class="h-100">
@@ -21,6 +22,7 @@
     </div>
     <%= render partial: 'statics/modal' %>
     <%= render partial: 'statics/footer' %>
+    </div>
   </body>
 
 </html>

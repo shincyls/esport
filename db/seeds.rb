@@ -15,12 +15,6 @@ PageContent.create!([
 User.create!([
   {username: "super1", first_name: "Super", last_name: "Admin1", phone_number: "0123456781", email: "super1@prins.com", password: "@dmin!23", role: 0},
   {username: "super2", first_name: "Super", last_name: "Admin2", phone_number: "0123456782", email: "super2@prins.com", password: "@dmin!23", role: 0},
-  {username: "admin1", first_name: "Normal", last_name: "Admin1", phone_number: "0123456783", email: "admin1@prins.com", password: "qwerasdf", role: 1},
-  {username: "admin2", first_name: "Normal", last_name: "Admin2", phone_number: "0123456784", email: "admin2@prins.com", password: "qwerasdf", role: 1},
-  {username: "user1", first_name: "Normal", last_name: "User1", phone_number: "0123456785", email: "user1@prins.com", password: "qwerasdf", role: 2},
-  {username: "user2", first_name: "Normal", last_name: "User2", phone_number: "0123456786", email: "user2@prins.com", password: "qwerasdf", role: 2},
-  {username: "user3", first_name: "Normal", last_name: "User3", phone_number: "0123456787", email: "user3@prins.com", password: "qwerasdf", role: 2},
-  {username: "user4", first_name: "Normal", last_name: "User4", phone_number: "0123456788", email: "user4@prins.com", password: "qwerasdf", role: 2}
 ])
 
 Tournament.create!([
@@ -48,22 +42,22 @@ Bracket.create!([
 
 Team.create!([
   {name: "TBA", description: "Team is not assigned"},
-  {name: "Team Secret", description: "This is Alpha Team"},
-  {name: "Team Liquid", description: "This is Beta Team"},
-  {name: "Alliance", description: "This is Gamma Team"},
-  {name: "NoPangolier", description: "This is Delta Team"},
-  {name: "Virtus.pro", description: "This is Epsilon Team"},
-  {name: "Team Aster", description: "This is Zeta Team"},
-  {name: "Vici Gaming", description: "This is Eta Team"},
-  {name: "PSG.LGD", description: "This is Theta Team"},
-  {name: "Fnatic", description: "This is Iota Team"},
-  {name: "TNC Predator", description: "This is Kappa Team"},
-  {name: "J.Storm", description: "This is Lambda Team"},
-  {name: "Forward Gaming", description: "This is Mu Team"},
-  {name: "Evil Geniuses", description: "This is Nu Team"},
-  {name: "paiN Gaming", description: "This is Xi Team"},
-  {name: "Thunder Predator", description: "This is Omicron Team"},
-  {name: "The Bucharest Minor", description: "This is Pi Team"}
+  {name: "Team Secret", description: "Region Europe #1"},
+  {name: "Team Liquid", description: "Region Europe #2"},
+  {name: "Alliance", description: "Region Europe #3"},
+  {name: "NoPangolier", description: "Region CIS #1"},
+  {name: "Virtus.pro", description: "Region CIS #2"},
+  {name: "Team Aster", description: "Region China #1"},
+  {name: "Vici Gaming", description: "Region China #2"},
+  {name: "PSG.LGD", description: "Region China #3"},
+  {name: "Fnatic", description: "Region SEA #1"},
+  {name: "TNC Predator", description: "Region SEA #2"},
+  {name: "J.Storm", description: "Region North America #1"},
+  {name: "Forward Gaming", description: "Region North America #2"},
+  {name: "Evil Geniuses", description: "Region North America #3"},
+  {name: "paiN Gaming", description: "Region South America #1"},
+  {name: "Thunder Predator", description: "Region South America #2"},
+  {name: "The Bucharest Minor", description: "Region South America #3"}
 ])
 
 Match.create!([
@@ -86,14 +80,6 @@ Match.create!([
 ])
 
 MatchPrediction.create!([
-  {user_id: 5, match_id: 1, answer_1: "Yes", answer_2: "No", answer_3: "No" },
-  {user_id: 6, match_id: 2, answer_1: "Yes", answer_2: "No", answer_3: "No" },
-  {user_id: 7, match_id: 3, answer_1: "Yes", answer_2: "No", answer_3: "No" },
-  {user_id: 8, match_id: 4, answer_1: "Yes", answer_2: "No", answer_3: "No" },
-  {user_id: 5, match_id: 5, answer_1: "Yes", answer_2: "No", answer_3: "No" },
-  {user_id: 6, match_id: 6, answer_1: "Yes", answer_2: "No", answer_3: "No" },
-  {user_id: 7, match_id: 7, answer_1: "Yes", answer_2: "No", answer_3: "No" },
-  {user_id: 8, match_id: 8, answer_1: "Yes", answer_2: "No", answer_3: "No" }
 ])
 
 

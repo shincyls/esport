@@ -18,17 +18,21 @@
                     <li class="team-item" id="<%=m.bracket.code%>">
                         <%= link_to new_match_prediction_path(id: m.id), remote: true do %>
                             <div class="row">
-                                <div class="col-2 mx-auto"><%= image_tag("icons/teams/#{m.team_home.id}.png", class: "", style: "height:1.2rem") %></div>
-                                <div class="col-9">
+                                <div class="col-2 mx-auto"><%= image_tag("icons/teams/t#{m.team_home.id}.png", class: "", style: "height:1.4rem") %></div>
+                                <div class="col-8 text-team">
                                     <%=m.team_home.name%>
-                                    <span class="float-right"><%=m.team_home_won%></span>
+                                </div>
+                                <div class="col-2 text-team">
+                                    <span><%=m.team_home_won%></span>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-2 mx-auto"><%= image_tag("icons/teams/#{m.team_away.id}.png", class: "", style: "height:1.2rem") %></div>
-                                <div class="col-9">
+                                <div class="col-2 mx-auto"><%= image_tag("icons/teams/t#{m.team_away.id}.png", class: "", style: "height:1.4rem") %></div>
+                                <div class="col-8 text-team">
                                     <%=m.team_away.name%>
-                                    <span class="float-right"><%=m.team_away_won%></span>
+                                </div>
+                                <div class="col-2 text-team">
+                                    <span><%=m.team_away_won%></span>
                                 </div>
                             </div>
                         <% end %>

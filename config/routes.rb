@@ -7,8 +7,11 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   resources :matches
-  resources :match_predictions 
-  get 'match_predictions/:id/predict', to: 'match_predictions#predict'
+  resources :match_predictions do 
+    member do
+      get :route
+    end
+  end
 
   resources :users
   resources :sessions 
