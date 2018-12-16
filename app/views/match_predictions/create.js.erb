@@ -1,5 +1,7 @@
 $('#flash-message').html("<%= j (render 'statics/message') %>");
 
+$("#<%=@match_prediction.match.bracket.code%>").addClass("predicted");
+
 $("#modal-header").html("Successfully Submitted");
 $("#modal-body").html("<%= j (render 'create') %>");
 $("#modal-footer").html("<button type='button' class='btn btn-primary' data-dismiss='modal' aria-label='Close'>Close</button>");

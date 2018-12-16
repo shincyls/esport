@@ -61,22 +61,22 @@ Team.create!([
 ])
 
 Match.create!([
-  {description: "Round Of 16 - Game 1", team_home_id: 17, team_away_id: 16, question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 1},
-  {description: "Round Of 16 - Game 2", team_home_id: 2, team_away_id: 15, question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 2},
-  {description: "Round Of 16 - Game 3", team_home_id: 3, team_away_id: 14, question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 3},
-  {description: "Round Of 16 - Game 4", team_home_id: 4, team_away_id: 13, question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 4},
-  {description: "Round Of 16 - Game 5", team_home_id: 5, team_away_id: 12, question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 5},
-  {description: "Round Of 16 - Game 6", team_home_id: 6, team_away_id: 11, question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 6},
-  {description: "Round Of 16 - Game 7", team_home_id: 7, team_away_id: 10, question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 7},
-  {description: "Round Of 16 - Game 8", team_home_id: 8, team_away_id: 9, question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 8},
-  {description: "Quarter Final - Game 1", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 9},
-  {description: "Quarter Final - Game 2", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 10},
-  {description: "Quarter Final - Game 3", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 11},
-  {description: "Quarter Final - Game 4", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 12},
-  {description: "Semi Final - Game 1", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 13},
-  {description: "Semi Final - Game 2", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 14},
-  {description: "The Bronze", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 15},
-  {description: "The Final", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 16}
+  {description: "Round Of 16 - Game 1", team_home_id: 17, team_away_id: 16, match_start: "2019-01-18 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 1},
+  {description: "Round Of 16 - Game 2", team_home_id: 2, team_away_id: 15, match_start: "2019-01-18 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 2},
+  {description: "Round Of 16 - Game 3", team_home_id: 3, team_away_id: 14, match_start: "2019-01-18 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 3},
+  {description: "Round Of 16 - Game 4", team_home_id: 4, team_away_id: 13, match_start: "2019-01-18 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 4},
+  {description: "Round Of 16 - Game 5", team_home_id: 5, team_away_id: 12, match_start: "2019-01-18 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 5},
+  {description: "Round Of 16 - Game 6", team_home_id: 6, team_away_id: 11, match_start: "2019-01-18 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 6},
+  {description: "Round Of 16 - Game 7", team_home_id: 7, team_away_id: 10, match_start: "2019-01-18 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 7},
+  {description: "Round Of 16 - Game 8", team_home_id: 8, team_away_id: 9, match_start: "2019-01-18 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 8},
+  {description: "Quarter Final - Game 1", match_start: "2019-01-19 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 9},
+  {description: "Quarter Final - Game 2", match_start: "2019-01-19 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 10},
+  {description: "Quarter Final - Game 3", match_start: "2019-01-19 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 11},
+  {description: "Quarter Final - Game 4", match_start: "2019-01-19 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 12},
+  {description: "Semi Final - Game 1", match_start: "2019-01-20 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 13},
+  {description: "Semi Final - Game 2", match_start: "2019-01-20 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 14},
+  {description: "The Bronze", match_start: "2019-01-21 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 15},
+  {description: "The Final", match_start: "2019-01-21 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 16}
 ])
 
 MatchPrediction.create!([

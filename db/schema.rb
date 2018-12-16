@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2018_12_07_142832) do
     t.string "description"
     t.bigint "team_home_id", default: 1
     t.bigint "team_away_id", default: 1
+    t.bigint "team_won_id", default: 1
     t.integer "team_home_won", default: 0
     t.integer "team_away_won", default: 0
     t.datetime "match_start"
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 2018_12_07_142832) do
     t.index ["bracket_id"], name: "index_matches_on_bracket_id"
     t.index ["team_away_id"], name: "index_matches_on_team_away_id"
     t.index ["team_home_id"], name: "index_matches_on_team_home_id"
+    t.index ["team_won_id"], name: "index_matches_on_team_won_id"
     t.index ["tournament_id"], name: "index_matches_on_tournament_id"
   end
 

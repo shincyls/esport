@@ -3,6 +3,7 @@ class CreateMatchPredictions < ActiveRecord::Migration[5.2]
     create_table :match_predictions do |t|
       t.references :user
       t.references :match
+      t.text :answers
       t.string :answer_1
       t.string :answer_2
       t.string :answer_3

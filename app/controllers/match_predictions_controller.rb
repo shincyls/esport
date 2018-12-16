@@ -1,5 +1,6 @@
 class MatchPredictionsController < ApplicationController
   before_action :set_match_prediction, only: [:show, :edit, :route, :update, :destroy]
+  before_action :timesup_block, only: [:create, :edit]
 
   # GET /match_predictions
   def index

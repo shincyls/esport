@@ -10,6 +10,7 @@ class CreateMatches < ActiveRecord::Migration[5.2]
       t.integer :team_away_won, default: 0
       t.datetime :match_start
       t.datetime :match_end
+      t.text :questions
       t.string :question_1
       t.string :question_2
       t.string :question_3
