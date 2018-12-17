@@ -11,6 +11,14 @@
 
 </script>
 
+<div class="row">
+  <div class="col-md-12">
+      <div class="form-group">
+          <%= button_to "New Team", new_team_path, remote: true, method: 'get', class: "btn btn-outline-info" %>
+      </div>
+  </div>
+</div>
+
 <table id="team-table" class="table table-sm table-responsive-lg table-striped table-dark" style="font-size:0.8rem">
   <thead class="bg-dark text-white">
     <tr>

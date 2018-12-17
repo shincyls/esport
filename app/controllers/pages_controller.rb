@@ -20,6 +20,8 @@ class PagesController < ApplicationController
             @matches = Match.all
         when "4"
             @match_predictions = MatchPrediction.all
+        when "5"
+            @tournaments = Tournament.all
         else
             redirect_to root_url
         end

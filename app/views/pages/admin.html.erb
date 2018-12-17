@@ -2,12 +2,13 @@
   <div class="col-lg-10 text-center" id="slogan">
     <h2 class="text-white text-shadow">Administration</h2>
     <div class="row">
-      <div class="col-md-8 mx-auto">
+      <div class="col-md-12 mx-auto">
 
         <%= form_for :page, url: select_page_path, method: "post", remote: true do |f| %>
         <div class="form-group ml-4 mr-4">
           <%= button_tag "User", value: 1, type: "submit", id: "btn-first", class: "btn btn-outline-primary" %>
           <%= button_tag "Team", value: 2, type: "submit", id: "btn-second", class: "btn btn-outline-primary" %>
+          <%= button_tag "Tournament", value: 5, type: "submit", id: "btn-fifth", class: "btn btn-outline-primary" %>
           <%= button_tag "Match", value: 3, type: "submit", id: "btn-third", class: "btn btn-outline-primary" %>
           <%= button_tag "Prediction", value: 4, type: "submit", id: "btn-forth", class: "btn btn-outline-primary" %>
         </div>
@@ -18,13 +19,14 @@
   </div>
 </div>
 
-<main>
-  <div class="position-relative mb-4" style="min-height:10rem;">
-    <div class="container p-4 shadow rounded">
+<div class="container mt-4 mb-4">
+    <div class="jumbotron">
+      <div class="container p-4 shadow rounded">
       <div class="row justify-content-center">
         <div id="table-section" class="col-lg-12">
+          <h4 class="align-center text-white">Select Table</h4>
         </div>
       </div>
     </div>
-  </div>
-</main>
+    </div>
+</div>

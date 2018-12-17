@@ -25,14 +25,13 @@ class TeamsController < ApplicationController
   # POST /teams.json
   def create
     @team = Team.new(team_params)
-
     respond_to do |format|
       if @team.save
-        format.html { redirect_to @team, notice: 'Team was successfully created.' }
-        format.json { render :show, status: :created, location: @team }
+        format.html
+        format.js { flash.now[:success] = "Team has successfully created!" }
       else
-        format.html { render :new }
-        format.json { render json: @team.errors, status: :unprocessable_entity }
+        format.html
+        format.js { flash.now[:alert] = "Something Wrong" }
       end
     end
   end

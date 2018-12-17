@@ -3,23 +3,34 @@
     $("#btn-second").attr('class', 'btn btn-outline-primary');
     $("#btn-third").attr('class', 'btn btn-outline-primary');
     $("#btn-forth").attr('class', 'btn btn-outline-primary');
+    $("#btn-fifth").attr('class', 'btn btn-outline-primary');
     $('#table-section').html("<%= j (render 'users/index') %>");
 <% when "2" %>
 	$("#btn-first").attr('class', 'btn btn-outline-primary');
     $("#btn-second").attr('class', 'btn btn-primary');
     $("#btn-third").attr('class', 'btn btn-outline-primary');
     $("#btn-firth").attr('class', 'btn btn-outline-primary');
+    $("#btn-fifth").attr('class', 'btn btn-outline-primary');
     $('#table-section').html("<%= j (render 'teams/index') %>");
 <% when "3" %>
     $("#btn-first").attr('class', 'btn btn-outline-primary');
     $("#btn-second").attr('class', 'btn btn-outline-primary');
     $("#btn-third").attr('class', 'btn btn-primary');
     $("#btn-forth").attr('class', 'btn btn-outline-primary');
+    $("#btn-fifth").attr('class', 'btn btn-outline-primary');
     $('#table-section').html("<%= j (render 'matches/index') %>");
 <% when "4" %>
     $("#btn-first").attr('class', 'btn btn-outline-primary');
     $("#btn-second").attr('class', 'btn btn-outline-primary');
     $("#btn-third").attr('class', 'btn btn-outline-primary');
     $("#btn-forth").attr('class', 'btn btn-primary');
+    $("#btn-fifth").attr('class', 'btn btn-outline-primary');
     $('#table-section').html("<%= j (render 'match_predictions/index') %>");
+<% when "5" %>
+    $("#btn-first").attr('class', 'btn btn-outline-primary');
+    $("#btn-second").attr('class', 'btn btn-outline-primary');
+    $("#btn-third").attr('class', 'btn btn-outline-primary');
+    $("#btn-forth").attr('class', 'btn btn-outline-primary');
+    $("#btn-fifth").attr('class', 'btn btn-primary');
+    $('#table-section').html("<%= j (render 'tournaments/index') %>");
 <% end %>

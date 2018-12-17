@@ -25,14 +25,13 @@ class TournamentsController < ApplicationController
   # POST /tournaments.json
   def create
     @tournament = Tournament.new(tournament_params)
-
     respond_to do |format|
       if @tournament.save
-        format.html { redirect_to @tournament, notice: 'Tournament was successfully created.' }
-        format.json { render :show, status: :created, location: @tournament }
+        format.html
+        format.js { flash.now[:success] = "Tournament has successfully created!" }
       else
-        format.html { render :new }
-        format.json { render json: @tournament.errors, status: :unprocessable_entity }
+        format.html
+        format.js { flash.now[:alert] = "Something Wrong" }
       end
     end
   end

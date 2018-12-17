@@ -1,0 +1,62 @@
+<script>
+
+  $(document).ready(function() {
+    $('#team-table').DataTable({
+      "order": [],
+      "search": {
+        "caseInsensitive": true
+      }
+    });
+  });
+
+</script>
+
+<div class="row">
+  <div class="col-md-12">
+      <div class="form-group">
+          <%= button_to "New Tournament", new_tournament_path, remote: true, method: 'get', class: "btn btn-outline-info" %>
+      </div>
+  </div>
+</div>
+
+<table id="team-table" class="table table-sm table-responsive-lg table-striped table-dark" style="font-size:0.8rem">
+  <thead class="bg-dark text-white">
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Prize 1</th>
+      <th>Info 1</th>
+      <th>Prize 2</th>
+      <th>Info 2</th>
+      <th>Prize 3</th>
+      <th>Info 3</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tournaments.each do |tournament| %>
+      <tr>
+        <td><%= tournament.title %></td>
+        <td><%= tournament.description %></td>
+        <td><%= tournament.start_date %></td>
+        <td><%= tournament.end_date %></td>
+        <td><%= tournament.prize_1 %></td>
+        <td><%= tournament.info_1 %></td>
+        <td><%= tournament.prize_2 %></td>
+        <td><%= tournament.info_2 %></td>
+        <td><%= tournament.prize_3 %></td>
+        <td><%= tournament.info_3 %></td>
+        <td><span class="bg-warning rounded p-1 m-1"><%= link_to 'Edit', edit_tournament_path(tournament), class: "text-white" %></span></td>
+        <td><span class="bg-danger rounded p-1 m-1"><%= link_to 'Delete', tournament, method: :delete, data: { confirm: 'Are you sure?' }, class: "text-white" %></span></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tournament', new_tournament_path %>

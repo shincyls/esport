@@ -14,10 +14,9 @@
   </head>
 
   <body>
-    <div class="allbutfooter">
     <div id="flash-message"><%= render partial: 'statics/message' %></div>
     <%= render partial: 'statics/navbar' %>
-    <div class="h-100">
+    <div class="container">
       <%= yield %>
     </div>
     <%= render partial: 'statics/modal' %>
