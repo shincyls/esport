@@ -1,14 +1,21 @@
 <script>
-
   $(document).ready(function() {
     $('#team-table').DataTable({
       "order": [],
       "search": {
         "caseInsensitive": true
-      }
+      },
+      "dom": 'Blfrtip',
+      buttons: [
+        {
+            extend: 'excel',
+            exportOptions: {
+                orthogonal: 'sort'
+            }
+        }        
+      ]
     });
   });
-
 </script>
 
 <div class="row">

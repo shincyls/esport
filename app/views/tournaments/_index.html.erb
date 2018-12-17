@@ -1,14 +1,21 @@
 <script>
-
   $(document).ready(function() {
-    $('#team-table').DataTable({
+    $('#tournament-table').DataTable({
       "order": [],
       "search": {
         "caseInsensitive": true
-      }
+      },
+      "dom": 'Blfrtip',
+      buttons: [
+        {
+            extend: 'excel',
+            exportOptions: {
+                orthogonal: 'sort'
+            }
+        }        
+      ]
     });
   });
-
 </script>
 
 <div class="row">
@@ -19,7 +26,7 @@
   </div>
 </div>
 
-<table id="team-table" class="table table-sm table-responsive-lg table-striped table-dark" style="font-size:0.8rem">
+<table id="tournament-table" class="table table-sm table-responsive-lg table-striped table-dark" style="font-size:0.8rem">
   <thead class="bg-dark text-white">
     <tr>
       <th>Name</th>
@@ -38,7 +45,7 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody id="table-body">
     <% @tournaments.each do |tournament| %>
       <tr>
         <td><%= tournament.title %></td>
@@ -64,7 +71,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Tournament', new_tournament_path %>

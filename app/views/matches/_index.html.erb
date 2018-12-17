@@ -1,15 +1,23 @@
 <script>
-
   $(document).ready(function() {
     $('#match-table').DataTable({
       "order": [],
       "search": {
         "caseInsensitive": true
-      }
+      },
+      "dom": 'Blfrtip',
+      buttons: [
+        {
+            extend: 'excel',
+            exportOptions: {
+                orthogonal: 'sort'
+            }
+        }        
+      ]
     });
   });
-
 </script>
+
 
 <div class="row">
   <div class="col-md-12">

@@ -18,10 +18,20 @@ loadjs();
 function loadjs() {
   $(document).ready(function() {
     $('#data-table').DataTable({
+      
       "order": [],
       "search": {
         "caseInsensitive": true
-      }
+      },
+      "dom": 'Blfrtip',
+      buttons: [
+        {
+            extend: 'excel',
+            exportOptions: {
+                orthogonal: 'sort'
+            }
+        }        
+      ]
     });
   });
 };

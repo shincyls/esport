@@ -2,13 +2,11 @@ class TournamentsController < ApplicationController
   before_action :set_tournament, only: [:show, :edit, :update, :destroy]
 
   # GET /tournaments
-  # GET /tournaments.json
   def index
     @tournaments = Tournament.all
   end
 
   # GET /tournaments/1
-  # GET /tournaments/1.json
   def show
   end
 
@@ -22,7 +20,6 @@ class TournamentsController < ApplicationController
   end
 
   # POST /tournaments
-  # POST /tournaments.json
   def create
     @tournament = Tournament.new(tournament_params)
     respond_to do |format|
@@ -42,21 +39,19 @@ class TournamentsController < ApplicationController
   end
 
   # PATCH/PUT /tournaments/1
-  # PATCH/PUT /tournaments/1.json
   def update
     respond_to do |format|
       if @tournament.update(tournament_params)
-        format.html { redirect_to @tournament, notice: 'Tournament was successfully updated.' }
-        format.json { render :show, status: :ok, location: @tournament }
+        format.html
+        format.js { flash.now[:success] = "Tournament has successfully updated!" }
       else
-        format.html { render :edit }
-        format.json { render json: @tournament.errors, status: :unprocessable_entity }
+        format.html
+        format.js { flash.now[:alert] = "Opps! Something Wrong Please Check with Admin" }
       end
     end
   end
 
   # DELETE /tournaments/1
-  # DELETE /tournaments/1.json
   def destroy
     @tournament.destroy
     respond_to do |format|
