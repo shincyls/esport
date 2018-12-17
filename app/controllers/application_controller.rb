@@ -31,7 +31,11 @@ class ApplicationController < ActionController::Base
     current_user.approval
   end
 
-  def authorize_admin
+  def require_login
+    redirect_to(root_path) unless !current_user.nil?
+  end
+
+  def require_admin
     redirect_to(root_path) unless current_user.super? || current_user.admin?
   end
 

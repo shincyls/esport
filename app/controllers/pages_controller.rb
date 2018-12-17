@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
 
-    before_action :authorize_admin, only: [:approve, :display, :admin]
+    before_action :require_login
+    before_action :require_admin, only: [:approve, :display, :admin, :select]
 
     def home
         @tournaments = Tournament.where(display: true).order("start_date desc")
