@@ -1,10 +1,15 @@
 class PagesController < ApplicationController
 
+    before_action :authorize_admin, only: [:approve, :display, :admin]
+
     def home
-        @tournaments = Tournament.all.order("start_date desc")
+        @tournaments = Tournament.where(display: true).order("start_date desc")
     end
 
     def info
+    end
+
+    def admin
     end
 
     def select
@@ -33,6 +38,15 @@ class PagesController < ApplicationController
           @user.update_attribute(:approval, false)
         else
           @user.update_attribute(:approval, true)
+        end
+    end
+
+    def display
+        @tournament = Tournament.find(params[:id])
+        if @tournament.display
+          @tournament.update_attribute(:display, false)
+        else
+          @tournament.update_attribute(:display, true)
         end
     end
 

@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+
   
   def current_number
     current_number = 1
@@ -28,6 +29,10 @@ class ApplicationController < ActionController::Base
 
   def user_approved
     current_user.approval
+  end
+
+  def authorize_admin
+    redirect_to(root_path) unless current_user.super? && current_user.admin?
   end
 
   helper_method :logged_in?, :current_user

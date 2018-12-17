@@ -25,7 +25,10 @@
       <th>Tournament</th>
       <th>Game</th>
       <th>Team Home</th>
+      <th>Game Won</th>
       <th>Team Away</th>
+      <th>Game Won</th>
+      <th>The Winner</th>
       <th>Match Start</th>
       <th>Match End</th>
       <th>Edit</th>
@@ -39,7 +42,10 @@
         <td><%= match.tournament.title %></td>
         <td><%= match.bracket.title %></td>
         <td><%= match.team_home.name %></td>
+        <td><%= match.team_home_won %></td>
         <td><%= match.team_away.name %></td>
+        <td><%= match.team_home_won %></td>
+        <td><%= match.team_won.name %></td>
         <td><%= match.match_start %></td>
         <td><%= match.match_end %></td>
         <td><span class="bg-warning rounded p-1 m-1"><%= link_to 'Edit', edit_match_path(match), remote: true, class: "text-white" %></span></td>
