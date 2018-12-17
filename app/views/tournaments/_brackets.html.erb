@@ -1,5 +1,6 @@
 <% @tournaments.each do |t| %>
-    <div>
+<div class="col-md-12">
+    <div class="jumbotron mx-auto">
         <div class="row justify-content-center">
             <%= image_tag("brand/cqm.jpg", style: "width:70%;height:70%") %>
             <h6 class="text-white text-uppercase mx-auto shadow mt-2 mb-2">Select Your Game and Predict Your Result</h6>
@@ -123,8 +124,7 @@
                 </div>
             </div>
         </div>
-
-        <p class="text-white">Terms and Conditions</p>
-
+        <p class="text-white mx-auto">Terms and Conditions</p>
     </div>
+</div>
 <% end %>

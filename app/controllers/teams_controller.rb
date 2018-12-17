@@ -55,8 +55,8 @@ class TeamsController < ApplicationController
   def destroy
     @team.destroy
     respond_to do |format|
-      format.html { redirect_to teams_url, notice: 'Team was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html
+      format.js { flash.now[:success] = "Team has successfully removed!" }
     end
   end
 

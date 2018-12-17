@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2018_12_07_142832) do
   create_table "match_predictions", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "match_id"
+    t.text "answers"
     t.string "answer_1"
     t.string "answer_2"
     t.string "answer_3"
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 2018_12_07_142832) do
     t.integer "team_away_won", default: 0
     t.datetime "match_start"
     t.datetime "match_end"
+    t.text "questions"
     t.string "question_1"
     t.string "question_2"
     t.string "question_3"

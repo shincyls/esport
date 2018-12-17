@@ -4,7 +4,7 @@ class PagesController < ApplicationController
     before_action :require_admin, only: [:approve, :display, :admin, :select]
 
     def home
-        @tournaments = Tournament.where(display: true).order("start_date desc")
+        @tournaments = Tournament.with_matches.where(display: true).order("start_date desc")
     end
 
     def info

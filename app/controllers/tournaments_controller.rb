@@ -34,6 +34,11 @@ class TournamentsController < ApplicationController
         format.js { flash.now[:alert] = "Something Wrong" }
       end
     end
+    # Create Brackets Automatically
+    1.upto(16) do |number|
+      @match = Match.new(tournament_id: @tournament.id, bracket_id: number)
+      @match.save
+    end
   end
 
   # PATCH/PUT /tournaments/1
@@ -55,8 +60,8 @@ class TournamentsController < ApplicationController
   def destroy
     @tournament.destroy
     respond_to do |format|
-      format.html { redirect_to tournaments_url, notice: 'Tournament was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html
+      format.js { flash.now[:success] = "Tournament and all associated matches has been successfully removed!" }
     end
   end
 
