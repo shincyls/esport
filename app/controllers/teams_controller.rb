@@ -51,7 +51,7 @@ class TeamsController < ApplicationController
     @team.destroy
     respond_to do |format|
       format.html
-      format.js { flash.now[:success] = "Team has successfully removed!" }
+      format.js { flash.now[:alert] = "Team was successfully removed." }
     end
   end
 

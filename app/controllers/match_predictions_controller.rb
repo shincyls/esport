@@ -62,8 +62,8 @@ class MatchPredictionsController < ApplicationController
   def destroy
     @match_prediction.destroy
     respond_to do |format|
-      format.html { redirect_to match_predictions_url, notice: 'Match prediction was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html
+      format.js { flash.now[:alert] = "Match prediction was successfully removed." }
     end
   end
 

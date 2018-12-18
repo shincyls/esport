@@ -32,6 +32,7 @@ class PagesController < ApplicationController
             redirect_to root_url
         end
 
+        @data.order("created_at asc")
         #render json: { data: @data }
 
     end

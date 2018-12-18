@@ -51,10 +51,10 @@ class UsersController < ApplicationController
 
   # DELETE /users/:id
   def destroy
-    session[:user_id] = nil
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, flash: { danger: 'User was successfully destroyed.' } }
+      format.html
+      format.js { flash.now[:alert] = "User was successfully removed." }
     end
   end
 

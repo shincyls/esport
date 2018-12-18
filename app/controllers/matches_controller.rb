@@ -39,7 +39,7 @@ class MatchesController < ApplicationController
   # PATCH/PUT /matches/1
   def update
     respond_to do |format|
-      if @match.save
+      if @match.update(match_params)
         format.html
         format.js { flash.now[:success] = "Match has successfully updated!" }
       else
@@ -54,7 +54,7 @@ class MatchesController < ApplicationController
     @match.destroy
     respond_to do |format|
       format.html
-      format.js { flash.now[:success] = "Match has successfully removed!" }
+      format.js { flash.now[:alert] = "Match was successfully removed." }
     end
   end
 
