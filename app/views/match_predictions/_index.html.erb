@@ -1,25 +1,4 @@
-<script>
-  $(document).ready(function() {
-    $('#prediction-table').DataTable({
-      "order": [],
-      "search": {
-        "caseInsensitive": true
-      },
-      "dom": 'Blfrtip',
-      buttons: [
-        {
-            extend: 'excel',
-            exportOptions: {
-                orthogonal: 'sort'
-            }
-        }        
-      ]
-    });
-  });
-</script>
-
-
-<table id="prediction-table" class="table table-sm table-responsive-lg table-striped table-dark" style="font-size:0.8rem">
+<table id="MatchPrediction-table" class="table table-sm table-responsive-lg table-striped table-dark" style="font-size:0.8rem">
   <thead class="bg-dark text-white">
     <tr>
       <th>User</th>
@@ -33,7 +12,7 @@
   </thead>
 
   <tbody>
-    <% @match_predictions.each do |mp| %>
+    <% @data.each do |mp| %>
       <tr>
         <td><%= mp.user.username %></td>
         <td><%= mp.match.description %></td>

@@ -1,39 +1,11 @@
 <div class="container mt-4 mb-4">
     <div class="row">
-        <!-- Section Left -->
-        
-                <% if current_user.approval %>
-                    <%= render partial: 'tournaments/brackets' %>
-                <% else %>
-                    <%= render partial: 'approval' %>
-                <% end %>
+        <% if current_user.approval %>
+            <%= render partial: 'tournaments/brackets' %>
+        <% else %>
+            <%= render partial: 'approval' %>
+        <% end %>
     </div>
 </div>
 
 
-<script>
-
-loadjs();
-
-function loadjs() {
-  $(document).ready(function() {
-    $('#data-table').DataTable({
-      
-      "order": [],
-      "search": {
-        "caseInsensitive": true
-      },
-      "dom": 'Blfrtip',
-      buttons: [
-        {
-            extend: 'excel',
-            exportOptions: {
-                orthogonal: 'sort'
-            }
-        }        
-      ]
-    });
-  });
-};
-
-</script>

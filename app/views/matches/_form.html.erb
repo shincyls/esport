@@ -53,12 +53,16 @@
 
   <div class="form-group row">
     <div class="col-6">
-      <label for="select-team_away">Select DateTime for Match Start</label>
-      <%= form.datetime_select :match_start, placeholder: "Match Start", class: "form-control form-control-sm datepicker" %>
+      <label for="match-start">Start</label>
+      <div class="d-block">
+        <%= form.datetime_select :match_start, placeholder: "Match Start", class: "form-control form-control-sm mb-1", id: "match-start" %>
+      </div>
     </div>
     <div class="col-6">
-      <label for="select-team_away">Select DateTime for Match End</label>
-      <%= form.datetime_select :match_end, placeholder: "Match End", class: "form-control form-control-sm datepicker" %>
+      <label for="match-end">End</label>
+      <div class="d-block">
+        <%= form.datetime_select :match_end, placeholder: "Match End", class: "form-control form-control-sm mb-1", id: "match-end" %>
+      </div>
     </div>
   </div>
 

@@ -1,26 +1,4 @@
-<script>
-
-  $(document).ready(function() {
-    $('#user-table').DataTable({
-      "order": [],
-      "search": {
-        "caseInsensitive": true
-      },
-      "dom": 'Blfrtip',
-      buttons: [
-        {
-            extend: 'excel',
-            exportOptions: {
-                orthogonal: 'sort'
-            }
-        }        
-      ]
-    });
-  });
-
-</script>
-
-<table id="user-table" class="table table-sm table-responsive-lg table-striped table-dark" style="font-size:0.8rem">
+<table id="User-table" class="table table-sm table-responsive-lg table-striped table-dark" style="font-size:0.8rem">
   <thead class="bg-dark text-white">
     <tr>
       <th>Username</th>
@@ -34,7 +12,7 @@
   </thead>
 
   <tbody class="bg-dark">
-    <% @users.each do |user| %>
+    <% @data.each do |user| %>
       <tr>
         <td><%= user.username %></td>
         <td><%= user.email %></td>

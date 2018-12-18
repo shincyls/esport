@@ -1,2 +1,4 @@
+$('#<%=@match.model_name.name%>-table').dataTable().fnDestroy();
+$("#modal-form").modal('hide');
 $('#flash-message').html("<%= j (render 'statics/message') %>");
-$("#modal-form").modal();
+loadjs('#<%=@match.model_name.name%>-table');

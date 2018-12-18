@@ -1,24 +1,3 @@
-<script>
-  $(document).ready(function() {
-    $('#match-table').DataTable({
-      "order": [],
-      "search": {
-        "caseInsensitive": true
-      },
-      "dom": 'Blfrtip',
-      buttons: [
-        {
-            extend: 'excel',
-            exportOptions: {
-                orthogonal: 'sort'
-            }
-        }        
-      ]
-    });
-  });
-</script>
-
-
 <div class="row">
   <div class="col-md-12">
       <div class="form-group">
@@ -27,7 +6,7 @@
   </div>
 </div>
 
-<table id="match-table" class="table table-sm table-responsive-lg table-striped table-dark" style="font-size:0.8rem">
+<table id="Match-table" class="table table-sm table-responsive-lg table-striped table-dark" style="font-size:0.8rem">
   <thead class="bg-dark text-white">
     <tr>
       <th>Tournament</th>
@@ -45,7 +24,7 @@
   </thead>
 
   <tbody class="text-black">
-    <% @matches.each do |match| %>
+    <% @data.each do |match| %>
       <tr>
         <td><%= match.tournament.title %></td>
         <td><%= match.bracket.title %></td>

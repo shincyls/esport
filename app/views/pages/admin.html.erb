@@ -30,3 +30,35 @@
     </div>
     </div>
 </div>
+
+
+<script>
+
+function loadjs(table) {
+    $(table).DataTable({
+      //ajax: 'pages/select',
+      "order": [],
+      "search": {
+        "caseInsensitive": true
+      },
+      "dom": 'Blfrtip',
+      buttons: [
+        {
+            extend: 'excel',
+            exportOptions: {
+                orthogonal: 'sort'
+            }
+        }        
+      ]
+    });
+};
+
+//function reload(table) {
+//  $(table).DataTable().ajax.reload();
+//};
+
+</script>
+
+
+
+

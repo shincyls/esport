@@ -19,18 +19,21 @@ class PagesController < ApplicationController
 
         case params[:button]
         when "1"
-            @users = User.all
+            @data = User.all
         when "2"
-            @teams = Team.all
+            @data = Team.all
         when "3"
-            @matches = Match.all
+            @data = Match.all
         when "4"
-            @match_predictions = MatchPrediction.all
+            @data = MatchPrediction.all
         when "5"
-            @tournaments = Tournament.all
+            @data = Tournament.all
         else
             redirect_to root_url
         end
+
+        #render json: { data: @data }
+
     end
 
     def approve
