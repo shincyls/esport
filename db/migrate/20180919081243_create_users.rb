@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :first_name
       t.string :last_name
       t.string :phone_number
+      t.string :identity_number, limit: 14
       t.string :email
       t.date :birthday
       t.boolean :approval, default: false

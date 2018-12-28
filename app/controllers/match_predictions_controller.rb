@@ -1,6 +1,6 @@
 class MatchPredictionsController < ApplicationController
   before_action :set_match_prediction, only: [:show, :edit, :route, :update, :destroy]
-  before_action :timesup_block, only: [:create, :edit]
+  #before_action :timesup_block, only: [:new, :create, :edit]
 
   # GET /match_predictions
   def index
@@ -25,14 +25,17 @@ class MatchPredictionsController < ApplicationController
     respond_to :html, :js
     @match_prediction = MatchPrediction.new
     @match = Match.find(params[:id])
+    timesup_block
   end
 
   # GET /match_predictions/1/edit
   def edit
+    timesup_block
   end
 
   # POST /match_predictions
   def create
+    timesup_block
     @match_prediction = MatchPrediction.new(match_prediction_params)
     respond_to do |format|
       if @match_prediction.save
@@ -79,7 +82,15 @@ class MatchPredictionsController < ApplicationController
     end
 
     def timesup_block
-      
+      unless (@match.match_start - Time.current)/1.minutes > 30 && @match.tournament.prediction
+        respond_to do |format|
+          format.html
+          format.js { flash.now[:alert] = "Unable to submit prediction when in less than 30min before match start." }
+        end
+        return false
+      else
+        return true
+      end
     end
 
 end

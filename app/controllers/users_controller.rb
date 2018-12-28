@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   include ApplicationHelper
 
   skip_before_action :verify_authenticity_token
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :password_change]
   before_action :authenticate_user!, except:[:index, :show, :new, :create]
 
   # When registering for new user
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
       end
     end
   end
-
+  
   # PATCH/PUT /users/:id
   def update
     respond_to :html, :js
@@ -46,6 +46,24 @@ class UsersController < ApplicationController
       redirect_to @user, flash: { success: 'User was successfully updated.' }
     else
       redirect_to root_url, flash: { alert: 'Failed to Edit user.' }
+    end
+  end
+
+  # POST /users/:id/password
+  def password_change
+    user = User.find_by(username: params[:session][:username])
+    respond_to do |format|
+      if @user.nil?
+        format.html
+        format.js { flash.now[:alert] = @user.errors.messages }
+      else
+        if user && user.authenticate(params[:session][:password])
+          @user.password = params[:user][:new_password] unless params[:user][:new_password].nil? || params[:user][:new_password].empty?
+          @user.save
+          format.html
+          format.js { flash.now[:success] = "Password has successfully updated!" }
+        end
+      end
     end
   end
 
@@ -73,7 +91,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :first_name, :last_name, :email, :phone_number, :password, :pasword_confirmation)
+      params.require(:user).permit(:username, :first_name, :last_name, :identity_number, :email, :phone_number, :password, :pasword_confirmation)
     end
     
 end

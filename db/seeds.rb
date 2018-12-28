@@ -13,8 +13,8 @@ PageContent.create!([
 ])
 
 User.create!([
-  {username: "super1", first_name: "Super", last_name: "Admin1", phone_number: "0123456781", email: "super1@prins.com", password: "@dmin!23", role: 0},
-  {username: "super2", first_name: "Super", last_name: "Admin2", phone_number: "0123456782", email: "super2@prins.com", password: "@dmin!23", role: 0},
+  {username: "super1", first_name: "Super", last_name: "Admin1", phone_number: "0123456781", identity_number: "123456-14-1234", email: "super1@esports.com", password: "@dmin!23", role: 0},
+  {username: "super2", first_name: "Super", last_name: "Admin2", phone_number: "0123456782", identity_number: "223456-14-1234",email: "super2@esports.com", password: "@dmin!23", role: 0},
 ])
 
 Tournament.create!([
@@ -61,14 +61,14 @@ Team.create!([
 ])
 
 Match.create!([
-  {description: "Round Of 16 - Game 1", team_home_id: 17, team_away_id: 16, match_start: "2019-01-18 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 1},
-  {description: "Round Of 16 - Game 2", team_home_id: 2, team_away_id: 15, match_start: "2019-01-18 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 2},
-  {description: "Round Of 16 - Game 3", team_home_id: 3, team_away_id: 14, match_start: "2019-01-18 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 3},
-  {description: "Round Of 16 - Game 4", team_home_id: 4, team_away_id: 13, match_start: "2019-01-18 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 4},
-  {description: "Round Of 16 - Game 5", team_home_id: 5, team_away_id: 12, match_start: "2019-01-18 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 5},
-  {description: "Round Of 16 - Game 6", team_home_id: 6, team_away_id: 11, match_start: "2019-01-18 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 6},
-  {description: "Round Of 16 - Game 7", team_home_id: 7, team_away_id: 10, match_start: "2019-01-18 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 7},
-  {description: "Round Of 16 - Game 8", team_home_id: 8, team_away_id: 9, match_start: "2019-01-18 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 8},
+  {description: "Round Of 16 - Game 1", match_start: "2019-01-18 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 1},
+  {description: "Round Of 16 - Game 2", match_start: "2019-01-18 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 2},
+  {description: "Round Of 16 - Game 3", match_start: "2019-01-18 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 3},
+  {description: "Round Of 16 - Game 4", match_start: "2019-01-18 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 4},
+  {description: "Round Of 16 - Game 5", match_start: "2019-01-18 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 5},
+  {description: "Round Of 16 - Game 6", match_start: "2019-01-18 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 6},
+  {description: "Round Of 16 - Game 7", match_start: "2019-01-18 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 7},
+  {description: "Round Of 16 - Game 8", match_start: "2019-01-18 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 8},
   {description: "Quarter Final - Game 1", match_start: "2019-01-19 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 9},
   {description: "Quarter Final - Game 2", match_start: "2019-01-19 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 10},
   {description: "Quarter Final - Game 3", match_start: "2019-01-19 15:00:00", question_1: "What is this?", question_2: "What is that?", question_3: "Who will win?", tournament_id: 1, bracket_id: 11},

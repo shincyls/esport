@@ -16,6 +16,11 @@ class User < ApplicationRecord
     # validates :first_name, presence: {message: " must be presence."}
     # validates :last_name, presence: {message: " must be presence."}
 
+    validates :identity_number,
+    presence: {message: "IC Number must be presence."},
+    uniqueness: {message: "IC Number already exist"}, 
+    format: {with: /\d{6}-\d{2}-\d{4}/, message: "IC Number must be in valid format xxxxxx-xx-xxxx."}
+
     validates :phone_number, 
     presence: {message: "Phone Number must be presence."}
 
@@ -33,12 +38,24 @@ class User < ApplicationRecord
     enum role: ["super", "admin", "user"]
 
     def set_username
-        @set = sprintf("SEA%04d", self.id)
+        @prefix = rand_prefix
+        @set = sprintf("#{@prefix}%04d", self.id)
         self.username = @set
     end
 
     def fullname
        self.first_name + " " + self.last_name
+    end
+
+    def rand_prefix
+        case rand(1..3)
+        when 1
+            return "KZ"
+        when 2
+            return "KC"
+        when 3
+            return "KD"
+        end
     end
 
 end

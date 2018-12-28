@@ -1,9 +1,22 @@
-  <main class="profile-page">
-    <section class="section-profile-cover section-shaped my-0">
-    </section>
-    <section class="section">
-      <div class="container" id="profile">
-        <%= render partial: 'profile' %>
-      </div>
-    </section>
+  <main>
+    <div class="position-relative">
+      <div class="container p-4 shadow rounded mt-5 mb-5">
+        <h3 class="mt-3 mb-3">Profile</h3>
+        <div class="row">
+
+            <div class="col-md-6">
+              <p>Profile</p>
+              <p><span>Username:</span><span><%= @user.username %></span></p>
+            </div>
+
+            <div class="col-md-6">
+              <div class="card-body">
+                <div class="card-body-area">
+              
+                </div>
+              </div>
+            </div>
+
+        </div>
+    </div>
   </main>

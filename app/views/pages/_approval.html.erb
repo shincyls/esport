@@ -1,17 +1,18 @@
 <div class="col-md-12">
   <div class="jumbotron mx-auto">
     <div class="row justify-content-center mt-4">
-      <div class="col-lg-10 text-center" id="slogan">
-        <h2 class="text-white text-shadow">Thanks for your registration!</h2>
-        <h4 class="text-white text-shadow">Kindly Wait for Admin to Approve Your Registration</h4>
+      <div class="col-lg-10 text-center text-special" id="slogan">
+        <h2 class="text-white text-shadow">Your account registration is in progress!</h2>
+        <h6 class="text-white text-shadow">Kindly wait for our admin to approve your registration</h6>
         <div class="row">
           <div class="col-md-8 mx-auto">
-            <p>Your Username: <%=current_user.username%></p>
-            <p>Please Check With Admin:</p>
-            <p>Your Payment Detail</p>
-            <p>Contact Admin</p>
+            <p>Your Username: <span class="info badge-secondary"><%=current_user.username%></span></p>
+            <p>Kindly verify account with attach receipt and send to admin:</p>
+            <p>Whatsapp: 012-3456788</p>
             <p>Email: admin@gmail.com</p>
-            <p>Phone: 012-3456788</p>
+            <p>Bank: <span class="info badge-secondary">Maybank Berhad</span></p>
+            <p>Name: <span class="info badge-secondary">Little Mary Lamb House</span></p>
+            <p>A/C No: <span class="info badge-secondary">512781083046</span></p>
           </div>
         </div>
       </div>

@@ -11,10 +11,20 @@
     <span class="small invalid-feedback"></span>
   </div>
 
+  <div id="validateIc" class="form-group mb-3">
+    <div class="input-group input-group-alternative">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="ni ni-badge"></i></span>
+      </div>
+      <%= f.text_field :identity_number, class: "form-control", placeholder: "IC Number xxxxxx-xx-xxxx" %>
+    </div>
+    <span class="small invalid-feedback"></span>
+  </div>
+
   <div id="validatePhone" class="form-group mb-3">
     <div class="input-group input-group-alternative">
       <div class="input-group-prepend">
-        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+        <span class="input-group-text"><i class="ni ni-mobile-button"></i></span>
       </div>
       <%= f.text_field :phone_number, class: "form-control", placeholder: "Phone Number" %>
     </div>

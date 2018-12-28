@@ -55,6 +55,15 @@ class PagesController < ApplicationController
         end
     end
 
+    def prediction
+        @tournament = Tournament.find(params[:id])
+        if @tournament.display
+          @tournament.update_attribute(:prediction, false)
+        else
+          @tournament.update_attribute(:prediction, true)
+        end
+    end
+
     private
 
     def require_approval

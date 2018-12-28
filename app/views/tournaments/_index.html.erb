@@ -14,6 +14,7 @@
       <th>Start Date</th>
       <th>End Date</th>
       <th>Display</th>
+      <th>Prediction</th>
       <th>Prize 1</th>
       <th>Info 1</th>
       <th>Prize 2</th>
@@ -37,6 +38,13 @@
                                data: {
                                 remote: true,
                                 url: "#{tournament.id}/display",
+                                method: 'POST'}) %>
+        </td>
+        <td>
+            <%= check_box_tag("prediction", tournament.id, tournament.prediction,
+                               data: {
+                                remote: true,
+                                url: "#{tournament.id}/prediction",
                                 method: 'POST'}) %>
         </td>
         <td><%= tournament.prize_1 %></td>

@@ -3,6 +3,15 @@
     $('#validateEmail .invalid-feedback').html('<%= @user.errors.messages[:email][0] %>');
 <% else %>
     $('#validateEmail').attr("class", "form-group mb-3 has-success");
+    $('#validateEmail .invalid-feedback').html('');
+<% end %>
+
+<% if @user.errors.messages[:identity_number].any? %>
+    $('#validateIc').attr("class", "form-group mb-3 has-danger");
+    $('#validateIc .invalid-feedback').html('<%= @user.errors.messages[:identity_number][0] %>');
+<% else %>
+    $('#validateIc').attr("class", "form-group mb-3 has-success");
+    $('#validateIc .invalid-feedback').html('');
 <% end %>
 
 <% if @user.errors.messages[:phone_number].any? %>
@@ -10,6 +19,7 @@
     $('#validatePhone .invalid-feedback').html('<%= @user.errors.messages[:phone_number][0] %>');
 <% else %>
     $('#validatePhone').attr("class", "form-group mb-3 has-success");
+    $('#validatePhone .invalid-feedback').html('');
 <% end %>
 
 <% if @user.errors.messages[:password].any? %>
@@ -17,4 +27,5 @@
     $('#validatePassword .invalid-feedback').html('<%= @user.errors.messages[:password][0] %>');
 <% else %>
     $('#validatePassword').attr("class", "form-group mb-3 has-success");
+    $('#validatePassword .invalid-feedback').html('');
 <% end %>

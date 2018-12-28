@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_07_142832) do
+ActiveRecord::Schema.define(version: 2018_12_28_023654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.string "answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "brackets", force: :cascade do |t|
     t.string "title"
@@ -90,6 +96,12 @@ ActiveRecord::Schema.define(version: 2018_12_07_142832) do
     t.index ["team_id"], name: "index_players_on_team_id"
   end
 
+  create_table "questions", force: :cascade do |t|
+    t.string "question"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "teams", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -111,6 +123,7 @@ ActiveRecord::Schema.define(version: 2018_12_07_142832) do
     t.string "prize_3"
     t.string "info_3"
     t.boolean "display", default: true
+    t.boolean "prediction", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -120,6 +133,7 @@ ActiveRecord::Schema.define(version: 2018_12_07_142832) do
     t.string "first_name"
     t.string "last_name"
     t.string "phone_number"
+    t.string "identity_number", limit: 14
     t.string "email"
     t.date "birthday"
     t.boolean "approval", default: false
