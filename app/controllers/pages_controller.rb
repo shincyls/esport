@@ -57,7 +57,7 @@ class PagesController < ApplicationController
 
     def prediction
         @tournament = Tournament.find(params[:id])
-        if @tournament.display
+        if @tournament.prediction
           @tournament.update_attribute(:prediction, false)
         else
           @tournament.update_attribute(:prediction, true)
