@@ -18,4 +18,14 @@
     <%= form.select(:answer_3, {"Yes" => "Yes", "Ok" => "Ok", "Will" => "Will"}, {include_blank: "Select Here"}, class: "form-control form-control-sm", id: "state") %>
   </div>
 
+  <p>Question 4: <%= @match.question_4 %></p>
+  <div class="input-group mb-3 col-md-10">
+    <%= form.select(:answer_2, {"Team 1" => "Team 1", "Team 2" => "Draw", "Draw" => "Draw"}, {include_blank: "Select Here"}, class: "form-control form-control-sm", id: "state") %>
+  </div>
+
+  <p>Question 5: <%= @match.question_5 %></p>
+  <div class="input-group mb-3 col-md-10">
+    <%= form.select(:answer_3, {"Yes" => "Yes", "Ok" => "Ok", "Will" => "Will"}, {include_blank: "Select Here"}, class: "form-control form-control-sm", id: "state") %>
+  </div>
+
 <% end %>

@@ -1,14 +1,12 @@
 class MatchesController < ApplicationController
-  before_action :set_match, only: [:show, :edit, :update, :destroy]
+  before_action :set_match, only: [:show, :edit, :update, :destroy, :question, :setquestion]
 
   # GET /matches
-  # GET /matches.json
   def index
     @matches = Match.all.order("created_at desc")
   end
 
   # GET /matches/1
-  # GET /matches/1.json
   def show
   end
 
@@ -20,6 +18,7 @@ class MatchesController < ApplicationController
 
   # GET /matches/1/edit
   def edit
+    @form = params[:form]
   end
 
   # POST /matches

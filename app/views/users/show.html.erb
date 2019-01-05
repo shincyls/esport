@@ -1,22 +1,33 @@
-  <main>
-    <div class="position-relative">
-      <div class="container p-4 shadow rounded mt-5 mb-5">
-        <h3 class="mt-3 mb-3">Profile</h3>
-        <div class="row">
-
-            <div class="col-md-6">
-              <p>Profile</p>
-              <p><span>Username:</span><span><%= @user.username %></span></p>
-            </div>
-
-            <div class="col-md-6">
-              <div class="card-body">
-                <div class="card-body-area">
-              
-                </div>
-              </div>
-            </div>
-
+<div class="container mt-4 mb-4">
+    <div class="jumbotron">
+        <div class="row text-white text-special">
+            <h2 class="text-white m-2 d-inline">User Profile</h2>
+            <p class="m-2">Username: <%= @user.username %></p>
+            <p class="text-white m-2">IC Number: <%= @user.identity_number %></h6>
+            <p class="text-white m-2">Phone Number: <%= @user.phone_number %></h6>
+            <ul>
+              <li>
+                <p>Match Predicted: <%= @user.match_predictions.count %> </p>
+              </li>
+              <li>
+                <p>Match Correctly: </p>
+              </li>
+              <li>
+                <p>Match Predicted: </p>
+              </li>
+            </ul>
         </div>
     </div>
-  </main>
+
+    <div class="jumbotron">
+        <div class="row text-white text-special">
+            <h2 class="text-white m-2">Predicted Match</h2>
+            <h6 class="text-white m-2">Predict and Answer Most Questions Correctly to Win The Cash Prizes!</h6>
+            <br><br><br>
+            <% @user.match_predictions.each do |p| %>
+              <% @m = p.match %>
+              <%= render partial: 'matches/card' %>
+            <% end %>
+        </div>
+    </div>
+</div>

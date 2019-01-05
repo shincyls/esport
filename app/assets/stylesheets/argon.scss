@@ -5193,7 +5193,7 @@ input[type='button'].btn-block
 {
     color: white;
     border-color: #dee2e6 #dee2e6 #fff; 
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(255, 134, 77, 0.8);
 }
 .nav-tabs .dropdown-menu
 {
@@ -5212,7 +5212,7 @@ input[type='button'].btn-block
 .nav-pills .show > .nav-link
 {
     color: #fff;
-    background-color: #000000;
+    background-color: rgb(255, 134, 77);
 }
 
 .nav-fill .nav-item
@@ -16106,7 +16106,7 @@ textarea[resize='horizontal']
 .nav-pills .show > .nav-link
 {
     color: #fff;
-    background-color: #000000;
+    background-color: rgb(255, 134, 77);
 }
 
 @media (max-width: 575.98px)

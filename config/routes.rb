@@ -4,7 +4,14 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   # Model Routes
-  resources :matches
+  resources :matches do
+    collection do
+      post :setquestion
+    end
+    member do
+      get :question
+    end
+  end
   resources :match_predictions do 
     member do
       get :route

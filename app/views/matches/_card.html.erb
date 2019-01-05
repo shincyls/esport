@@ -1,15 +1,28 @@
-<% @matches.each do |m| %>
-    <div class="col-lg-4 mb-3">
-        <div class="card shadow border-0">
-            <div class="card-body py-5">
-                <h6 class="text-primary text-uppercase"><%= m.description %></h6>
-                <p class="description mt-3">Team <%= m.team_home_id %> vs Team <%= m.team_away_id %></p>
-                <span class="badge badge-pill badge-primary"><%= m.match_start %></span>
-                <a href="#" class="btn btn-primary mt-4">Predict</a>
-            </div>
-        </div>
-    </div>
-<% end %>
+
+    <ul class="bracket">
+        <li class="team-item <%=m.predicted(current_user)%>" id="<%=m.bracket.code%>">
+            <%= link_to new_match_prediction_path(id: m.id), remote: true do %>
+                <div class="row">
+                    <div class="col-2 mx-auto"><%= image_tag("icons/teams/t#{m.team_home.id}.png", class: "", style: "height:1.4rem") %></div>
+                        <div class="col-8 text-team">
+                            <%=m.team_home.name%>
+                        </div>
+                        <div class="col-2 text-team">
+                            <span><%=m.team_home_won%></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-2 mx-auto"><%= image_tag("icons/teams/t#{m.team_away.id}.png", class: "", style: "height:1.4rem") %></div>
+                    <div class="col-8 text-team">
+                        <%=m.team_away.name%>
+                    </div>
+                    <div class="col-2 text-team">
+                        <span><%=m.team_away_won%></span>
+                    </div>
+                </div>
+            <% end %>
+        </li>
+    </ul>
 
 
 

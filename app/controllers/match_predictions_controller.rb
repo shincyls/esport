@@ -1,7 +1,7 @@
 class MatchPredictionsController < ApplicationController
   before_action :set_match_prediction, only: [:show, :edit, :route, :update, :destroy]
   before_action :set_match, only: [:new]
-  before_action :allow_prediction, only: [:new, :create, :edit, :update]
+  before_action :allow_prediction, only: [:new, :edit]
 
   # GET /match_predictions
   def index
@@ -84,7 +84,7 @@ class MatchPredictionsController < ApplicationController
 
     def allow_prediction
       unless (@match.match_start - Time.current)/1.minutes > 30 && @match.tournament.prediction
-        respond_to do |format|  
+        respond_to do |format|
           format.html
           format.js { flash.now[:alert] = "Unable to submit prediction when <30min before the match start." }
         end
