@@ -3,29 +3,29 @@
   <%= form.hidden_field :user_id, value: current_user.id %>
   <%= form.hidden_field :match_id, value: @match.id %>
 
-  <p>Question 1: <%= @match.question_1 %></p>
+  <p>Q1: <%= @match.question_1 %></p>
   <div class="input-group mb-3 col-md-10">
-    <%= form.select(:answer_1, {"Yes" => "Yes", "No" => "No", "Draw" => "Draw"}, {include_blank: "Select Here"}, class: "form-control form-control-sm", id: "state") %>
+    <%= form.select(:answer_1, {@match.team_home.name => "Team A", @match.team_away.name => "Team B"}, {include_blank: "Select Here"}, class: "form-control form-control-sm") %>
   </div>
 
-  <p>Question 2: <%= @match.question_2 %></p>
+  <p>Q2: <%= @match.question_2 %></p>
   <div class="input-group mb-3 col-md-10">
-    <%= form.select(:answer_2, {"Team 1" => "Team 1", "Team 2" => "Draw", "Draw" => "Draw"}, {include_blank: "Select Here"}, class: "form-control form-control-sm", id: "state") %>
+    <%= form.text_field :answer_2, placeholder: "Write Your Answer Here", class: "form-control form-control-sm mb-1" %>
   </div>
 
-  <p>Question 3: <%= @match.question_3 %></p>
+  <p>Q3: <%= @match.question_3 %></p>
   <div class="input-group mb-3 col-md-10">
-    <%= form.select(:answer_3, {"Yes" => "Yes", "Ok" => "Ok", "Will" => "Will"}, {include_blank: "Select Here"}, class: "form-control form-control-sm", id: "state") %>
+    <%= form.text_field :answer_3, placeholder: "Write Your Answer Here", class: "form-control form-control-sm mb-1" %>
   </div>
 
-  <p>Question 4: <%= @match.question_4 %></p>
+  <p>Q4: <%= @match.question_4 %></p>
   <div class="input-group mb-3 col-md-10">
-    <%= form.select(:answer_2, {"Team 1" => "Team 1", "Team 2" => "Draw", "Draw" => "Draw"}, {include_blank: "Select Here"}, class: "form-control form-control-sm", id: "state") %>
+    <%= form.select(:answer_4, {@match.team_home.name => "Team A", @match.team_away.name => "Team B"}, {include_blank: "Select Here"}, class: "form-control form-control-sm") %>
   </div>
 
-  <p>Question 5: <%= @match.question_5 %></p>
+  <p>Q5: <%= @match.question_5 %></p>
   <div class="input-group mb-3 col-md-10">
-    <%= form.select(:answer_3, {"Yes" => "Yes", "Ok" => "Ok", "Will" => "Will"}, {include_blank: "Select Here"}, class: "form-control form-control-sm", id: "state") %>
+    <%= form.select(:answer_5, {@match.team_home.name => "Team A", @match.team_away.name => "Team B"}, {include_blank: "Select Here"}, class: "form-control form-control-sm") %>
   </div>
 
 <% end %>

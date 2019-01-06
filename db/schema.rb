@@ -10,15 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_28_023654) do
+ActiveRecord::Schema.define(version: 2019_01_06_050606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "answer_question_joins", force: :cascade do |t|
+    t.bigint "match_id"
+    t.bigint "question_id"
+    t.bigint "answer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["answer_id"], name: "index_answer_question_joins_on_answer_id"
+    t.index ["match_id"], name: "index_answer_question_joins_on_match_id"
+    t.index ["question_id"], name: "index_answer_question_joins_on_question_id"
+  end
+
   create_table "answers", force: :cascade do |t|
+    t.bigint "question_id"
     t.string "answer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
   create_table "brackets", force: :cascade do |t|
@@ -54,12 +67,11 @@ ActiveRecord::Schema.define(version: 2018_12_28_023654) do
     t.integer "team_away_won", default: 0
     t.datetime "match_start"
     t.datetime "match_end"
-    t.text "questions"
-    t.string "question_1"
-    t.string "question_2"
-    t.string "question_3"
-    t.string "question_4"
-    t.string "question_5"
+    t.string "question_1", default: "Which team will triumph and be victorious in this series?"
+    t.string "question_2", default: "Which player will have most death?"
+    t.string "question_3", default: "Which player will have the best score/KDA? (kill, death and assist)"
+    t.string "question_4", default: "Which team to first score 10 kills?"
+    t.string "question_5", default: "Which team will produce the MVP of the match?"
     t.bigint "bracket_id"
     t.bigint "tournament_id"
     t.datetime "created_at", null: false
@@ -97,9 +109,11 @@ ActiveRecord::Schema.define(version: 2018_12_28_023654) do
   end
 
   create_table "questions", force: :cascade do |t|
+    t.bigint "match_id"
     t.string "question"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["match_id"], name: "index_questions_on_match_id"
   end
 
   create_table "teams", force: :cascade do |t|

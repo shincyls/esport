@@ -1,9 +1,5 @@
 $('#flash-message').html("<%= j (render 'statics/message') %>");
-
-$("#<%=@match_prediction.match.bracket.code%>").addClass("predicted");
-$("#<%=@match_prediction.match.bracket.code%> a").attr("href", "<%= @match_prediction.match.predicted_route(current_user) %>");
-
-$("#modal-header").html("Successfully Submitted");
+$("#modal-header").html("Successfully Updated");
 $("#modal-body").html("<%= j (render 'create') %>");
 $("#modal-footer").html("<button type='button' class='btn btn-primary' data-dismiss='modal' aria-label='Close'>Close</button>");
 $("#modal-form").modal();

@@ -2,32 +2,21 @@
     <div class="jumbotron">
         <div class="row text-white text-special">
             <h2 class="text-white m-2 d-inline">User Profile</h2>
-            <p class="m-2">Username: <%= @user.username %></p>
-            <p class="text-white m-2">IC Number: <%= @user.identity_number %></h6>
-            <p class="text-white m-2">Phone Number: <%= @user.phone_number %></h6>
             <ul>
               <li>
-                <p>Match Predicted: <%= @user.match_predictions.count %> </p>
+                Username: <%= @user.username %>
               </li>
               <li>
-                <p>Match Correctly: </p>
+                IC Number: <%= @user.identity_number %>
               </li>
               <li>
-                <p>Match Predicted: </p>
+                Phone Number: <%= @user.phone_number %>
+              </li>
+              <li>
+                Match Predicted: <%= @user.match_predictions.count %>
               </li>
             </ul>
         </div>
     </div>
 
-    <div class="jumbotron">
-        <div class="row text-white text-special">
-            <h2 class="text-white m-2">Predicted Match</h2>
-            <h6 class="text-white m-2">Predict and Answer Most Questions Correctly to Win The Cash Prizes!</h6>
-            <br><br><br>
-            <% @user.match_predictions.each do |p| %>
-              <% @m = p.match %>
-              <%= render partial: 'matches/card' %>
-            <% end %>
-        </div>
-    </div>
 </div>

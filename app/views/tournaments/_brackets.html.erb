@@ -17,7 +17,7 @@
                     <ul class="bracket bracket-1">
                         <% @matches[0..7].each do |m| %>
                         <li class="team-item <%=m.predicted(current_user)%>" id="<%=m.bracket.code%>">
-                            <%= link_to new_match_prediction_path(id: m.id), remote: true do %>
+                            <a data-remote="true" href="<%=m.predicted_route(current_user)%>">
                                 <div class="row">
                                     <div class="col-2 mx-auto"><%= image_tag("icons/teams/t#{m.team_home.id}.png", class: "", style: "height:1.4rem") %></div>
                                     <div class="col-8 text-team">
@@ -36,7 +36,7 @@
                                         <span><%=m.team_away_won%></span>
                                     </div>
                                 </div>
-                            <% end %>
+                            </a>
                         </li>
                         <% end %>
                     </ul>

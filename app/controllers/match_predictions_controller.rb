@@ -29,6 +29,9 @@ class MatchPredictionsController < ApplicationController
 
   # GET /match_predictions/1/edit
   def edit
+    @match = @match_prediction.match
+    print @match
+    @valid = allow_prediction
   end
 
   # POST /match_predictions
@@ -71,6 +74,7 @@ class MatchPredictionsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_match_prediction
       @match_prediction = MatchPrediction.find(params[:id])
+      @match = @match_prediction.match
     end
 
     def set_match
@@ -79,7 +83,7 @@ class MatchPredictionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def match_prediction_params
-      params.require(:match_prediction).permit(:user_id, :match_id, :answer_1, :answer_2, :answer_3)
+      params.require(:match_prediction).permit(:user_id, :match_id, :answer_1, :answer_2, :answer_3, :answer_4, :answer_5)
     end
 
     def allow_prediction
