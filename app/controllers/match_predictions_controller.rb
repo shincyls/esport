@@ -66,7 +66,7 @@ class MatchPredictionsController < ApplicationController
     @match_prediction.destroy
     respond_to do |format|
       format.html
-      format.js { flash.now[:alert] = "Match prediction was successfully removed." }
+      format.js { flash.now[:success] = "The prediction to this match has been deleted." }
     end
   end
 

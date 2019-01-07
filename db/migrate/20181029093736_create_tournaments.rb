@@ -12,8 +12,8 @@ class CreateTournaments < ActiveRecord::Migration[5.2]
       t.string :info_2
       t.string :prize_3
       t.string :info_3
-      t.boolean :display, default: true
-      t.boolean :prediction, default: true
+      t.boolean :display, default: false
+      t.boolean :prediction, default: false
       t.timestamps
     end
   end
