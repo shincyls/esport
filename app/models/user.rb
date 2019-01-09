@@ -27,7 +27,8 @@ class User < ApplicationRecord
     validates :password, 
     presence: {message: "Password must be presence."}, 
     confirmation: {message: "Please check again your password."}, 
-    length: {:within => 8..10, :too_short => 'Password Minimum 8 Characters', :too_long => 'Password Maximum 10 Characters'}
+    length: {:within => 8..10, :too_short => 'Password Minimum 8 Characters', :too_long => 'Password Maximum 10 Characters'},
+    unless: :send_password_reset
 
     #Bcrypt with Secured Password
     has_secure_password
@@ -36,6 +37,19 @@ class User < ApplicationRecord
     mount_uploader :avatar, AvatarUploader
 
     enum role: ["super", "admin", "user"]
+
+    def send_password_reset
+        generate_token(:password_reset_token)
+        self.password_reset_sent_at = Time.zone.now
+        UserMailer.forgot_password(self).deliver_now # This sends an e-mail with a link for the user to reset the password
+    end
+     
+    # This generates a random password reset token for the user
+    def generate_token(column)
+        begin
+          self[column] = SecureRandom.urlsafe_base64
+        end while User.exists?(column => self[column])
+    end
 
     def set_username
         @prefix = rand_prefix
@@ -50,11 +64,11 @@ class User < ApplicationRecord
     def rand_prefix
         case rand(1..3)
         when 1
-            return "KZ"
+            return "kz"
         when 2
-            return "KC"
+            return "kc"
         when 3
-            return "KD"
+            return "kd"
         end
     end
 

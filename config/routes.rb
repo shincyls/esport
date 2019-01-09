@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :sessions 
   resources :tournaments
   resources :teams
+  resources :password_resets
 
   # Custom Routes
   get 'statics/login', to: 'statics#login', as: 'modal_login'
