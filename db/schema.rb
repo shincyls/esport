@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_08_121341) do
+ActiveRecord::Schema.define(version: 2019_01_06_050606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,11 @@ ActiveRecord::Schema.define(version: 2019_01_08_121341) do
     t.string "answer_3"
     t.string "answer_4"
     t.string "answer_5"
+    t.integer "score_1", default: 0
+    t.integer "score_2", default: 0
+    t.integer "score_3", default: 0
+    t.integer "score_4", default: 0
+    t.integer "score_5", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["match_id"], name: "index_match_predictions_on_match_id"
@@ -136,8 +141,8 @@ ActiveRecord::Schema.define(version: 2019_01_08_121341) do
     t.string "info_2"
     t.string "prize_3"
     t.string "info_3"
-    t.boolean "display", default: true
-    t.boolean "prediction", default: true
+    t.boolean "display", default: false
+    t.boolean "prediction", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -154,11 +159,11 @@ ActiveRecord::Schema.define(version: 2019_01_08_121341) do
     t.string "password_digest"
     t.string "remember_digest"
     t.integer "role", default: 2
+    t.string "password_reset_token"
+    t.datetime "password_reset_sent_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar"
-    t.string "password_reset_token"
-    t.datetime "password_reset_sent_at"
   end
 
 end

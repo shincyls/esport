@@ -13,8 +13,6 @@ class User < ApplicationRecord
     presence: {message: "Email must be presence."},
     uniqueness: {message: "Email already exist"}, 
     format: {with: /.+@.+\..+/, message: "Email must be in valid format."}
-    # validates :first_name, presence: {message: " must be presence."}
-    # validates :last_name, presence: {message: " must be presence."}
 
     validates :identity_number,
     presence: {message: "IC Number must be presence."},
@@ -27,8 +25,9 @@ class User < ApplicationRecord
     validates :password, 
     presence: {message: "Password must be presence."}, 
     confirmation: {message: "Please check again your password."}, 
-    length: {:within => 8..10, :too_short => 'Password Minimum 8 Characters', :too_long => 'Password Maximum 10 Characters'},
-    unless: :send_password_reset
+    length: {:within => 8..10, :too_short => 'Password Minimum 8 Characters', :too_long => 'Password Maximum 10 Characters'}
+
+    before_create :generate_token
 
     #Bcrypt with Secured Password
     has_secure_password
@@ -39,16 +38,15 @@ class User < ApplicationRecord
     enum role: ["super", "admin", "user"]
 
     def send_password_reset
-        generate_token(:password_reset_token)
-        self.password_reset_sent_at = Time.zone.now
-        UserMailer.forgot_password(self).deliver_now # This sends an e-mail with a link for the user to reset the password
+        self.password_reset_token = generate_token
+        self.password_reset_sent_at = Time.now
+        #self.save
+        UserMailer.forgot_password(self).deliver # This sends an e-mail with a link for the user to reset the password
     end
      
     # This generates a random password reset token for the user
-    def generate_token(column)
-        begin
-          self[column] = SecureRandom.urlsafe_base64
-        end while User.exists?(column => self[column])
+    def generate_token
+          return SecureRandom.urlsafe_base64
     end
 
     def set_username
@@ -69,6 +67,15 @@ class User < ApplicationRecord
             return "kc"
         when 3
             return "kd"
+        end
+    end
+
+    protected
+
+    def generate_token
+        self.password_reset_token = loop do
+        random_token = SecureRandom.urlsafe_base64(nil, false)
+        break random_token unless User.exists?(password_reset_token: random_token)
         end
     end
 

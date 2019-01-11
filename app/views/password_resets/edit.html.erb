@@ -5,30 +5,22 @@
             <h2 class="text-white text-special sm-2">Reset Password</h2>
             <br><br><br>
         </div>
+
         <div class="row justify-content-center m-4 p-4">
           <%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>
-            <% if @user.errors.any? %>
-              <div class='error_messages'>
-                <h2>Form is invalid</h2>
-                <ul>
-                  <% for message in @user.errors.full_messages %>
-                    <li><%= message %></li>
-                  <% end %>
-                </ul>
-              </div>
-            <% end %>
-
             <div class='field'>
               <%= f.label :password %>
-              <%= f.password_field :password %>
+              <%= f.password_field :password , class: "form-control form-control-sm mb-2 mt-2"%>
             </div>
             <div class='field'>
               <%= f.label :password_confirmation %>
-              <%= f.password_field :password_confirmation %>
+              <%= f.password_field :password_confirmation, class: "form-control form-control-sm mb-2 mt-2" %>
             </div>
-            <div class='actions'><%= f.submit 'Update password' %></div>
+            <div class='actions'><%= f.submit 'Update password', class: "btn btn-primary text-center mb-2 mt-2" %></div>
           <% end %>
         </div>
+        
     </div>
 </div>
 <br><br><br>
+
