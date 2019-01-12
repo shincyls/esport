@@ -16,8 +16,10 @@ User.create!([
   {username: "super2", first_name: "Super", last_name: "Admin2", phone_number: "0123456782", identity_number: "223456-14-1234",email: "super2@esports.com", password: "@dmin!23", role: 0},
 ])
 
+text = "The Chongqing Major will be the second Major of the 2018/19 season for StarLadder and ImbaTV's first overall Major.[1] The event will see 16 teams from across the globe competing for $1,000,000 USD and valuable DPC points for The International 2019 in January 2019. In collaboration with ImbaTV and Chongqing Cable Networks, the main event will be hosted in Chongqing, China, from 19 to 27 January 2019."
+
 Tournament.create!([
-  {title: "Chongqing Major", description: "Chongqing Major!!!", start_date: "2019-01-16", end_date: "2019-01-18", prize_1: "RM10000", info_1: "Cash", prize_2: "RM5000", info_2: "Cash", prize_3: "RM1000", info_3: "Cash", logo_url: "https://liquipedia.net/commons/images/f/f5/Chongqing_Major_2019.jpg"}
+  {title: "Chongqing Major", description: text, start_date: "2019-01-19", end_date: "2019-01-27", logo_url: "https://liquipedia.net/commons/images/f/f5/Chongqing_Major_2019.jpg"}
 ])
 
 Bracket.create!([
