@@ -11,7 +11,7 @@ PageContent.create!([
 ])
 
 User.create!([
-  {username: "pickemd2", first_name: "Super", last_name: "Admin", phone_number: "0123456789", identity_number: "883456-14-1234", email: "pickemd2@gmail.com", password: "@dmin!23", role: 0},
+  {username: "pickemd2", first_name: "Super", last_name: "Admin", phone_number: "0135159945", identity_number: "883456-14-1234", email: "pickemd2@gmail.com", password: "@dmin!23", role: 0},
   {username: "super1", first_name: "Super", last_name: "Admin1", phone_number: "0123456781", identity_number: "123456-14-1234", email: "super1@esports.com", password: "@dmin!23", role: 0},
   {username: "super2", first_name: "Super", last_name: "Admin2", phone_number: "0123456782", identity_number: "223456-14-1234",email: "super2@esports.com", password: "@dmin!23", role: 0},
 ])
