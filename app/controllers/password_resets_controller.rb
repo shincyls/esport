@@ -4,11 +4,18 @@ class PasswordResetsController < ApplicationController
   end
 
   def create
-    user = User.find_by_email(params[:email])
-    user.send_password_reset
-    user.save(validate: false)
-    flash[:notice] = 'Please Check Your Email for Password Reset URL'
-    redirect_to root_url
+      if User.find_by_email(params[:email])
+        user = User.find_by_email(params[:email])
+        user.send_password_reset
+        user.save(validate: false)
+        redirect_to root_url
+        flash[:notice] = 'Please Check Your Email for Password Reset Instruction'
+      else
+        respond_to do |format|
+          format.html
+          format.js { flash.now[:alert] = "User Email is not found" }
+        end
+      end
   end
 
   def edit
