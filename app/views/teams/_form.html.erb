@@ -10,6 +10,11 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= form.label :picture %>
+    <%= form.file_field :picture %>
+  </div>
+
   <div class="form-group">
     <label>Team Name</label>
     <%= form.text_field :name, placeholder: "Name", class: "form-control form-control-sm mb-1" %>
