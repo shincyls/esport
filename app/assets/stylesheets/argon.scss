@@ -6385,7 +6385,6 @@ input[type='button'].btn-block
 {
     margin-bottom: 2rem;
     padding: 2rem 1rem;
-
     border-radius: .3rem; 
     background-color: rgba(0,0,0,0.5);
 }
@@ -7635,6 +7634,8 @@ button.close
 .carousel
 {
     position: relative;
+    min-height: 25rem;
+    background-color: rgba(0, 0, 0, .5);
 }
 
 .carousel-inner
@@ -7644,6 +7645,7 @@ button.close
     overflow: hidden; 
 
     width: 100%;
+
 }
 
 .carousel-item
