@@ -33,6 +33,7 @@ gem 'pg_search', '~> 2.1', '>= 2.1.2'
 
 # Use ActiveStorage variant
 gem 'carrierwave', '~> 1.2', '>= 1.2.3'
+gem 'google-cloud-storage', '~> 1.17'
 # gem 'mini_magick', '~> 4.8'
 
 # Styling Libraries
