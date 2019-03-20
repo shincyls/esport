@@ -110,8 +110,10 @@ ActiveRecord::Schema.define(version: 2019_02_11_141231) do
   end
 
   create_table "page_contents", force: :cascade do |t|
-    t.integer "name"
-    t.integer "value"
+    t.string "name"
+    t.string "value"
+    t.string "description"
+    t.string "remark"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -164,6 +166,7 @@ ActiveRecord::Schema.define(version: 2019_02_11_141231) do
     t.string "info_3"
     t.boolean "display", default: false
     t.boolean "prediction", default: false
+    t.string "banner"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

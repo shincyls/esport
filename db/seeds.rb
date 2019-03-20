@@ -7,7 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 PageContent.create!([
-  {name: "running_number", value: 1}
+  {name: "Default_Q1", value: "Which team will triumph and be victorious in this series?"},
+  {name: "Default_Q2", value: "Which player will have most death?"},
+  {name: "Default_Q3", value: "Which player will have the best score/KDA? (kill, death and assist)"},
+  {name: "Default_Q4", value: "Which team to first score 10 kills?"},
+  {name: "Default_Q5", value: "Which team will produce the MVP of the match?"}
 ])
 
 User.create!([
@@ -16,10 +20,10 @@ User.create!([
   {username: "super2", first_name: "Super", last_name: "Admin2", phone_number: "0123456782", identity_number: "223456-14-1234",email: "super2@esports.com", password: "@dmin!23", role: 0},
 ])
 
-text = "The Chongqing Major will be the second Major of the 2018/19 season for StarLadder and ImbaTV's first overall Major.[1] The event will see 16 teams from across the globe competing for $1,000,000 USD and valuable DPC points for The International 2019 in January 2019. In collaboration with ImbaTV and Chongqing Cable Networks, the main event will be hosted in Chongqing, China, from 19 to 27 January 2019."
+text = "The OGA Dota PIT Minor 2019 is the seventh tournament by One Game Agency. Eight teams will fight for a $300,000 USD prize pool as well as qualification points for The International 2019.[1] The main event will be hosted at the Spaladium Arena, in Split, Croatia, on April 2019."
 
 Tournament.create!([
-  {title: "Chongqing Major", description: text, start_date: "2019-01-19", end_date: "2019-01-27", logo_url: "https://liquipedia.net/commons/images/f/f5/Chongqing_Major_2019.jpg"}
+  {title: "OGA Dota PIT Minor 2019", description: text, start_date: "2019-04-22", end_date: "2019-04-28"}
 ])
 
 Bracket.create!([
@@ -62,44 +66,22 @@ Team.create!([
 ])
 
 Match.create!([
-  {description: "Round Of 16 - Game 1", match_start: "2019-01-18 15:00:00", tournament_id: 1, bracket_id: 1},
-  {description: "Round Of 16 - Game 2", match_start: "2019-01-18 15:00:00", tournament_id: 1, bracket_id: 2},
-  {description: "Round Of 16 - Game 3", match_start: "2019-01-18 15:00:00", tournament_id: 1, bracket_id: 3},
-  {description: "Round Of 16 - Game 4", match_start: "2019-01-18 15:00:00", tournament_id: 1, bracket_id: 4},
-  {description: "Round Of 16 - Game 5", match_start: "2019-01-18 15:00:00", tournament_id: 1, bracket_id: 5},
-  {description: "Round Of 16 - Game 6", match_start: "2019-01-18 15:00:00", tournament_id: 1, bracket_id: 6},
-  {description: "Round Of 16 - Game 7", match_start: "2019-01-18 15:00:00", tournament_id: 1, bracket_id: 7},
-  {description: "Round Of 16 - Game 8", match_start: "2019-01-18 15:00:00", tournament_id: 1, bracket_id: 8},
-  {description: "Quarter Final - Game 1", match_start: "2019-01-19 15:00:00", tournament_id: 1, bracket_id: 9},
-  {description: "Quarter Final - Game 2", match_start: "2019-01-19 15:00:00", tournament_id: 1, bracket_id: 10},
-  {description: "Quarter Final - Game 3", match_start: "2019-01-19 15:00:00", tournament_id: 1, bracket_id: 11},
-  {description: "Quarter Final - Game 4", match_start: "2019-01-19 15:00:00", tournament_id: 1, bracket_id: 12},
-  {description: "Semi Final - Game 1", match_start: "2019-01-20 15:00:00", tournament_id: 1, bracket_id: 13},
-  {description: "Semi Final - Game 2", match_start: "2019-01-20 15:00:00", tournament_id: 1, bracket_id: 14},
-  {description: "The Bronze", match_start: "2019-01-21 15:00:00", tournament_id: 1, bracket_id: 15},
-  {description: "The Final", match_start: "2019-01-21 15:00:00", tournament_id: 1, bracket_id: 16}
-])
-
-Question.create!([
-  {match_id: 1, question: "Who will win?"},
-  {match_id: 1, question: "What is the predicted game score?"},
-  {match_id: 1, question: "How many kills will be accumulated?"}
-])
-
-Answer.create!([
-  {question_id: 1, answer: "Yes"},
-  {question_id: 1, answer: "No"},
-  {question_id: 1, answer: "Team 1"},
-  {question_id: 1, answer: "Team 2"},
-  {question_id: 2, answer: "1-20"},
-  {question_id: 2, answer: "21-40"},
-  {question_id: 2, answer: "41-60"},
-  {question_id: 2, answer: "2-0"},
-  {question_id: 3, answer: "3-1"},
-  {question_id: 3, answer: "3-2"},
-  {question_id: 3, answer: "0-2"},
-  {question_id: 3, answer: "1-3"},
-  {question_id: 3, answer: "2-3"}
+  {description: "Round Of 16 - Game 1", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 1},
+  {description: "Round Of 16 - Game 2", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 2},
+  {description: "Round Of 16 - Game 3", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 3},
+  {description: "Round Of 16 - Game 4", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 4},
+  {description: "Round Of 16 - Game 5", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 5},
+  {description: "Round Of 16 - Game 6", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 6},
+  {description: "Round Of 16 - Game 7", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 7},
+  {description: "Round Of 16 - Game 8", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 8},
+  {description: "Quarter Final - Game 1", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 9},
+  {description: "Quarter Final - Game 2", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 10},
+  {description: "Quarter Final - Game 3", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 11},
+  {description: "Quarter Final - Game 4", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 12},
+  {description: "Semi Final - Game 1", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 13},
+  {description: "Semi Final - Game 2", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 14},
+  {description: "The Bronze", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 15},
+  {description: "The Final", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 16}
 ])
 
 MatchPrediction.create!([

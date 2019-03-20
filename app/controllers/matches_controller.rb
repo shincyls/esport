@@ -24,6 +24,12 @@ class MatchesController < ApplicationController
   # POST /matches
   def create
     @match = Match.new(match_params)
+    @match.question_1 = PageContent.find_by(name: "Default_Q1").value
+    @match.question_2 = PageContent.find_by(name: "Default_Q2").value
+    @match.question_3 = PageContent.find_by(name: "Default_Q3").value
+    @match.question_4 = PageContent.find_by(name: "Default_Q4").value
+    @match.question_5 = PageContent.find_by(name: "Default_Q5").value
+
     respond_to do |format|
       if @match.save
         format.html
