@@ -11,8 +11,9 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :picture %>
-    <%= form.file_field :picture %>
+    <%= image_tag(team.logo, width: 32) if team.logo.attached? %> 
+    <%= form.label :logo %>
+    <%= form.file_field :logo %>
   </div>
 
   <div class="form-group">
@@ -23,11 +24,6 @@
   <div class="form-group">
     <label>Team Description</label>
     <%= form.text_field :description, placeholder: "Description", class: "form-control form-control-sm mb-1" %>
-  </div>
-
-  <div class="form-group">
-    <label>Team Logo Upload</label>
-    <%= form.text_field :logo, placeholder: "Logo", class: "form-control form-control-sm mb-1" %>
   </div>
 
 <% end %>

@@ -1,4 +1,6 @@
 <table id="User-table" class="table table-sm table-responsive-lg table-striped table-dark" style="font-size:0.8rem">
+  <div class="text-special">Total Users: <%= User.where(role: "user").count %></div>
+  <br>
   <thead class="bg-dark text-white">
     <tr>
       <th>Username</th>

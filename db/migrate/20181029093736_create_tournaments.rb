@@ -14,6 +14,7 @@ class CreateTournaments < ActiveRecord::Migration[5.2]
       t.string :info_3
       t.boolean :display, default: false
       t.boolean :prediction, default: false
+      t.string :banner
       t.timestamps
     end
   end
