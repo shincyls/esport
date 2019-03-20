@@ -2,7 +2,7 @@
 <div class="col-md-12">
     <div class="jumbotron mx-auto">
         <div class="row justify-content-center">
-            <%= image_tag(t.banner, style: "width:70%;height:70%") %>
+            <%= image_tag(t.banner, style: "width:70%;height:70%") if t.banner.attached? %>
             <h6 class="text-white d-block text-uppercase mx-auto shadow mt-2 mb-2">
                 Select Your Game and Predict Your Result
             </h6>

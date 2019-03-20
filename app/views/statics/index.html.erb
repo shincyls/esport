@@ -16,6 +16,10 @@
                     <div class="carousel-item p-2 active">
                         <div class="row justify-content-center text-white text-special">
                             <h2 class="text-white">Upcoming Tournament</h2>
+                            <% nxt = Tournament.find_by('end_date > ?', Date.today) %>
+                            <div class="col-8 text-center"><%= nxt.title %></div>
+                            <div class="col-8 text-center"><%= image_tag(nxt.banner, style: "width:70%;height:70%") if nxt.banner.attached? %></div>
+                            <div class="col-8 text-center">From <%= nxt.start_date %> To <%= nxt.end_date %></div>
                         </div>
                     </div>
                     <div class="carousel-item p-2">
