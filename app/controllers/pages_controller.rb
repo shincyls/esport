@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-    before_action :require_login, except: [:about]
+    before_action :require_login, except: [:about, :faq]
     before_action :require_admin, only: [:approve, :display, :admin, :select]
 
     def home
@@ -14,6 +14,9 @@ class PagesController < ApplicationController
     end
 
     def about
+    end
+
+    def faq
     end
 
     def select

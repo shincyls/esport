@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   get 'pages/info', to: 'pages#info', as: 'info'
   get 'pages/home', to: 'pages#home', as: 'home'
   get 'pages/about', to: 'pages#about', as: 'about'
+  get 'pages/faq', to: 'pages#faq', as: 'faq'
   post 'pages/select', to: 'pages#select', as: 'select_page'
   post 'pages/:id/approve', to: 'pages#approve', as: 'approve_user'
   post 'pages/:id/display', to: 'pages#display', as: 'display_tournament'
