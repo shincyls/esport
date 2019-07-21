@@ -25,7 +25,7 @@
           </span>
         </td>
         <td>
-          <%= image_tag(team.logo, width: 16) if team.logo.attached? %> 
+          <%= image_tag(team.logo, width: 48) if team.logo.attached? %> 
         </td>
         <td><span class="bg-warning rounded p-1 m-1"><%= link_to 'Edit', edit_team_path(team), remote: true, class: "text-white" %></span></td>
         <td><span class="bg-danger rounded p-1 m-1"><%= link_to 'Delete', team, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "text-white" %></span></td>

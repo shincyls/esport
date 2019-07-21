@@ -2,7 +2,7 @@
 <div class="col-md-12">
     <div class="jumbotron mx-auto">
         <div class="row justify-content-center">
-            <%= image_tag(t.banner, style: "width:70%;height:70%") if t.banner.attached? %>
+            <%= image_tag(t.banner, style: "width:50%;height:50%") if t.banner.attached? %>
             <h6 class="text-white d-block text-uppercase mx-auto shadow mt-2 mb-2">
                 Select Your Game and Predict Your Result
             </h6>
@@ -26,12 +26,12 @@
                             <a data-remote="true" href="<%=m.predicted_route(current_user)%>">
                                 <div class="row">
                                     <div class="col-12 mx-auto text-team">
-                                        <%= image_tag(m.team_home.logo, height: 16) if m.team_home.logo.attached? %> <%=m.team_home.name%> <span><%=m.team_home_won%></span>
+                                        <%= image_tag(m.team_home.logo, height: 16) if m.team_home.logo.attached? %>  <%=m.team_home.name%>  <span><%=m.team_home_won%></span>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 mx-auto text-team">
-                                        <%= image_tag(m.team_away.logo, height: 16) if m.team_away.logo.attached? %> <%=m.team_away.name%> <span><%=m.team_away_won%></span>
+                                        <%= image_tag(m.team_away.logo, height: 16) if m.team_away.logo.attached? %>  <%=m.team_away.name%>  <span><%=m.team_away_won%></span>
                                     </div>
                                 </div>
                             </a>

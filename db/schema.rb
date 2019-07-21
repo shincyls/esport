@@ -178,6 +178,7 @@ ActiveRecord::Schema.define(version: 2019_02_11_141231) do
     t.boolean "display", default: false
     t.boolean "prediction", default: false
     t.string "banner"
+    t.string "logo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

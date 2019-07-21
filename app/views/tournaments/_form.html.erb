@@ -7,6 +7,14 @@
     <%= form.file_field :banner %>
   </div>
 
+  <div class="field">
+    <div>
+      <%= image_tag(tournament.logo, height: 16) if tournament.logo.attached? %>
+    </div>
+    <p>Upload Tournament Logo</p>
+    <%= form.file_field :logo %>
+  </div>
+
   <div class="form-group">
     <label>Team Name</label>
     <%= form.text_field :title, placeholder: "Tournament Title", class: "form-control form-control-sm mb-1" %>
