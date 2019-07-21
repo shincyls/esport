@@ -29,9 +29,15 @@
               <%= match.bracket.code %>
           </span>
         </td>
-        <td><%= match.team_home.name %> <%= match.team_home_won %>-<%= match.team_home_won %> <%= match.team_away.name %></td>
-        <td><%= match.match_start.to_formatted_s(:short) if match.match_start %></td>
-        <td><%= match.match_end.to_formatted_s(:short) if match.match_end %></td>
+        <td id="mct-team-<%=match.id%>">
+          <%= match.team_home.name %> <%= match.team_home_won %>-<%= match.team_home_won %> <%= match.team_away.name %>
+        </td>
+        <td id="mct-ms-<%=match.id%>">
+          <%= match.match_start.to_formatted_s(:short) if match.match_start %>
+        </td>
+        <td id="mct-me-<%=match.id%>">
+          <%= match.match_end.to_formatted_s(:short) if match.match_end %>
+        </td>
         <td><span class="bg-info rounded p-1 m-1"><%= link_to 'Edit', edit_match_path(match, form: 1), remote: true, class: "text-white" %></span></td>
         <td><span class="bg-warning rounded p-1 m-1"><%= link_to 'Edit', edit_match_path(match, form: 2), remote: true, class: "text-white" %></span></td>
         <td><span class="bg-danger rounded p-1 m-1"><%= link_to 'Delete', match, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "text-white" %></span></td>

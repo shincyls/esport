@@ -1,4 +1,4 @@
 $('#<%=@team.model_name.name%>-table').dataTable().fnDestroy();
 $("#modal-form").modal('hide');
 $('#flash-message').html("<%= j (render 'statics/message') %>");
-loadjs('#<%=@team.model_name.name%>-table');
+$('#team-logo-<%=@team.id%>').html("<%= j (image_tag(@team.logo, width: 48) if @team.logo.attached?) %> ");

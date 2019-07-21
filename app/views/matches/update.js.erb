@@ -1,4 +1,7 @@
 $('#<%=@match.model_name.name%>-table').dataTable().fnDestroy();
 $("#modal-form").modal('hide');
 $('#flash-message').html("<%= j (render 'statics/message') %>");
-loadjs('#<%=@match.model_name.name%>-table');
+
+$('#mct-team-<%=@match.id%>').html("<%= @match.team_home.name %> <%= @match.team_home_won %>-<%= @match.team_home_won %> <%= @match.team_away.name %>");
+$('#mct-ms-<%=@match.id%>').html("<%= j (@match.match_start.to_formatted_s(:short) if @match.match_start) %>");
+$('#mct-me-<%=@match.id%>').html("<%= j (@match.match_end.to_formatted_s(:short) if @match.match_end) %>");
