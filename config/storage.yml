@@ -8,13 +8,13 @@ local:
 
 google:
   service: GCS
-  project: team-pic
+  project: team-picture
   credentials: <%= ENV['GOOGLE_APPLICATION_CREDENTIALS'] %>
   bucket: pickemd2
 
 google_dev:
   service: GCS
-  project: team-pic
+  project: team-picture
   credentials: <%= Rails.root.join("config/secrets/team-pic.json") %>
   bucket: pickemd2
 

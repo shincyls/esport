@@ -9,7 +9,7 @@
         </div>
 
         <h6 class="text-white text-center shadow mt-2 mb-2">
-            Prediction will be prohibited 30min before the match start.
+            Prediction will be only started 30min BEFORE the match start.
         </h6>
 
         <% @matches = t.matches.order("bracket_id asc") %>
@@ -26,12 +26,12 @@
                             <a data-remote="true" href="<%=m.predicted_route(current_user)%>">
                                 <div class="row">
                                     <div class="col-12 mx-auto text-team">
-                                        <%= image_tag(m.team_home.logo) if m.team_home.logo.attached? %> <%=m.team_home.name%> <span><%=m.team_home_won%></span>
+                                        <%= image_tag(m.team_home.logo, height: 16) if m.team_home.logo.attached? %> <%=m.team_home.name%> <span><%=m.team_home_won%></span>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 mx-auto text-team">
-                                        <%= image_tag(m.team_away.logo) if m.team_away.logo.attached? %> <%=m.team_away.name%> <span><%=m.team_away_won%></span>
+                                        <%= image_tag(m.team_away.logo, height: 16) if m.team_away.logo.attached? %> <%=m.team_away.name%> <span><%=m.team_away_won%></span>
                                     </div>
                                 </div>
                             </a>
@@ -48,12 +48,12 @@
                             <a data-remote="true" href="<%=m.predicted_route(current_user)%>">
                                 <div class="row">
                                     <div class="col-12 mx-auto text-team">
-                                        <%= image_tag(m.team_home.logo) if m.team_home.logo.attached? %> <%=m.team_home.name%> <span><%=m.team_home_won%></span>
+                                        <%= image_tag(m.team_home.logo, height: 16) if m.team_home.logo.attached? %> <%=m.team_home.name%> <span><%=m.team_home_won%></span>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 mx-auto text-team">
-                                        <%= image_tag(m.team_away.logo) if m.team_away.logo.attached? %> <%=m.team_away.name%> <span><%=m.team_away_won%></span>
+                                        <%= image_tag(m.team_away.logo, height: 16) if m.team_away.logo.attached? %> <%=m.team_away.name%> <span><%=m.team_away_won%></span>
                                     </div>
                                 </div>
                             </a>
@@ -70,19 +70,19 @@
                             <a data-remote="true" href="<%=m.predicted_route(current_user)%>">
                                 <div class="row">
                                     <div class="col-12 mx-auto text-team">
-                                        <%= image_tag(m.team_home.logo) if m.team_home.logo.attached? %> <%=m.team_home.name%> <span><%=m.team_home_won%></span>
+                                        <%= image_tag(m.team_home.logo, height: 16) if m.team_home.logo.attached? %> <%=m.team_home.name%> <span><%=m.team_home_won%></span>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 mx-auto text-team">
-                                        <%= image_tag(m.team_away.logo) if m.team_away.logo.attached? %> <%=m.team_away.name%> <span><%=m.team_away_won%></span>
+                                        <%= image_tag(m.team_away.logo, height: 16) if m.team_away.logo.attached? %> <%=m.team_away.name%> <span><%=m.team_away_won%></span>
                                     </div>
                                 </div>
                             </a>
                         </li>
                         <% end %>
                     </ul>
-                        
+
                     <ul class="bracket bracket-4">
                         <% final = @matches[15] %>
                         <li class="team-item <%=final.predicted(current_user)%>" id="<%=final.bracket.code%>">
@@ -92,12 +92,12 @@
                             <a data-remote="true" href="<%=final.predicted_route(current_user)%>">
                                 <div class="row">
                                     <div class="col-12 mx-auto text-team">
-                                        <%= image_tag(final.team_home.logo) if final.team_home.logo.attached? %> <%=final.team_home.name%> <span><%=final.team_home_won%></span>
+                                        <%= image_tag(final.team_home.logo, height: 16) if final.team_home.logo.attached? %> <%=final.team_home.name%> <span><%=final.team_home_won%></span>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 mx-auto text-team">
-                                        <%= image_tag(final.team_away.logo) if final.team_away.logo.attached? %> <%=final.team_away.name%> <span><%=final.team_away_won%></span>
+                                        <%= image_tag(final.team_away.logo, height: 16) if final.team_away.logo.attached? %> <%=final.team_away.name%> <span><%=final.team_away_won%></span>
                                     </div>
                                 </div>
                             </a>

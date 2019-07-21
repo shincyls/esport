@@ -90,7 +90,7 @@ class MatchPredictionsController < ApplicationController
       unless (@match.match_start - Time.current)/1.minutes < 30 && @match.tournament.prediction
         respond_to do |format|
           format.html
-          format.js { flash.now[:alert] = "Unable to submit prediction when <30min before the match start." }
+          format.js { flash.now[:alert] = "Prediction will be only started 30min BEFORE the match start." }
         end
         return false
       else

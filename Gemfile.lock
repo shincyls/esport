@@ -343,7 +343,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   figaro (~> 1.1, >= 1.1.1)
   font-awesome-rails (~> 4.7, >= 4.7.0.4)
-  google-cloud-storage (~> 1.17)
+  google-cloud-storage (~> 1.8)
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3, >= 4.3.3)
   jquery-turbolinks (~> 2.1)
