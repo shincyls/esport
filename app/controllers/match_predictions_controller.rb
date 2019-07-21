@@ -2,6 +2,7 @@ class MatchPredictionsController < ApplicationController
   before_action :set_match_prediction, only: [:show, :edit, :route, :update, :destroy]
   before_action :set_match, only: [:new]
   before_action :allow_prediction, only: [:new, :edit]
+  
 
   # GET /match_predictions
   def index
@@ -87,15 +88,25 @@ class MatchPredictionsController < ApplicationController
     end
 
     def allow_prediction
-      unless (@match.match_start - Time.current)/1.minutes < 30 && @match.tournament.prediction
+      
+      if current_user.approval
+        unless (@match.match_start - Time.current)/1.minutes < 60 && (@match.match_start - Time.current)/1.minutes > 0 && @match.tournament.prediction
+          respond_to do |format|
+            format.html
+            format.js { flash.now[:alert] = "Prediction will only opened 60min BEFORE and UNTIL the match is started." }
+          end
+          return false
+        else
+          return true
+        end
+      else
         respond_to do |format|
           format.html
-          format.js { flash.now[:alert] = "Prediction will be only started 30min BEFORE the match start." }
+          format.js { flash.now[:alert] = "Your account is not approved yet, kindly contact our admin for further enquiry." }
         end
         return false
-      else
-        return true
       end
+
     end
 
 

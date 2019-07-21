@@ -9,7 +9,7 @@
 
 <div class="container mt-2 mb-2">
     <div class="row">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 100%; height: 20rem;">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 100%; height: 30rem;">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -17,9 +17,10 @@
                 </ol>
                 <div class="carousel-inner" style="width: 100%;">
                     <div class="carousel-item p-2 active">
-                        <div class="row justify-content-center text-white text-special">
-                            <h2 class="text-white">Upcoming Tournament</h2>
+                        <div class="row justify-content-center text-special">
+                            <h2 class="d-block mx-auto text-white">Upcoming Tournament</h2>
                         </div>
+                        <%= image_tag("brand/upcoming.png", class: "d-block mx-auto", style: "width:50%;") %>
                     </div>
                     <div class="carousel-item p-2">
                         <div class="row justify-content-center text-special">
@@ -38,27 +39,27 @@
                     </div>
                     <div class="carousel-item p-2">
                         <div class="row justify-content-center text-special">
-                            <h2 class="text-white">To Participate</h2>
+                            <h2 class="text-white">How To Participate?</h2>
                         </div>
-                        <div class="row justify-content-center text-white text-special">
+                        <div class="row justify-content-center text-white text-small">
                             <ul>
                                 <li>
-                                    <p>Step 1: Sign-Up Account</p>
+                                    <span class="badge badge-info">Step 1 </span> Signed Up for Pickemd2 and completed verification process.
                                 </li>
                                 <li>
-                                    <p>Step 2: Submit Activation via Email &amp; Pay Reg Fee</p>
+                                    <span class="badge badge-info">Step 2</span> Predict 5 questions per match for all matches in the published Tournament.
                                 </li>
                                 <li>
-                                    <p>Step 3: Fill in Predictions via account provided through email.</p>
+                                    <span class="badge badge-info">Step 3</span> Each correct prediction earn 1 point and player accumulated highested point throughout the Tournament will win the prize!
                                 </li>
                                 <li>
-                                    <p>Step 4: Submit Predictions</p>
+                                    <span class="badge badge-info">Step 4</span> Player must complete all predictions 60 minutes prior to official per match time to avoid any complications.
                                 </li>
                                 <li>
-                                    <p>Step 5: Compile most points throughout tournament</p>
+                                    <span class="badge badge-info">Step 5</span> Once the tournament is ended and when the top scorers are finalized, our Admin will contact winner for awarding the prize!
                                 </li>
                                 <li>
-                                    <p>Step 6: Win Prize!</p>
+                                    <span class="badge badge-info">Step 6</span> Please do not hesitate to contact via whatsapp to admin contact or email to us.
                                 </li>
                             </ul>
                         </div>
