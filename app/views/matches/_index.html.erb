@@ -11,15 +11,11 @@
     <tr>
       <th>Tournament</th>
       <th>Game</th>
-      <th>Team Home</th>
-      <th>Game Won</th>
-      <th>Team Away</th>
-      <th>Game Won</th>
-      <th>The Winner</th>
+      <th>Team Versus</th>
       <th>Match Start</th>
       <th>Match End</th>
-      <th>Question</th>
-      <th>Edit</th>
+      <th>MatchQ</th>
+      <th>MatchInfo</th>
       <th>Delete</th>
     </tr>
   </thead>
@@ -28,14 +24,14 @@
     <% @data.each do |match| %>
       <tr>
         <td><%= match.tournament.title %></td>
-        <td><%= match.bracket.title %></td>
-        <td><%= match.team_home.name %></td>
-        <td><%= match.team_home_won %></td>
-        <td><%= match.team_away.name %></td>
-        <td><%= match.team_home_won %></td>
-        <td><%= match.team_won.name %></td>
-        <td><%= match.match_start %></td>
-        <td><%= match.match_end %></td>
+        <td>
+          <span class="btn btn-sm" data-toggle="tooltip" data-placement="right" title="<%= match.bracket.title %>">
+              <%= match.bracket.code %>
+          </span>
+        </td>
+        <td><%= match.team_home.name %> <%= match.team_home_won %>-<%= match.team_home_won %> <%= match.team_away.name %></td>
+        <td><%= match.match_start.to_formatted_s(:short) if match.match_start %></td>
+        <td><%= match.match_end.to_formatted_s(:short) if match.match_end %></td>
         <td><span class="bg-info rounded p-1 m-1"><%= link_to 'Edit', edit_match_path(match, form: 1), remote: true, class: "text-white" %></span></td>
         <td><span class="bg-warning rounded p-1 m-1"><%= link_to 'Edit', edit_match_path(match, form: 2), remote: true, class: "text-white" %></span></td>
         <td><span class="bg-danger rounded p-1 m-1"><%= link_to 'Delete', match, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "text-white" %></span></td>

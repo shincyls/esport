@@ -9,8 +9,7 @@
 <table id="Team-table" class="table table-sm table-responsive-lg table-striped table-dark" style="font-size:0.8rem">
   <thead class="bg-dark text-white">
     <tr>
-      <th>Name</th>
-      <th>Description</th>
+      <th>Team</th>
       <th>Logo</th>
       <th>Edit</th>
       <th>Delete</th>
@@ -20,8 +19,11 @@
   <tbody class="text-black">
     <% @data.each do |team| %>
       <tr>
-        <td><%= team.name %></td>
-        <td><%= team.description %></td>
+        <td>
+          <span class="btn btn-sm" data-toggle="tooltip" data-placement="right" title="<%= team.description %>">
+            <%= team.name %>
+          </span>
+        </td>
         <td>
           <%= image_tag(team.logo, width: 16) if team.logo.attached? %> 
         </td>

@@ -10,17 +10,10 @@
   <thead class="bg-dark text-white">
     <tr>
       <th>Name</th>
-      <th>Description</th>
       <th>Start Date</th>
       <th>End Date</th>
-      <th>Display</th>
-      <th>Prediction</th>
-      <th>Prize 1</th>
-      <th>Info 1</th>
-      <th>Prize 2</th>
-      <th>Info 2</th>
-      <th>Prize 3</th>
-      <th>Info 3</th>
+      <th>OpenDisplay?</th>
+      <th>OpenPrediction?</th>
       <th>Edit</th>
       <th>Delete</th>
     </tr>
@@ -29,8 +22,11 @@
   <tbody id="table-body">
     <% @data.each do |tournament| %>
       <tr>
-        <td><%= tournament.title %></td>
-        <td><%= tournament.description %></td>
+        <td>
+          <span class="btn btn-sm" data-toggle="tooltip" data-placement="right" title="<%= tournament.description %>">
+            <%= tournament.title %>
+          </span>
+        </td>
         <td><%= tournament.start_date %></td>
         <td><%= tournament.end_date %></td>
         <td>
@@ -47,12 +43,6 @@
                                 url: "#{tournament.id}/prediction",
                                 method: 'POST'}) %>
         </td>
-        <td><%= tournament.prize_1 %></td>
-        <td><%= tournament.info_1 %></td>
-        <td><%= tournament.prize_2 %></td>
-        <td><%= tournament.info_2 %></td>
-        <td><%= tournament.prize_3 %></td>
-        <td><%= tournament.info_3 %></td>
         <td><span class="bg-warning rounded p-1 m-1"><%= link_to 'Edit', edit_tournament_path(tournament), remote: true, class: "text-white" %></span></td>
         <td><span class="bg-danger rounded p-1 m-1"><%= link_to 'Delete', tournament, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "text-white" %></span></td>
       </tr>

@@ -39,8 +39,7 @@ class PagesController < ApplicationController
         end
 
         @data.order("created_at asc")
-        #render json: { data: @data }
-
+ 
     end
 
     def approve

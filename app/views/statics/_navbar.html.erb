@@ -37,7 +37,7 @@
                   <span class="nav-link-inner--text d-lg-none">Settings</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-success_dropdown_1">
-                  <% if current_user.super? %>
+                  <% if current_user.super? | current_user.admin? %>
                     <%= link_to "Admin", admin_path, class: "dropdown-item"%>
                   <% end %>
                   <%= link_to "Profile", user_path(current_user), class: "dropdown-item"%>

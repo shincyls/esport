@@ -36,7 +36,7 @@ class MatchesController < ApplicationController
         format.js { flash.now[:success] = "Match has successfully created!" }
       else
         format.html
-        format.js { flash.now[:alert] = "Something Wrong" }
+        format.js { flash.now[:alert] = "Opps! Something Wrong Please Check with Admin" }
       end
     end
   end
@@ -71,6 +71,7 @@ class MatchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def match_params
-      params.require(:match).permit(:name, :description, :team_home_id, :team_home_won, :team_away_id, :team_away_won, :team_won_id, :match_start, :match_end, :question_1, :question_2, :question_3, :question_4, :question_5, :tournament_id, :bracket_id)
+      params.require(:match).permit(:name, :description, :team_home_id, :team_home_won, :team_away_id, :team_away_won, :team_won_id, :match_start, :match_end, :question_1, :question_2, :question_3, :question_4, :question_5, :selection_1, :selection_2, :selection_3, :selection_4, :selection_5, :answer_1, :answer_2, :answer_3, :answer_4, :answer_5, :tournament_id, :bracket_id, :status)
     end
+    
 end

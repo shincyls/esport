@@ -6180,15 +6180,15 @@ input[type='button'].btn-block
 
 .badge
 {
-    font-size: 66%;
-    font-weight: 600;
-    line-height: 1;
+    // font-size: 66%;
+    // font-weight: 600;
+    // line-height: 1;
 
     display: inline-block;
 
-    padding: .35rem .375rem;
+    // padding: .35rem .375rem;
 
-    text-align: center;
+    // text-align: center;
     vertical-align: baseline;
     white-space: nowrap;
 
@@ -6257,8 +6257,11 @@ input[type='button'].btn-block
 
 .badge-info
 {
-    color: #03acca;
-    background-color: #11cdef;
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.2rem;
+    color: #ffffff;
+    background-color: #000000;
 }
 .badge-info[href]:hover,
 .badge-info[href]:focus
@@ -14173,14 +14176,15 @@ button.section-darker:focus
     margin-left: -1rem;
 }
 
-.badge
-{
-    text-transform: uppercase;
-}
-.badge a
-{
-    color: #fff;
-}
+// .badge
+// {
+//     text-transform: uppercase;
+// }
+
+// .badge a
+// {
+//     color: #fff;
+// }
 
 .badge-pill
 {

@@ -67,6 +67,8 @@
     </div>
   </div>
 
+  <%= form.hidden_field :status, value: "2" %>
+
   <% elsif @form == "1" %>
 
       <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -91,33 +93,54 @@
           <div class="form-group">
             <label>Question 1</label>
             <%= form.text_field :question_1, placeholder: "Question 1", class: "form-control form-control-sm mb-1" %>
+            <label>Selection List</label>
+            <%= form.text_field :selection_1, class: "form-control form-control-sm mb-1" %>
+            <label>Correct Answer?</label>
+            <%= form.select(:answer_1, @match.selection_1.split(";"), {include_blank: "Select Here"}, class: "form-control form-control-sm") %>
           </div>
         </div>
         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
           <div class="form-group">
             <label>Question 2</label>
-            <%= form.text_field :question_2, placeholder: "Question 3", class: "form-control form-control-sm mb-1" %>
+            <%= form.text_field :question_2, placeholder: "Question 2", class: "form-control form-control-sm mb-1" %>
+             <label>Selection List</label>
+            <%= form.text_field :selection_2, class: "form-control form-control-sm mb-1" %>
+            <label>Correct Answer?</label>
+            <%= form.select(:answer_2, @match.selection_2.split(";"), {include_blank: "Select Here"}, class: "form-control form-control-sm") %>
           </div>
         </div>
         <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
           <div class="form-group">
             <label>Question 3</label>
             <%= form.text_field :question_3, placeholder: "Question 3", class: "form-control form-control-sm mb-1" %>
+             <label>Selection List</label>
+            <%= form.text_field :selection_3, class: "form-control form-control-sm mb-1" %>
+            <label>Correct Answer?</label>
+            <%= form.select(:answer_3, @match.selection_3.split(";"), {include_blank: "Select Here"}, class: "form-control form-control-sm") %>
           </div>
         </div>
         <div class="tab-pane fade" id="pills-forth" role="tabpanel" aria-labelledby="pills-forth-tab">
           <div class="form-group">
             <label>Question 4</label>
             <%= form.text_field :question_4, placeholder: "Question 4", class: "form-control form-control-sm mb-1" %>
+             <label>Selection List</label>
+            <%= form.text_field :selection_4, class: "form-control form-control-sm mb-1" %>
+            <label>Correct Answer?</label>
+            <%= form.select(:answer_4, @match.selection_4.split(";"), {include_blank: "Select Here"}, class: "form-control form-control-sm") %>
           </div>
         </div>
         <div class="tab-pane fade" id="pills-fifth" role="tabpanel" aria-labelledby="pills-fifth-tab">
           <div class="form-group">
             <label>Question 5</label>
             <%= form.text_field :question_5, placeholder: "Question 5", class: "form-control form-control-sm mb-1" %>
+             <label>Selection List</label>
+            <%= form.text_field :selection_5, class: "form-control form-control-sm mb-1" %>
+            <label>Correct Answer?</label>
+            <%= form.select(:answer_5, @match.selection_5.split(";"), {include_blank: "Select Here"}, class: "form-control form-control-sm") %>
           </div>
         </div>
       </div>
+      <%= form.hidden_field :status, value: "1" %>
 
   <% end %>
 

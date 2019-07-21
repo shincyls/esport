@@ -16,14 +16,15 @@ PageContent.create!([
 
 User.create!([
   {username: "pickemd2", first_name: "Super", last_name: "Admin", phone_number: "0135159945", identity_number: "883456-14-1234", email: "pickemd2@gmail.com", password: "@dmin!23", role: 0},
-  {username: "super1", first_name: "Super", last_name: "Admin1", phone_number: "0123456781", identity_number: "123456-14-1234", email: "super1@esports.com", password: "@dmin!23", role: 0},
-  {username: "super2", first_name: "Super", last_name: "Admin2", phone_number: "0123456782", identity_number: "223456-14-1234",email: "super2@esports.com", password: "@dmin!23", role: 0},
+  {username: "admin1", first_name: "PickemD2", last_name: "Admin1", phone_number: "0123456781", identity_number: "123456-14-1234", email: "admin1@esports.com", password: "@dmin!23", role: 1},
+  {username: "admin2", first_name: "PickemD2", last_name: "Admin2", phone_number: "0123456782", identity_number: "223456-14-1234",email: "admin2@esports.com", password: "@dmin!23", role: 1},
+  {username: "tester", first_name: "Tester", last_name: "Account", phone_number: "0123456783", identity_number: "223452-14-1235",email: "tester@esports.com", password: "Test!234", role: 2}
 ])
 
-text = "The OGA Dota PIT Minor 2019 is the seventh tournament by One Game Agency. Eight teams will fight for a $300,000 USD prize pool as well as qualification points for The International 2019.[1] The main event will be hosted at the Spaladium Arena, in Split, Croatia, on April 2019."
+text = "The International 2019 is the concluding tournament of the Dota Pro Circuit and the ninth annual edition of The International. The tournament will be held on Chinese soil for the first time, as it moves to the Mercedes-Benz Arena in Shanghai. Following the previous year format, a point system based on official sponsored Majors and Minors will be used to determine the twelve invites to The International."
 
 Tournament.create!([
-  {title: "OGA Dota PIT Minor 2019", description: text, start_date: "2019-04-22", end_date: "2019-04-28"}
+  {title: "The International 2019", description: text, start_date: "2019-08-15", end_date: "2019-08-25"}
 ])
 
 Bracket.create!([
@@ -62,26 +63,31 @@ Team.create!([
   {name: "Evil Geniuses", description: "Region North America #3"},
   {name: "paiN Gaming", description: "Region South America #1"},
   {name: "Thunder Predator", description: "Region South America #2"},
+  {name: "Ninjas In Pyjamas", description: ""},
+  {name: "OG", description: ""},
+  {name: "Keen Gaming", description: ""},
+  {name: "Infamous", description: ""},
+  {name: "Mineski", description: ""},
   {name: "The Bucharest Minor", description: "Region South America #3"}
 ])
 
 Match.create!([
-  {description: "Round Of 16 - Game 1", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 1},
-  {description: "Round Of 16 - Game 2", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 2},
-  {description: "Round Of 16 - Game 3", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 3},
-  {description: "Round Of 16 - Game 4", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 4},
-  {description: "Round Of 16 - Game 5", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 5},
-  {description: "Round Of 16 - Game 6", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 6},
-  {description: "Round Of 16 - Game 7", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 7},
-  {description: "Round Of 16 - Game 8", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 8},
-  {description: "Quarter Final - Game 1", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 9},
-  {description: "Quarter Final - Game 2", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 10},
-  {description: "Quarter Final - Game 3", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 11},
-  {description: "Quarter Final - Game 4", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 12},
-  {description: "Semi Final - Game 1", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 13},
-  {description: "Semi Final - Game 2", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 14},
-  {description: "The Bronze", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 15},
-  {description: "The Final", match_start: "2019-04-22 15:00:00", tournament_id: 1, bracket_id: 16}
+  {description: "Round Of 16 - Game 1", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 1},
+  {description: "Round Of 16 - Game 2", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 2},
+  {description: "Round Of 16 - Game 3", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 3},
+  {description: "Round Of 16 - Game 4", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 4},
+  {description: "Round Of 16 - Game 5", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 5},
+  {description: "Round Of 16 - Game 6", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 6},
+  {description: "Round Of 16 - Game 7", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 7},
+  {description: "Round Of 16 - Game 8", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 8},
+  {description: "Quarter Final - Game 1", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 9},
+  {description: "Quarter Final - Game 2", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 10},
+  {description: "Quarter Final - Game 3", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 11},
+  {description: "Quarter Final - Game 4", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 12},
+  {description: "Semi Final - Game 1", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 13},
+  {description: "Semi Final - Game 2", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 14},
+  {description: "The Bronze", match_start: "2019-08-25 14:00:00", tournament_id: 1, bracket_id: 15},
+  {description: "The Final", match_start: "2019-08-25 14:00:00", tournament_id: 1, bracket_id: 16}
 ])
 
 MatchPrediction.create!([
