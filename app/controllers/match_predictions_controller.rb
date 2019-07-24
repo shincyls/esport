@@ -84,7 +84,7 @@ class MatchPredictionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def match_prediction_params
-      params.require(:match_prediction).permit(:user_id, :match_id, :answer_1, :answer_2, :answer_3, :answer_4, :answer_5)
+      params.require(:match_prediction).permit(:user_id, :match_id, :tournament_id, :answer_1, :answer_2, :answer_3, :answer_4, :answer_5)
     end
 
     def allow_prediction

@@ -15,7 +15,7 @@ PageContent.create!([
 ])
 
 User.create!([
-  {username: "pickemd2", first_name: "Super", last_name: "Admin", phone_number: "0135159945", identity_number: "883456-14-1234", email: "pickemd2@gmail.com", password: "@dmin!23", role: 0},
+  {username: "pickemd2", first_name: "Super", last_name: "Admin", phone_number: "0182322649", identity_number: "883456-14-1234", email: "pickemd2@gmail.com", password: "@dmin!23", role: 0},
   {username: "admin1", first_name: "PickemD2", last_name: "Admin1", phone_number: "0123456781", identity_number: "123456-14-1234", email: "admin1@esports.com", password: "@dmin!23", role: 1},
   {username: "admin2", first_name: "PickemD2", last_name: "Admin2", phone_number: "0123456782", identity_number: "223456-14-1234",email: "admin2@esports.com", password: "@dmin!23", role: 1},
   {username: "tester", first_name: "Tester", last_name: "Account", phone_number: "0123456783", identity_number: "223452-14-1235",email: "tester@esports.com", password: "Test!234", role: 2}
@@ -24,6 +24,7 @@ User.create!([
 text = "The International 2019 is the concluding tournament of the Dota Pro Circuit and the ninth annual edition of The International. The tournament will be held on Chinese soil for the first time, as it moves to the Mercedes-Benz Arena in Shanghai. Following the previous year format, a point system based on official sponsored Majors and Minors will be used to determine the twelve invites to The International."
 
 Tournament.create!([
+  {title: "The Testing Tournament", description: "For Testing Purpose", start_date: "2019-08-15", end_date: "2019-08-25"},
   {title: "The International 2019", description: text, start_date: "2019-08-15", end_date: "2019-08-25"}
 ])
 
@@ -67,30 +68,95 @@ Team.create!([
   {name: "OG", description: ""},
   {name: "Keen Gaming", description: ""},
   {name: "Infamous", description: ""},
-  {name: "Mineski", description: ""},
-  {name: "The Bucharest Minor", description: "Region South America #3"}
+  {name: "Mineski", description: ""}
 ])
 
 Match.create!([
-  {description: "Round Of 16 - Game 1", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 1},
-  {description: "Round Of 16 - Game 2", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 2},
-  {description: "Round Of 16 - Game 3", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 3},
-  {description: "Round Of 16 - Game 4", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 4},
-  {description: "Round Of 16 - Game 5", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 5},
-  {description: "Round Of 16 - Game 6", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 6},
-  {description: "Round Of 16 - Game 7", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 7},
-  {description: "Round Of 16 - Game 8", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 8},
-  {description: "Quarter Final - Game 1", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 9},
-  {description: "Quarter Final - Game 2", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 10},
-  {description: "Quarter Final - Game 3", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 11},
-  {description: "Quarter Final - Game 4", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 12},
-  {description: "Semi Final - Game 1", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 13},
-  {description: "Semi Final - Game 2", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 14},
-  {description: "The Bronze", match_start: "2019-08-25 14:00:00", tournament_id: 1, bracket_id: 15},
-  {description: "The Final", match_start: "2019-08-25 14:00:00", tournament_id: 1, bracket_id: 16}
+  {description: "Round Of 16 - Game 1", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 1, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {description: "Round Of 16 - Game 2", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 2, answer_1: "TeamB", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamB", answer_5: "TeamA"},
+  {description: "Round Of 16 - Game 3", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 3, answer_1: "TeamB", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamB", answer_5: "TeamA"},
+  {description: "Round Of 16 - Game 4", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 4, answer_1: "TeamB", answer_2: "TeamB", answer_3: "TeamB", answer_4: "TeamB", answer_5: "TeamA"},
+  {description: "Round Of 16 - Game 5", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 5, answer_1: "TeamA", answer_2: "TeamB", answer_3: "TeamA", answer_4: "TeamB", answer_5: "TeamA"},
+  {description: "Round Of 16 - Game 6", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 6, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamB", answer_5: "TeamA"},
+  {description: "Round Of 16 - Game 7", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 7, answer_1: "TeamA", answer_2: "TeamB", answer_3: "TeamA", answer_4: "TeamB", answer_5: "TeamA"},
+  {description: "Round Of 16 - Game 8", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 8, answer_1: "TeamA", answer_2: "TeamB", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamB"},
+  {description: "Quarter Final - Game 1", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 9, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamB"},
+  {description: "Quarter Final - Game 2", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 10, answer_1: "TeamA", answer_2: "TeamB", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamB"},
+  {description: "Quarter Final - Game 3", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 11, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamB", answer_4: "TeamB", answer_5: "TeamB"},
+  {description: "Quarter Final - Game 4", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 12, answer_1: "TeamB", answer_2: "TeamA", answer_3: "TeamB", answer_4: "TeamA", answer_5: "TeamB"},
+  {description: "Semi Final - Game 1", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 13, answer_1: "TeamB", answer_2: "TeamB", answer_3: "TeamB", answer_4: "TeamB", answer_5: "TeamA"},
+  {description: "Semi Final - Game 2", match_start: "2019-08-20 14:00:00", tournament_id: 1, bracket_id: 14, answer_1: "TeamB", answer_2: "TeamB", answer_3: "TeamB", answer_4: "TeamB", answer_5: "TeamA"},
+  {description: "The Bronze", match_start: "2019-08-25 14:00:00", tournament_id: 1, bracket_id: 15, answer_1: "TeamA", answer_2: "TeamB", answer_3: "TeamA", answer_4: "TeamB", answer_5: "TeamA"},
+  {description: "The Final", match_start: "2019-08-25 14:00:00", tournament_id: 1, bracket_id: 16, answer_1: "TeamA", answer_2: "TeamB", answer_3: "TeamA", answer_4: "TeamB", answer_5: "TeamA"},
+  {description: "Round Of 16 - Game 1", match_start: "2019-08-20 14:00:00", tournament_id: 2, bracket_id: 1},
+  {description: "Round Of 16 - Game 2", match_start: "2019-08-20 14:00:00", tournament_id: 2, bracket_id: 2},
+  {description: "Round Of 16 - Game 3", match_start: "2019-08-20 14:00:00", tournament_id: 2, bracket_id: 3},
+  {description: "Round Of 16 - Game 4", match_start: "2019-08-20 14:00:00", tournament_id: 2, bracket_id: 4},
+  {description: "Round Of 16 - Game 5", match_start: "2019-08-20 14:00:00", tournament_id: 2, bracket_id: 5},
+  {description: "Round Of 16 - Game 6", match_start: "2019-08-20 14:00:00", tournament_id: 2, bracket_id: 6},
+  {description: "Round Of 16 - Game 7", match_start: "2019-08-20 14:00:00", tournament_id: 2, bracket_id: 7},
+  {description: "Round Of 16 - Game 8", match_start: "2019-08-20 14:00:00", tournament_id: 2, bracket_id: 8},
+  {description: "Quarter Final - Game 1", match_start: "2019-08-20 14:00:00", tournament_id: 2, bracket_id: 9},
+  {description: "Quarter Final - Game 2", match_start: "2019-08-20 14:00:00", tournament_id: 2, bracket_id: 10},
+  {description: "Quarter Final - Game 3", match_start: "2019-08-20 14:00:00", tournament_id: 2, bracket_id: 11},
+  {description: "Quarter Final - Game 4", match_start: "2019-08-20 14:00:00", tournament_id: 2, bracket_id: 12},
+  {description: "Semi Final - Game 1", match_start: "2019-08-20 14:00:00", tournament_id: 2, bracket_id: 13},
+  {description: "Semi Final - Game 2", match_start: "2019-08-20 14:00:00", tournament_id: 2, bracket_id: 14},
+  {description: "The Bronze", match_start: "2019-08-25 14:00:00", tournament_id: 2, bracket_id: 15},
+  {description: "The Final", match_start: "2019-08-25 14:00:00", tournament_id: 2, bracket_id: 16}
 ])
 
 MatchPrediction.create!([
+  {user_id: 4, tournament_id: 1, match_id: 1, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 4, tournament_id: 1, match_id: 2, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 4, tournament_id: 1, match_id: 3, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 4, tournament_id: 1, match_id: 4, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 4, tournament_id: 1, match_id: 5, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 4, tournament_id: 1, match_id: 6, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 4, tournament_id: 1, match_id: 7, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 4, tournament_id: 1, match_id: 8, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 4, tournament_id: 1, match_id: 9, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 4, tournament_id: 1, match_id: 10, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 4, tournament_id: 1, match_id: 11, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 4, tournament_id: 1, match_id: 12, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 4, tournament_id: 1, match_id: 13, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 4, tournament_id: 1, match_id: 14, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 4, tournament_id: 1, match_id: 15, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 4, tournament_id: 1, match_id: 16, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  
+  {user_id: 3, tournament_id: 1, match_id: 1, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 3, tournament_id: 1, match_id: 2, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 3, tournament_id: 1, match_id: 3, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 3, tournament_id: 1, match_id: 4, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 3, tournament_id: 1, match_id: 5, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 3, tournament_id: 1, match_id: 6, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 3, tournament_id: 1, match_id: 7, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 3, tournament_id: 1, match_id: 8, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 3, tournament_id: 1, match_id: 9, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 3, tournament_id: 1, match_id: 10, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 3, tournament_id: 1, match_id: 11, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 3, tournament_id: 1, match_id: 12, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 3, tournament_id: 1, match_id: 13, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 3, tournament_id: 1, match_id: 14, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 3, tournament_id: 1, match_id: 15, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 3, tournament_id: 1, match_id: 16, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+
+  {user_id: 2, tournament_id: 1, match_id: 1, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 2, tournament_id: 1, match_id: 2, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 2, tournament_id: 1, match_id: 3, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 2, tournament_id: 1, match_id: 4, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 2, tournament_id: 1, match_id: 5, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 2, tournament_id: 1, match_id: 6, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 2, tournament_id: 1, match_id: 7, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 2, tournament_id: 1, match_id: 8, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 2, tournament_id: 1, match_id: 9, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 2, tournament_id: 1, match_id: 10, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 2, tournament_id: 1, match_id: 11, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 2, tournament_id: 1, match_id: 12, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 2, tournament_id: 1, match_id: 13, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 2, tournament_id: 1, match_id: 14, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 2, tournament_id: 1, match_id: 15, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
+  {user_id: 2, tournament_id: 1, match_id: 16, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"}
 ])
 
 

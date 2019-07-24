@@ -25,6 +25,11 @@ class CreateMatches < ActiveRecord::Migration[5.2]
       t.string :answer_3
       t.string :answer_4
       t.string :answer_5
+      t.integer :gain_1, default: 1
+      t.integer :gain_2, default: 1
+      t.integer :gain_3, default: 1
+      t.integer :gain_4, default: 1
+      t.integer :gain_5, default: 1
       t.string :status
       t.references :bracket
       t.references :tournament

@@ -2,8 +2,8 @@ class CreateMatchPredictions < ActiveRecord::Migration[5.2]
   def change
     create_table :match_predictions do |t|
       t.references :user
+      t.references :tournament
       t.references :match
-      t.text :answers
       t.string :answer_1
       t.string :answer_2
       t.string :answer_3
@@ -14,6 +14,7 @@ class CreateMatchPredictions < ActiveRecord::Migration[5.2]
       t.integer :score_3, default: 0
       t.integer :score_4, default: 0
       t.integer :score_5, default: 0
+      t.integer :scores, default: 0
       t.timestamps
     end
   end

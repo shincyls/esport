@@ -2,6 +2,7 @@
 
   <%= form.hidden_field :user_id, value: current_user.id %>
   <%= form.hidden_field :match_id, value: @match.id %>
+  <%= form.hidden_field :tournament_id, value: @match.tournament.id %>
 
   <p>Q1: <%= @match.question_1 %></p>
   <div class="input-group mb-3 col-md-10">

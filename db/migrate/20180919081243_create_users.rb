@@ -14,6 +14,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.integer :role, default: 2
       t.string :password_reset_token
       t.datetime :password_reset_sent_at
+      t.integer :timezone, default: 8
       t.timestamps
     end
   end

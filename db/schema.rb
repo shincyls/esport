@@ -65,8 +65,8 @@ ActiveRecord::Schema.define(version: 2019_02_11_141231) do
 
   create_table "match_predictions", force: :cascade do |t|
     t.bigint "user_id"
+    t.bigint "tournament_id"
     t.bigint "match_id"
-    t.text "answers"
     t.string "answer_1"
     t.string "answer_2"
     t.string "answer_3"
@@ -77,9 +77,11 @@ ActiveRecord::Schema.define(version: 2019_02_11_141231) do
     t.integer "score_3", default: 0
     t.integer "score_4", default: 0
     t.integer "score_5", default: 0
+    t.integer "scores", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["match_id"], name: "index_match_predictions_on_match_id"
+    t.index ["tournament_id"], name: "index_match_predictions_on_tournament_id"
     t.index ["user_id"], name: "index_match_predictions_on_user_id"
   end
 
@@ -108,6 +110,11 @@ ActiveRecord::Schema.define(version: 2019_02_11_141231) do
     t.string "answer_3"
     t.string "answer_4"
     t.string "answer_5"
+    t.integer "gain_1", default: 1
+    t.integer "gain_2", default: 1
+    t.integer "gain_3", default: 1
+    t.integer "gain_4", default: 1
+    t.integer "gain_5", default: 1
     t.string "status"
     t.bigint "bracket_id"
     t.bigint "tournament_id"
@@ -197,6 +204,7 @@ ActiveRecord::Schema.define(version: 2019_02_11_141231) do
     t.integer "role", default: 2
     t.string "password_reset_token"
     t.datetime "password_reset_sent_at"
+    t.integer "timezone", default: 8
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar"

@@ -3,13 +3,12 @@
     <tr>
       <th>User</th>
       <th>Match</th>
-      <th>Answer 1</th>
-      <th>Answer 2</th>
-      <th>Answer 3</th>
-      <th>Answer 4</th>
-      <th>Answer 5</th>
-      <th>Edit</th>
-      <th>Delete</th>
+      <th>A1</th>
+      <th>A2</th>
+      <th>A3</th>
+      <th>A4</th>
+      <th>A5</th>
+      <th>Total</th>
     </tr>
   </thead>
 
@@ -23,8 +22,7 @@
         <td><%= mp.answer_3 %></td>
         <td><%= mp.answer_4 %></td>
         <td><%= mp.answer_5 %></td>
-        <td><span class="bg-warning rounded p-1 m-1"><%= link_to 'Edit', edit_match_prediction_path(mp), class: "text-white" %></span></td>
-        <td><span class="bg-danger rounded p-1 m-1"><%= link_to 'Delete', mp, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "text-white" %></span></td>
+        <td><%= mp.total_scores %></td>
       </tr>
     <% end %>
   </tbody>
