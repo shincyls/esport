@@ -2,10 +2,17 @@
 <div class="col-md-12">
     <div class="jumbotron mx-auto">
         <div class="row justify-content-center">
-            <%= image_tag(t.banner, style: "width:70%;height:70%") if t.banner.attached? %>
-            <h6 class="text-white d-block text-uppercase mx-auto shadow mt-2 mb-2">
-                Select Your Game and Predict Your Result
-            </h6>
+            <div class="col-8-lg">
+                <%= image_tag(t.banner, style: "width:70%;height:70%") if t.banner.attached? %>
+            </div>
+            <div class="col-8-lg">
+                <h2 class="text-white text-special d-block mx-auto shadow mt-2 mb-2">
+                    <%= t.title %>
+                </h2>
+                <h4 class="text-white text-special mt-2 mb-2">
+                    <%= t.start_date %> to <%= t.end_date %>
+                </h4>
+            </div>
         </div>
 
         <% @matches = t.matches.order("bracket_id asc") %>
@@ -105,4 +112,10 @@
         </div>
     </div>
 </div>
+
+
+<% t.match_predictions.each do |mp| %>
+    <p><%= mp.user.username %> <%= mp.match.bracket.code %> <%= mp.score_1 %> <%= mp.score_2 %> <%= mp.score_3 %> <%= mp.score_4 %> <%= mp.score_5 %></p>
+<% end %>
+
 <% end %>

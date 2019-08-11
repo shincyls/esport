@@ -7951,6 +7951,10 @@ button.close
     background-color: rgba(0,0,0,0.5) !important;
 }
 
+.bg-none
+{
+}
+
 a.bg-primary:hover,
 a.bg-primary:focus,
 button.bg-primary:hover,
@@ -15179,7 +15183,7 @@ a.btn-icon-only
 .footer
 {
     padding: 2rem 0;
-    background: #f4f5f7;
+    background: #000000;
 }
 .footer .col-footer .heading
 {
@@ -16195,7 +16199,7 @@ textarea[resize='horizontal']
 }
 .navbar-brand img
 {
-    height: 30px;
+    height: 4rem;
 }
 
 .navbar-dark .navbar-brand
