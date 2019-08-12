@@ -13,18 +13,28 @@ class Tournament < ApplicationRecord
             for matpred in match.match_predictions
                 if matpred.answer_1 == matpred.match.answer_1
                     matpred.score_1 = matpred.match.gain_1
+                else
+                    matpred.score_1 = 0
                 end
                 if matpred.answer_2 == matpred.match.answer_2
                     matpred.score_2 = matpred.match.gain_2
+                else
+                    matpred.score_2 = 0
                 end
                 if matpred.answer_3 == matpred.match.answer_3
                     matpred.score_3 = matpred.match.gain_3
+                else
+                    matpred.score_3 = 0
                 end
                 if matpred.answer_4 == matpred.match.answer_4
                     matpred.score_4 = matpred.match.gain_4
+                else
+                    matpred.score_4 = 0
                 end
                 if matpred.answer_5 == matpred.match.answer_5
                     matpred.score_5 = matpred.match.gain_5
+                else
+                    matpred.score_5 = 0
                 end
                 matpred.scores = matpred.score_1 + matpred.score_2 + matpred.score_3 + matpred.score_4 + matpred.score_5
                 self.last_populate = Time.now

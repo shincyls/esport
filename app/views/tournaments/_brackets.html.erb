@@ -11,7 +11,7 @@
                 <h2 class="text-white text-special d-block mx-auto shadow mt-2 mb-2">
                     <%= t.title %>
                 </h2>
-                <h4 class="text-white text-special mt-2 mb-2">
+                <h4 class="text-center text-white text-special mt-2 mb-2">
                     <%= t.start_date %> to <%= t.end_date %>
                 </h4>
             </div>
@@ -20,12 +20,15 @@
         <% @matches = t.matches.order("bracket_id asc") %>
 
         <div class="nav-wrapper w-20">
-            <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
+            <ul class="nav nav-pills nav-fill flex-column flex-md-row text-special " id="tabs-icons-text" role="tablist">
                 <li class="nav-item">
-                    <a class="btn btn-outline-primary text-special active show" id="tabs-icons-text-1-tab" data-toggle="tab" href="#tabs-icons-text-1" role="tab" aria-controls="tabs-icons-text-1" aria-selected="true">Bracket</a>
+                    <a class="btn btn-outline-primary active show" id="tabs-icons-text-1-tab" data-toggle="tab" href="#tabs-icons-text-1" role="tab" aria-controls="tabs-icons-text-1" aria-selected="true">Matches</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-outline-primary text-special" id="tabs-icons-text-2-tab" data-toggle="tab" href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false">Score</a>
+                    <a class="btn btn-outline-primary" id="tabs-icons-text-2-tab" data-toggle="tab" href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false">Current Standings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-primary" id="tabs-icons-text-3-tab" data-toggle="tab" href="#tabs-icons-text-3" role="tab" aria-controls="tabs-icons-text-3" aria-selected="false">My Scores</a>
                 </li>
             </ul>
             <div id="error"></div>
@@ -130,8 +133,7 @@
             </div>
 
             <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
-                
-                <table id="Tournament-table" class="table table-sm table-responsive-lg table-striped text-special mx-auto" style="font-size:0.8rem;width:60%">
+                <table id="table-rank" class="table table-sm table-responsive-lg table-striped text-special mx-auto" style="font-size:0.8rem;width:80%">
                     <thead class="bg-pickem-2 text-white">
                         <tr>
                             <th>User</th>
@@ -156,9 +158,73 @@
                         <% end %>
                     </tbody>
                 </table>
-                
+
             </div>
 
+
+            <div class="tab-pane fade" id="tabs-icons-text-3" role="tabpanel" aria-labelledby="tabs-icons-text-3-tab">
+                
+                <table id="table-player" class="table table-sm table-responsive-lg table-striped text-special mx-auto" style="font-size:0.8rem;width:80%">
+                    <h4 class="text-center text-white text-special">My Scores: <%= current_user.match_predictions.sum(:scores) %></h4>
+                    <thead class="bg-pickem-2 text-white">
+                        <tr>
+                            <th>Match</th>
+                            <th>Q1</th>
+                            <th>Q2</th>
+                            <th>Q3</th>
+                            <th>Q4</th>
+                            <th>Q5</th>
+                            <th>Score1</th>
+                            <th>Score2</th>
+                            <th>Score3</th>
+                            <th>Score4</th>
+                            <th>Score5</th>
+                            <th>Gained</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="table-body">
+                        <% current_user.match_predictions.each do |mp| %>
+                        <tr>
+                            <td><%= mp.match.bracket.code %></td>
+                            <td class="<%= mp.checkq1 %>">
+                                <span data-toggle="tooltip" data-placement="right" title="Q:<%= mp.match.question_1 %> A:<%= mp.match.answer_1 %>">
+                                    <%= mp.answer_1 %>
+                                </span>
+                            </td>
+                            <td class="<%= mp.checkq2 %>">
+                                <span data-toggle="tooltip" data-placement="right" title="Q:<%= mp.match.question_2 %> A:<%= mp.match.answer_2 %>">
+                                    <%= mp.answer_2 %>
+                                </span>
+                            </td>
+                            <td class="<%= mp.checkq3 %>">
+                                <span data-toggle="tooltip" data-placement="right" title="Q:<%= mp.match.question_3 %> A:<%= mp.match.answer_3 %>">
+                                    <%= mp.answer_3 %>
+                                </span>
+                            </td>
+                            <td class="<%= mp.checkq4 %>">
+                                <span data-toggle="tooltip" data-placement="right" title="Q:<%= mp.match.question_4 %> A:<%= mp.match.answer_4 %>">
+                                    <%= mp.answer_4 %>
+                                </span>
+                            </td>
+                            <td class="<%= mp.checkq5 %>">
+                                <span data-toggle="tooltip" data-placement="right" title="Q:<%= mp.match.question_5 %> A:<%= mp.match.answer_5 %>">
+                                    <%= mp.answer_5 %>
+                                </span>
+                            </td>
+                            <td><%= mp.score_1 %></td>
+                            <td><%= mp.score_2 %></td>
+                            <td><%= mp.score_3 %></td>
+                            <td><%= mp.score_4 %></td>
+                            <td><%= mp.score_5 %></td>
+                            <td><%= mp.scores %></td>
+                        </tr>
+                        <% end %>
+                    </tbody>
+
+                </table>
+
+            </div>
         </div>
 
     </div>

@@ -55,6 +55,11 @@ class User < ApplicationRecord
         self.username = @set
     end
 
+    def highlight(uid)
+        self.id = uid
+        return "current_user"
+    end
+
     def fullname
        self.first_name + " " + self.last_name
     end

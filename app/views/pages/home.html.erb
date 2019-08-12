@@ -11,3 +11,21 @@
 </div>
 
 
+
+
+<script>
+
+function loadjs(table,col) {
+    $(table).DataTable({
+      "order": [col],
+      "searching": false,
+      "bPaginate": false
+ 
+    });
+};
+
+loadjs('#table-rank', 3);
+loadjs('#table-player', 0);
+
+</script>
+
