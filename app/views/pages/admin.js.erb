@@ -1,0 +1,9 @@
+$('#<%=@data.model_name.name%>-table').dataTable().fnDestroy();
+
+$('#table-section').html("<%= j (render 'users/index') %>");
+$("#btn-first").attr('class', 'btn btn-primary');
+
+loadjs('#<%=@data.model_name.name%>-table');
+
+
+

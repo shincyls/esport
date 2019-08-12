@@ -1,0 +1,3 @@
+$('#flash-message').html("<%= j (render 'statics/message') %>");
+
+$('#t-po-<%=@tournament.id%>').html("<%= j (time_ago_in_words(@tournament.last_populate) if @tournament.last_populate) %>");

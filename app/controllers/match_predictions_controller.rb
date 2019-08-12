@@ -2,6 +2,7 @@ class MatchPredictionsController < ApplicationController
   before_action :set_match_prediction, only: [:show, :edit, :route, :update, :destroy]
   before_action :set_match, only: [:new]
   before_action :allow_prediction, only: [:new, :edit]
+  before_action :require_admin, only: [:destroy]
   
 
   # GET /match_predictions

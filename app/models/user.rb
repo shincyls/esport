@@ -70,6 +70,19 @@ class User < ApplicationRecord
         end
     end
 
+    def total_answers(tourid)
+        @predictions = self.match_predictions.where(tournament_id: tourid)
+        count = 0
+        for predict in @predictions 
+            count += 1 unless predict.answer_1.blank?
+            count += 1 unless predict.answer_2.blank?
+            count += 1 unless predict.answer_3.blank?
+            count += 1 unless predict.answer_4.blank?
+            count += 1 unless predict.answer_5.blank?
+        end
+        return count
+    end
+
     protected
 
     def generate_token

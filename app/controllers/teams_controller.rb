@@ -1,5 +1,6 @@
 class TeamsController < ApplicationController
   before_action :set_team, only: [:show, :edit, :update, :destroy]
+  before_action :require_admin, only: [:show, :edit, :update, :destroy]
 
   # GET /teams
   def index
@@ -65,4 +66,5 @@ class TeamsController < ApplicationController
     def team_params
       params.require(:team).permit(:name, :description, :logo)
     end
+
 end

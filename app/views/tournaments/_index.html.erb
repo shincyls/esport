@@ -6,14 +6,16 @@
   </div>
 </div>
 
-<table id="Tournament-table" class="table table-sm table-responsive-lg table-striped table-dark" style="font-size:0.8rem">
+<table id="Tournament-table" class="table table-sm table-responsive-lg table-striped" style="font-size:0.8rem">
   <thead class="bg-dark text-white">
     <tr>
       <th>Name</th>
       <th>Start Date</th>
       <th>End Date</th>
-      <th>OpenDisplay?</th>
-      <th>OpenPrediction?</th>
+      <th>Display?</th>
+      <th>Prediction?</th>
+      <th>Populate</th>
+      <th>On</th>
       <th>Edit</th>
       <th>Delete</th>
     </tr>
@@ -43,6 +45,9 @@
                                 url: "#{tournament.id}/prediction",
                                 method: 'POST'}) %>
         </td>
+
+        <td><span class="bg-info rounded p-1 m-1"><%= link_to 'Result', populate_tournament_path(tournament), remote: true, data: { confirm: 'Are you want populate result?' }, class: "text-white" %></span></td>
+        <td id="t-po-<%=tournament.id%>"><%= time_ago_in_words(tournament.last_populate) if tournament.last_populate %></td>
         <td><span class="bg-warning rounded p-1 m-1"><%= link_to 'Edit', edit_tournament_path(tournament), remote: true, class: "text-white" %></span></td>
         <td><span class="bg-danger rounded p-1 m-1"><%= link_to 'Delete', tournament, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "text-white" %></span></td>
       </tr>

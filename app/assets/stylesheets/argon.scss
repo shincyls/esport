@@ -2980,14 +2980,14 @@ fieldset:disabled a.btn
 {
     color: #fff;
     border-color: #fff;
-    background-color: #000;
+    background-color: #02C8FF;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
 }
 .btn-primary:hover
 {
     color: #fff;
     border-color: #fff; 
-    background-color: #000000;
+    background-color: #02C8FF;
 }
 .btn-primary:focus,
 .btn-primary.focus
@@ -3466,8 +3466,8 @@ fieldset:disabled a.btn
 .btn-outline-primary:hover
 {
     color: #fff;
-    border-color: #000000; 
-    background-color: #000000;
+    border-color: #02C8FF; 
+    background-color: #02C8FF;
 }
 .btn-outline-primary:focus,
 .btn-outline-primary.focus
@@ -3485,8 +3485,8 @@ fieldset:disabled a.btn
 .show > .btn-outline-primary.dropdown-toggle
 {
     color: #fff;
-    border-color: #000000; 
-    background-color: #000000;
+    border-color: #fff; 
+    background-color: #02C8FF;
 }
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus,
 .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
@@ -6108,8 +6108,8 @@ input[type='button'].btn-block
     z-index: 1;
 
     color: #fff;
-    border-color: #000000; 
-    background-color: #000000;
+    border-color: #fff; 
+    background-color: #02c8ff;
 }
 
 .page-item.disabled .page-link
@@ -6388,7 +6388,7 @@ input[type='button'].btn-block
     margin-bottom: 2rem;
     padding: 2rem 1rem;
     border-radius: .3rem; 
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.8);
 }
 @media (min-width: 576px)
 {
@@ -7961,6 +7961,16 @@ button.bg-primary:hover,
 button.bg-primary:focus
 {
     background-color: #324cdd !important;
+}
+
+.bg-pickem-1
+{
+    background-color: #02C8FF !important;
+}
+
+.bg-pickem-2
+{
+    background-color: #FF2088 !important;
 }
 
 .bg-secondary
@@ -16114,7 +16124,7 @@ textarea[resize='horizontal']
 .nav-pills .show > .nav-link
 {
     color: #fff;
-    background-color: rgb(255, 134, 77);
+    background-color: #02C8FF;
 }
 
 @media (max-width: 575.98px)

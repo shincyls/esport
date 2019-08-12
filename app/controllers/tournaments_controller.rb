@@ -1,5 +1,6 @@
 class TournamentsController < ApplicationController
   before_action :set_tournament, only: [:show, :edit, :update, :destroy]
+  before_action :require_admin, only: [:show, :edit, :update, :destroy, :populate]
 
   # GET /tournaments
   def index
@@ -17,6 +18,16 @@ class TournamentsController < ApplicationController
 
   # GET /tournaments/1/edit
   def edit
+  end
+
+  # GET /tournaments/1/populate
+  def populate
+    @tournament = Tournament.find(params[:id])
+    @tournament.populate_result
+    respond_to do |format|
+      format.html
+      format.js { flash.now[:success] = "All Predictions of this Tournament have been calculated! Please Check Match Predictions Table" }
+    end
   end
 
   # POST /tournaments

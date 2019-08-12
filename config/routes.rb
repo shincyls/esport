@@ -19,7 +19,11 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :sessions 
-  resources :tournaments
+  resources :tournaments do
+    member do
+      get :populate
+    end
+  end
   resources :teams
   resources :password_resets
 

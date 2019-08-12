@@ -8,7 +8,7 @@
           <div class="col-md-8 mx-auto">
             <p>Your Username: <span class="info badge-secondary"><%=current_user.username%></span></p>
             <p>Kindly verify account with attached receipt and contact our admin via:</p>
-            <p>Whatsapp: TBA <span style="color:grey;">OR</span> Email: <%= User.first.email %></p>
+            <p>Whatsapp: <%= User.first.phone_number %> <span style="color:grey;">OR</span> Email: <%= User.first.email %></p>
             <p>Banking Details:</p>
             <p>Bank: <span class="info badge-secondary">Maybank Berhad</span></p>
             <p>Name: <span class="info badge-secondary">Little Mary Lamb House</span></p>

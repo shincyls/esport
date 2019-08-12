@@ -1,5 +1,6 @@
 class MatchesController < ApplicationController
   before_action :set_match, only: [:show, :edit, :update, :destroy, :question, :setquestion]
+  before_action :require_admin, only: [:show, :edit, :update, :destroy, :question, :setquestion]
 
   # GET /matches
   def index

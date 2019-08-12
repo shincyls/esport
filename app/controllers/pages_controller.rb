@@ -11,6 +11,8 @@ class PagesController < ApplicationController
     end
 
     def admin
+        respond_to :html, :js
+        @data = User.all
     end
 
     def about
@@ -39,8 +41,8 @@ class PagesController < ApplicationController
         end
 
         @data.order("created_at asc")
- 
     end
+    
 
     def approve
         @user = User.find(params[:id])

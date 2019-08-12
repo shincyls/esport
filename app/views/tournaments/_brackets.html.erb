@@ -1,4 +1,6 @@
 <% @tournaments.each do |t| %>
+    
+
 <div class="col-md-12">
     <div class="jumbotron mx-auto">
         <div class="row justify-content-center">
@@ -16,106 +18,151 @@
         </div>
 
         <% @matches = t.matches.order("bracket_id asc") %>
-        <div class="tournament-section">
-            <div class="tournament-container">
 
-                <div class="tournament-brackets">
-                    <ul class="bracket bracket-1">
-                        <% @matches[0..7].each do |m| %>
-                        <li class="team-item <%=m.predicted(current_user)%>" id="<%=m.bracket.code%>">
-                            <div class="col-12 mx-auto">
-                                <span class="text-small"><%=m.match_start.strftime("%m/%d %I:%M%p") if m.match_start%></span>
-                            </div>
-                            <a data-remote="true" href="<%=m.predicted_route(current_user)%>">
-                                <div class="row">
-                                    <div class="col-12 mx-auto text-team">
-                                        <%= image_tag(m.team_home.logo, height: 16) if m.team_home.logo.attached? %>  <%=m.team_home.name%>  <span><%=m.team_home_won%></span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 mx-auto text-team">
-                                        <%= image_tag(m.team_away.logo, height: 16) if m.team_away.logo.attached? %>  <%=m.team_away.name%>  <span><%=m.team_away_won%></span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <% end %>
-                    </ul>
+        <div class="nav-wrapper w-20">
+            <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
+                <li class="nav-item">
+                    <a class="btn btn-outline-primary text-special active show" id="tabs-icons-text-1-tab" data-toggle="tab" href="#tabs-icons-text-1" role="tab" aria-controls="tabs-icons-text-1" aria-selected="true">Bracket</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-primary text-special" id="tabs-icons-text-2-tab" data-toggle="tab" href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false">Score</a>
+                </li>
+            </ul>
+            <div id="error"></div>
+        </div>
 
-                    <ul class="bracket bracket-2">
-                        <% @matches[8..11].each do |m| %>
-                        <li class="team-item <%=m.predicted(current_user)%>" id="<%=m.bracket.code%>">
-                            <div class="col-12 mx-auto">
-                                <span class="text-small"><%=m.match_start.strftime("%m/%d %I:%M%p") if m.match_start%></span>
-                            </div>
-                            <a data-remote="true" href="<%=m.predicted_route(current_user)%>">
-                                <div class="row">
-                                    <div class="col-12 mx-auto text-team">
-                                        <%= image_tag(m.team_home.logo, height: 16) if m.team_home.logo.attached? %> <%=m.team_home.name%> <span><%=m.team_home_won%></span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 mx-auto text-team">
-                                        <%= image_tag(m.team_away.logo, height: 16) if m.team_away.logo.attached? %> <%=m.team_away.name%> <span><%=m.team_away_won%></span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <% end %>
-                    </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade active show" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
+            
+                <div class="tournament-section">
+                    <div class="tournament-container">
 
-                    <ul class="bracket bracket-3">
-                        <% @matches[12..13].each do |m| %>
-                        <li class="team-item <%=m.predicted(current_user)%>" id="<%=m.bracket.code%>">
-                            <div class="col-12 mx-auto">
-                                <span class="text-small"><%=m.match_start.strftime("%m/%d %I:%M%p") if m.match_start%></span>
-                            </div>
-                            <a data-remote="true" href="<%=m.predicted_route(current_user)%>">
-                                <div class="row">
-                                    <div class="col-12 mx-auto text-team">
-                                        <%= image_tag(m.team_home.logo, height: 16) if m.team_home.logo.attached? %> <%=m.team_home.name%> <span><%=m.team_home_won%></span>
+                        <div class="tournament-brackets">
+                            <ul class="bracket bracket-1">
+                                <% @matches[0..7].each do |m| %>
+                                <li class="team-item <%=m.predicted(current_user)%>" id="<%=m.bracket.code%>">
+                                    <div class="col-12 mx-auto">
+                                        <span class="text-small"><%=m.match_start.strftime("%m/%d %I:%M%p") if m.match_start%></span>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 mx-auto text-team">
-                                        <%= image_tag(m.team_away.logo, height: 16) if m.team_away.logo.attached? %> <%=m.team_away.name%> <span><%=m.team_away_won%></span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <% end %>
-                    </ul>
+                                    <a data-remote="true" href="<%=m.predicted_route(current_user)%>">
+                                        <div class="row">
+                                            <div class="col-12 mx-auto text-team">
+                                                <%= image_tag(m.team_home.logo, height: 16) if m.team_home.logo.attached? %>  <%=m.team_home.name%>  <span><%=m.team_home_won%></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 mx-auto text-team">
+                                                <%= image_tag(m.team_away.logo, height: 16) if m.team_away.logo.attached? %>  <%=m.team_away.name%>  <span><%=m.team_away_won%></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <% end %>
+                            </ul>
 
-                    <ul class="bracket bracket-4">
-                        <% final = @matches[15] %>
-                        <li class="team-item <%=final.predicted(current_user)%>" id="<%=final.bracket.code%>">
-                            <div class="col-12 mx-auto">
-                                <span class="text-small"><%=final.match_start.strftime("%m/%d %I:%M%p") if final.match_start%></span>
-                            </div>
-                            <a data-remote="true" href="<%=final.predicted_route(current_user)%>">
-                                <div class="row">
-                                    <div class="col-12 mx-auto text-team">
-                                        <%= image_tag(final.team_home.logo, height: 16) if final.team_home.logo.attached? %> <%=final.team_home.name%> <span><%=final.team_home_won%></span>
+                            <ul class="bracket bracket-2">
+                                <% @matches[8..11].each do |m| %>
+                                <li class="team-item <%=m.predicted(current_user)%>" id="<%=m.bracket.code%>">
+                                    <div class="col-12 mx-auto">
+                                        <span class="text-small"><%=m.match_start.strftime("%m/%d %I:%M%p") if m.match_start%></span>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 mx-auto text-team">
-                                        <%= image_tag(final.team_away.logo, height: 16) if final.team_away.logo.attached? %> <%=final.team_away.name%> <span><%=final.team_away_won%></span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
+                                    <a data-remote="true" href="<%=m.predicted_route(current_user)%>">
+                                        <div class="row">
+                                            <div class="col-12 mx-auto text-team">
+                                                <%= image_tag(m.team_home.logo, height: 16) if m.team_home.logo.attached? %> <%=m.team_home.name%> <span><%=m.team_home_won%></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 mx-auto text-team">
+                                                <%= image_tag(m.team_away.logo, height: 16) if m.team_away.logo.attached? %> <%=m.team_away.name%> <span><%=m.team_away_won%></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <% end %>
+                            </ul>
 
+                            <ul class="bracket bracket-3">
+                                <% @matches[12..13].each do |m| %>
+                                <li class="team-item <%=m.predicted(current_user)%>" id="<%=m.bracket.code%>">
+                                    <div class="col-12 mx-auto">
+                                        <span class="text-small"><%=m.match_start.strftime("%m/%d %I:%M%p") if m.match_start%></span>
+                                    </div>
+                                    <a data-remote="true" href="<%=m.predicted_route(current_user)%>">
+                                        <div class="row">
+                                            <div class="col-12 mx-auto text-team">
+                                                <%= image_tag(m.team_home.logo, height: 16) if m.team_home.logo.attached? %> <%=m.team_home.name%> <span><%=m.team_home_won%></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 mx-auto text-team">
+                                                <%= image_tag(m.team_away.logo, height: 16) if m.team_away.logo.attached? %> <%=m.team_away.name%> <span><%=m.team_away_won%></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <% end %>
+                            </ul>
+
+                            <ul class="bracket bracket-4">
+                                <% final = @matches[15] %>
+                                <li class="team-item <%=final.predicted(current_user)%>" id="<%=final.bracket.code%>">
+                                    <div class="col-12 mx-auto">
+                                        <span class="text-small"><%=final.match_start.strftime("%m/%d %I:%M%p") if final.match_start%></span>
+                                    </div>
+                                    <a data-remote="true" href="<%=final.predicted_route(current_user)%>">
+                                        <div class="row">
+                                            <div class="col-12 mx-auto text-team">
+                                                <%= image_tag(final.team_home.logo, height: 16) if final.team_home.logo.attached? %> <%=final.team_home.name%> <span><%=final.team_home_won%></span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 mx-auto text-team">
+                                                <%= image_tag(final.team_away.logo, height: 16) if final.team_away.logo.attached? %> <%=final.team_away.name%> <span><%=final.team_away_won%></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
+                
+                <table id="Tournament-table" class="table table-sm table-responsive-lg table-striped text-special mx-auto" style="font-size:0.8rem;width:60%">
+                    <thead class="bg-pickem-2 text-white">
+                        <tr>
+                            <th>User</th>
+                            <th>Matches</th>
+                            <th>Predicted</th>
+                            <th>Scores</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="table-body">
+
+                        <% ptcpt = t.match_predictions.uniq{|u| u.user_id} %>
+                        <% ptcpt.each do |u| %>
+
+                        <tr>
+                            <td><%= u.user.username %></td>
+                            <td><%= u.user.match_predictions.where(tournament_id: t.id).count %> / <%= t.matches.count %> </td>
+                            <td><%= u.user.total_answers(t.id) %> / <%= t.total_questions %> </td>
+                            <td><%= u.user.match_predictions.where(tournament_id: t.id).sum(:scores) %></td>
+                        </tr>
+
+                        <% end %>
+                    </tbody>
+                </table>
+                
+            </div>
+
         </div>
+
     </div>
 </div>
 
-
-<% t.match_predictions.each do |mp| %>
-    <p><%= mp.user.username %> <%= mp.match.bracket.code %> <%= mp.score_1 %> <%= mp.score_2 %> <%= mp.score_3 %> <%= mp.score_4 %> <%= mp.score_5 %></p>
-<% end %>
 
 <% end %>

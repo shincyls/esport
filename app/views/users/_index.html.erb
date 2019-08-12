@@ -1,7 +1,7 @@
-<table id="User-table" class="table table-sm table-responsive-lg table-striped table-dark" style="font-size:0.8rem">
+<table id="User-table" class="table table-sm table-responsive-lg table-striped" style="font-size:0.8rem">
   <div class="text-special">Total Users: <%= User.where(role: "user").count %></div>
   <br>
-  <thead class="bg-dark text-white">
+  <thead class="text-white">
     <tr>
       <th>Username</th>
       <th>Email</th>
@@ -13,7 +13,7 @@
     </tr>
   </thead>
 
-  <tbody class="bg-dark">
+  <tbody>
     <% @data.each do |user| %>
       <tr>
         <td><%= user.username %></td>

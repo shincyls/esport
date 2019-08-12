@@ -120,10 +120,7 @@ MatchPrediction.create!([
   {user_id: 4, tournament_id: 1, match_id: 11, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
   {user_id: 4, tournament_id: 1, match_id: 12, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
   {user_id: 4, tournament_id: 1, match_id: 13, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
-  {user_id: 4, tournament_id: 1, match_id: 14, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
-  {user_id: 4, tournament_id: 1, match_id: 15, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
-  {user_id: 4, tournament_id: 1, match_id: 16, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
-  
+ 
   {user_id: 3, tournament_id: 1, match_id: 1, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
   {user_id: 3, tournament_id: 1, match_id: 2, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
   {user_id: 3, tournament_id: 1, match_id: 3, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
@@ -139,8 +136,7 @@ MatchPrediction.create!([
   {user_id: 3, tournament_id: 1, match_id: 13, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
   {user_id: 3, tournament_id: 1, match_id: 14, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
   {user_id: 3, tournament_id: 1, match_id: 15, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
-  {user_id: 3, tournament_id: 1, match_id: 16, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
-
+ 
   {user_id: 2, tournament_id: 1, match_id: 1, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
   {user_id: 2, tournament_id: 1, match_id: 2, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
   {user_id: 2, tournament_id: 1, match_id: 3, answer_1: "TeamA", answer_2: "TeamA", answer_3: "TeamA", answer_4: "TeamA", answer_5: "TeamA"},
